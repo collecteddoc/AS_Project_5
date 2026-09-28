@@ -1,0 +1,461 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+  table, th, td {
+  border-collapse: collapse !important;
+  text-align: left !important;
+  border: 1px solid black !important;
+  cellpadding: 12px !important;
+  cellspacing: 12px !important;
+}
+</style>
+
+
+
+
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Change Request: Member Medical Help_2024.12.11</title></head><body><span style="font-weight: bold; font-family: Times New Roman,Times,serif;">Jira:</span><br style="font-family: Times New Roman,Times,serif;">
+<span style="font-family: Times New Roman,Times,serif;">
+http://192.168.0.3:8080/browse/AMMSW-6839<br>
+<br>
+<span style="font-weight: bold;">Confluence:</span><br>
+</span>http://192.168.0.3:8090/display/AM/ChangeRequest_000_Member+Medical+Help<br>
+<br>
+<span style="font-weight: bold; font-family: Times New Roman,Times,serif; color: black;">ChangeRequest_001_Member Medical Help_2024.12.11</span><br style="font-family: Times New Roman,Times,serif; color: black;">
+<ul>
+  <li><span style="font-family: Times New Roman,Times,serif; color: black;">CR_2024.12.11.001. Disease "Cesarean Delivery/Any other minor illness" or
+"&#2488;&#2495;&#2460;&#2494;&#2480;&#2495;&#2527;&#2494;&#2472; &#2465;&#2503;&#2482;&#2495;&#2477;&#2494;&#2480;&#2495;/&#2437;&#2472;&#2509;&#2479; &#2479;&#2503; &#2453;&#2507;&#2472; &#2459;&#2507;&#2463;-&#2454;&#2494;&#2463;&#2507; &#2437;&#2488;&#2497;&#2454;" will be renamed as
+"Cesarean Delivery" or "&#2488;&#2495;&#2460;&#2494;&#2480;&#2495;&#2527;&#2494;&#2472; &#2465;&#2503;&#2482;&#2495;&#2477;&#2494;&#2480;&#2495;".</span></li>
+  <li><span style="font-family: Times New Roman,Times,serif; color: black;">
+
+CR_2024.12.11.002. Add disease "Any other minor illness" or "&#2437;&#2472;&#2509;&#2479; &#2479;&#2503; &#2453;&#2507;&#2472; &#2459;&#2507;&#2463;-&#2454;&#2494;&#2463;&#2507; &#2437;&#2488;&#2497;&#2454;".</span></li>
+  <li><span style="color: black; font-family: Times New Roman,Times,serif;">
+CR_2024.12.11.003. A member should not be eligible for medical help if
+they have an active primary loan type with number of montlhy overdue (ignore daily, weekly </span><span style="color: black; font-family: Times New Roman,Times,serif;">overdue</span><span style="color: black; font-family: Times New Roman,Times,serif;">)
+defined in disease configuration. <span style="color: red;">(Monthly / Weekly installment asked
+to stakeholders)</span></span></li>
+  <li><span style="font-family: Times New Roman,Times,serif; color: black;">CR_2024.12.11.004.
+In "Member wise Medical Help Entry" UI, Disease should be populated
+based on the 'Budget Type' e.g. District, Branch selection.</span></li>
+  <li><span style="font-family: Times New Roman,Times,serif; color: black;">CR_2024.12.11.005.
+A member should get medical help for any disease as per defined amount,
+cycle and non-eligible overdue term defined in disease configuration.</span></li>
+</ul>
+
+
+
+
+
+
+<span style="font-weight: bold; font-family: Times New Roman,Times,serif; color: black;">Disease Configuration</span><br>
+<span style="font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);"></span><br style="font-family: Times New Roman,Times,serif; color: black;">
+
+<table style="border-collapse: collapse; width: 100%; height: 100%; font-family: Times New Roman,Times,serif; color: black;" border="0" cellpadding="0" cellspacing="0">
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <tbody><tr style="height: 14.5pt;" height="19">
+  <td class="xl66" style="height: 14.5pt; width: 60pt; font-weight: bold;" align="left" height="19" width="80">Budget
+  Type</td>
+  <td style="border-left: medium none; text-align: left; width: 334pt; font-weight: bold; vertical-align: middle;" class="xl66">English
+  Title</td>
+  <td class="xl66" style="border-left: medium none; text-align: left; width: 371pt; font-weight: bold;">Bangla
+  Title</td>
+  <td class="xl66" style="border-left: medium none; width: 111pt; font-weight: bold;" align="left" width="148">Minimum
+  Help Amount</td>
+  <td class="xl66" style="border-left: medium none; width: 113pt; font-weight: bold;" align="left" width="150">Maximum
+  Help Amount</td>
+  <td class="xl66" style="border-left: medium none; width: 77pt; font-weight: bold;" align="left" width="103">Minimum
+  Cycle</td>
+  <td class="xl66" style="border-left: medium none; width: 79pt; font-weight: bold;" align="left" width="105">Maximum
+  Cycle</td>
+  <td class="xl66" style="border-left: medium none; width: 205pt; font-weight: bold;" align="left" width="273">Non-eligible
+  Overdue Term (Equal or Above)</td><td style="vertical-align: top; font-family: Times New Roman,Times,serif; font-weight: bold;"><span style="font-size: 14px; font-style: normal; font-weight: bold; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">Effective From Date</span> <br>
+      </td>
+      <td style="vertical-align: top; font-family: Times New Roman,Times,serif; font-weight: bold;"><span style="font-size: 14px; font-style: normal; font-weight: bold; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">Effective To</span><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: bold; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"><span>&nbsp;</span>Date</span> <br>
+      </td>
+
+ </tr>
+ <tr style="height: 14.5pt;" height="19">
+  <td class="xl65" style="border-top: medium none; height: 14.5pt;" align="left" height="19">District</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="left">Cancer
+  (Blood, Lungs, Bone, Stomach, Throat, Breast)</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="left">&#2453;&#2509;&#2479;&#2494;&#2472;&#2509;&#2488;&#2494;&#2480; (&#2476;&#2509;&#2482;&#2494;&#2465;, &#2475;&#2497;&#2488;&#2475;&#2497;&#2488;, &#2489;&#2494;&#2465;&#2492;, &#2474;&#2494;&#2453;&#2488;&#2509;&#2469;&#2482;&#2496;, &#2455;&#2482;&#2494;, &#2476;&#2509;&#2480;&#2503;&#2488;&#2509;&#2463;)</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">1</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">150000</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">0</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">1</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">8</td><td style="vertical-align: top;">2024-01-01<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+
+ </tr>
+ <tr style="height: 14.5pt;" height="19">
+  <td class="xl65" style="border-top: medium none; height: 14.5pt;" align="left" height="19">District</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="left">Assistance for acid attack victims</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="left">&#2447;&#2488;&#2495;&#2465;
+  &#2438;&#2453;&#2509;&#2480;&#2494;&#2472;&#2509;&#2468;&#2470;&#2503;&#2480; &#2488;&#2489;&#2494;&#2479;&#2492;&#2468;&#2494;</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">1</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">20000</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">0</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">1</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">8</td><td style="vertical-align: top;">2024-01-01<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+
+ </tr>
+ <tr style="height: 14.5pt;" height="19">
+  <td class="xl65" style="border-top: medium none; height: 14.5pt;" align="left" height="19">District</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="left">Other
+  Cancer</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="left">&#2437;&#2472;&#2509;&#2479;&#2494;&#2472;&#2509;&#2479;
+  &#2453;&#2509;&#2479;&#2494;&#2472;&#2509;&#2488;&#2494;&#2480;</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">1</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">80000</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">0</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">1</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">8</td><td style="vertical-align: top;">2024-01-01<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+
+ </tr>
+ <tr style="height: 14.5pt;" height="19">
+  <td class="xl65" style="border-top: medium none; height: 14.5pt;" align="left" height="19">District</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="left">Brain
+  Tumor / Bleeding</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="left">&#2476;&#2509;&#2480;&#2503;&#2472;
+  &#2463;&#2495;&#2441;&#2478;&#2494;&#2480; / &#2480;&#2453;&#2509;&#2468;&#2453;&#2509;&#2487;&#2480;&#2467;</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">1</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">100000</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">0</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">1</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">8</td><td style="vertical-align: top;">2024-01-01<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+
+ </tr>
+ <tr style="height: 14.5pt;" height="19">
+  <td class="xl65" style="border-top: medium none; height: 14.5pt;" align="left" height="19">District</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="left">Stone
+  removal (Gallbladder / Kidney / Urinary tract)</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="left">&#2488;&#2509;&#2463;&#2507;&#2472;
+  &#2437;&#2474;&#2488;&#2494;&#2480;&#2467; (&#2474;&#2495;&#2468;&#2509;&#2468;&#2469;&#2482;&#2495;/ &#2453;&#2495;&#2465;&#2472;&#2496; / &#2478;&#2498;&#2468;&#2509;&#2480;&#2472;&#2494;&#2482;&#2496;)<br>
+</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">1</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">20000</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">0</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">1</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">8</td><td style="vertical-align: top;">2024-01-01<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+
+ </tr>
+ <tr style="height: 14.5pt;" height="19">
+  <td class="xl65" style="border-top: medium none; height: 14.5pt;" align="left" height="19">District</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="left">Kidney
+  damage/transplant</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="left">&#2453;&#2495;&#2465;&#2472;&#2495;
+  &#2465;&#2509;&#2479;&#2494;&#2478;&#2503;&#2460; / &#2463;&#2509;&#2480;&#2494;&#2472;&#2509;&#2488;&#2474;&#2509;&#2482;&#2509;&#2479;&#2494;&#2472;&#2509;&#2463;</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">1</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">200000</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">0</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">1</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">8</td><td style="vertical-align: top;">2024-01-01<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+
+ </tr>
+ <tr style="height: 14.5pt;" height="19">
+  <td class="xl65" style="border-top: medium none; height: 14.5pt;" align="left" height="19">District</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="left">Heart
+  surgery (Valve replacement / Ring placement)</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="left">&#2489;&#2494;&#2480;&#2509;&#2463;
+  &#2437;&#2474;&#2494;&#2480;&#2503;&#2486;&#2472; (&#2477;&#2494;&#2482;&#2509;&#2476; &#2474;&#2480;&#2495;&#2476;&#2480;&#2509;&#2468;&#2472; / &#2480;&#2495;&#2434; &#2476;&#2488;&#2494;&#2472;&#2507;)</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">1</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">150000</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">0</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">1</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">8</td><td style="vertical-align: top;">2024-01-01<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+
+ </tr>
+ <tr style="height: 14.5pt;" height="19">
+  <td class="xl65" style="border-top: medium none; height: 14.5pt;" align="left" height="19">District</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="left">Heart
+  Operation (Repair)</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="left">&#2489;&#2494;&#2480;&#2509;&#2463;
+  &#2437;&#2474;&#2494;&#2480;&#2503;&#2486;&#2472; (&#2480;&#2495;&#2474;&#2503;&#2479;&#2492;&#2494;&#2480;)</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">1</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">80000</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">0</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">1</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">8</td><td style="vertical-align: top;">2024-01-01<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+
+ </tr>
+ <tr style="height: 14.5pt;" height="19">
+  <td class="xl65" style="border-top: medium none; height: 14.5pt;" align="left" height="19">District</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="left">Heart
+  Operation (Bypass)</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="left">&#2489;&#2494;&#2480;&#2509;&#2463;
+  &#2437;&#2474;&#2494;&#2480;&#2503;&#2486;&#2472; (&#2476;&#2494;&#2439;&#2474;&#2494;&#2488;)</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">1</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">200000</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">0</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">1</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none;" align="right">8</td><td style="vertical-align: top;">2024-01-01<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+
+ </tr>
+ <tr style="height: 14.5pt;" height="19">
+  <td class="xl65" style="border-top: medium none; height: 14.5pt; font-family: Times New Roman,Times,serif;" align="left" height="19">District</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="left">Spinal
+  surgery</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="left">&#2478;&#2503;&#2480;&#2497;&#2470;&#2472;&#2509;&#2465;
+  &#2437;&#2474;&#2494;&#2480;&#2503;&#2486;&#2472;</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="right">1</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="right">100000</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="right">0</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="right">1</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="right">8</td><td style="vertical-align: top;">2024-01-01<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+
+ </tr>
+ <tr style="height: 14.5pt;" height="19">
+  <td class="xl65" style="border-top: medium none; height: 14.5pt; font-family: Times New Roman,Times,serif;" align="left" height="19">District</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="left">Orthopedic
+  treatment including patella replacement and other operations</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="left">&#2437;&#2480;&#2509;&#2469;&#2507;&#2474;&#2503;&#2465;&#2495;&#2453;
+  &#2458;&#2495;&#2453;&#2495;&#2510;&#2488;&#2494;&#2480; &#2453;&#2509;&#2487;&#2503;&#2468;&#2509;&#2480;&#2503; &#2489;&#2494;&#2433;&#2463;&#2497;&#2480; &#2474;&#2509;&#2479;&#2494;&#2465;&#2503;&#2482;&#2494; &#2474;&#2480;&#2495;&#2476;&#2480;&#2509;&#2468;&#2472;&#2488;&#2489; &#2437;&#2472;&#2509;&#2479;&#2494;&#2472;&#2509;&#2479; &#2437;&#2474;&#2494;&#2480;&#2503;&#2486;&#2472;</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="right">1</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="right">60000</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="right">0</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="right">1</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="right">8</td><td style="vertical-align: top;">2024-01-01<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+
+ </tr>
+ 
+    <tr>
+      <td style="vertical-align: top; font-family: Times New Roman,Times,serif;">District<br>
+      </td>
+      <td style="vertical-align: top; font-family: Times New Roman,Times,serif;">Breast tumor<br>
+      </td>
+      <td style="vertical-align: top; font-family: Times New Roman,Times,serif;">&#2476;&#2509;&#2480;&#2503;&#2488;&#2509;&#2463; &#2463;&#2495;&#2441;&#2478;&#2494;&#2480;<br>
+      </td>
+      <td style="vertical-align: top; font-family: Times New Roman,Times,serif;">1<br>
+      </td>
+      <td style="vertical-align: top; font-family: Times New Roman,Times,serif;">30000<br>
+      </td>
+      <td style="vertical-align: top; font-family: Times New Roman,Times,serif;">0<br>
+      </td>
+      <td style="vertical-align: top; font-family: Times New Roman,Times,serif;">1<br>
+      </td>
+      <td style="vertical-align: top; font-family: Times New Roman,Times,serif;">8<br>
+      </td><td style="vertical-align: top;">2024-01-01<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+
+    </tr>
+<tr style="height: 14.5pt;" height="19">
+  <td class="xl65" style="border-top: medium none; height: 14.5pt; font-family: Times New Roman,Times,serif;" align="left" height="19">District</td>
+  <td style="border-top: medium none; border-left: medium none; text-align: left; font-family: Times New Roman,Times,serif;">Ovarian/Uterus
+  Operation (Removal)</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="left">&#2451;&#2477;&#2494;&#2480;&#2496;/&#2439;&#2441;&#2463;&#2503;&#2480;&#2494;&#2488;
+  &#2437;&#2474;&#2494;&#2480;&#2503;&#2486;&#2472; (&#2437;&#2474;&#2488;&#2494;&#2480;&#2472;)</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="right">1</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="right">30000</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="right">0</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="right">1</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="right">8</td><td style="vertical-align: top;">2024-01-01<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+
+ </tr>
+ <tr style="height: 14.5pt;" height="19">
+  <td class="xl65" style="border-top: medium none; height: 14.5pt; font-family: Times New Roman,Times,serif;" align="left" height="19">Branch</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="left">Eye
+  Cataract/Cornea/Retina/Other Eye Operations</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="left">&#2458;&#2507;&#2454;&#2503;&#2480;
+  &#2459;&#2494;&#2433;&#2472;&#2495;/&#2453;&#2480;&#2509;&#2472;&#2495;&#2527;&#2494;/&#2480;&#2503;&#2463;&#2495;&#2472;&#2494;/&#2437;&#2472;&#2509;&#2479;&#2494;&#2472;&#2509;&#2479; &#2437;&#2474;&#2494;&#2480;&#2503;&#2486;&#2472;</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="right">1</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="right">30000</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="right">0</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="right">1</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="right">8</td><td style="vertical-align: top;">2024-01-01<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+
+ </tr>
+ <tr style="height: 14.5pt;" height="19">
+  <td class="xl65" style="border-top: medium none; height: 14.5pt; font-family: Times New Roman,Times,serif;" align="left" height="19">Branch</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="left">Any type
+  of minor bone surgery or treatment (Broken hand/leg)</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="left">&#2479;&#2503; &#2453;&#2507;&#2472;
+  &#2471;&#2480;&#2467;&#2503;&#2480; &#2459;&#2507;&#2463;-&#2454;&#2494;&#2463;&#2507; &#2489;&#2494;&#2524;&#2503;&#2480; &#2437;&#2474;&#2494;&#2480;&#2503;&#2486;&#2472; &#2476;&#2494; &#2458;&#2495;&#2453;&#2495;&#2510;&#2488;&#2494; (&#2489;&#2494;&#2468;/&#2474;&#2494; &#2477;&#2494;&#2457;&#2509;&#2455;&#2494;)</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="right">1</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="right">30000</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="right">0</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="right">1</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="right">8</td><td style="vertical-align: top;">2024-01-01<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+
+ </tr>
+ <tr style="height: 14.5pt;" height="19">
+  <td class="xl65" style="border-top: medium none; height: 14.5pt; font-family: Times New Roman,Times,serif;" align="left" height="19">Branch</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="left">Cesarean
+  Delivery</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="left">&#2488;&#2495;&#2460;&#2494;&#2480;&#2495;&#2527;&#2494;&#2472;
+  &#2465;&#2503;&#2482;&#2495;&#2477;&#2494;&#2480;&#2495;</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="right">1</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="right">30000</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="right">0</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="right">2</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="right">8</td><td style="vertical-align: top;">2024-01-01<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+
+ </tr>
+ <tr style="height: 14.5pt;" height="19">
+  <td class="xl65" style="border-top: medium none; height: 14.5pt; font-family: Times New Roman,Times,serif;" align="left" height="19">Branch</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="left">Any other
+  minor illness<br>
+</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;" align="left">&#2437;&#2472;&#2509;&#2479; &#2479;&#2503;
+  &#2453;&#2507;&#2472; &#2459;&#2507;&#2463;-&#2454;&#2494;&#2463;&#2507; &#2437;&#2488;&#2497;&#2454;</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;">1</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;">30000</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;">0</td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;">1 </td>
+  <td class="xl65" style="border-top: medium none; border-left: medium none; font-family: Times New Roman,Times,serif;">8</td><td style="vertical-align: top;">2024-01-01<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+
+ </tr>
+</tbody>
+</table>
+<br style="font-family: Times New Roman,Times,serif; color: black;">
+<span style="color: black; font-family: Times New Roman,Times,serif;"></span><span style="color: black; font-family: Times New Roman,Times,serif; font-weight: bold;">References:</span><br style="color: black;">
+<span style="color: black; font-family: Times New Roman,Times,serif;">
+<a href="Chapter_1.pdf">Chapter_1.pdf</a> =&gt; Page 142</span><br style="color: black;">
+<span style="color: black; font-family: Times New Roman,Times,serif;">
+</span><br style="color: black;">
+<span style="font-family: Times New Roman,Times,serif; color: red;">
+Also need to change in reports.
+
+</span><br>
+<br>
+Update in confluence. (http://192.168.0.3:8090/display/AM/8.+Memberwise+Medical+Help+Entry)<br>
+<ul style="margin: 10px 0px 0px; list-style-type: disc; color: red; font-family: monospace; font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255);">
+<li>UIV_8.1.1. System should shows validation message when a member having same&nbsp;<span>"</span><span>Member NID" / "</span>Member Id" / "<span style="font-size: 11px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Smart NID No</span>" is trying to get medical help more than once as per disease configuration.</li>
+  <li>UIV_8.1.2. "Branch", "Loan Officer", "Group", "Member Name", "Member Id", "Member NID", <span style="color: red;">"</span><span style="color: red; font-size: 11px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Smart NID No</span><span style="color: red;">" </span>should be auto populated by the system.</li>
+</ul>
+<span style="font-family: monospace; color: red;"></span><br style="font-family: Times New Roman,Times,serif; color: red;">
+<span style="font-family: Times New Roman,Times,serif; color: red;"></span><br style="font-family: Times New Roman,Times,serif; color: red;">
+<br style="font-family: Times New Roman,Times,serif; color: red;">
+<span style="font-family: Times New Roman,Times,serif; color: red;">Note: Confirm above change request with disease mapping from stakeholders.</span><br>
+<br>
+<span style="color: red;">Primary Type Loan</span><br style="color: red;">
+<span style="color: red;">http://192.168.0.3:8090/display/AM/Loan+Product+Configuration</span><br style="font-family: Times New Roman,Times,serif; color: black;">
+<span style="font-family: Times New Roman,Times,serif; color: black;"></span><br style="font-family: Times New Roman,Times,serif; color: black;">
+<span style="font-family: Times New Roman,Times,serif; color: black;"></span>
+
+
+</body></html>

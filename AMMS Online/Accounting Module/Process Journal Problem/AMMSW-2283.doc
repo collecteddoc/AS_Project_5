@@ -1,0 +1,1954 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>[#AMMSW-2283] HRM-Process Journal related issues</title>
+    <meta http-equiv="Content-Type" Content="application/vnd.ms-word; charset=UTF-8">
+        <style type="text/css">
+
+.tableBorder, .grid
+{
+    background-color: #fff;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableBorder td, .grid td
+{
+    vertical-align: top;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+.noPadding
+{
+    padding: 0 !important;
+}
+
+h3 .subText
+{
+    font-size: 60%;
+    font-weight: normal;
+}
+
+.tabLabel
+{
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-bottom:none;
+    padding: 2px;
+    display: inline;
+}
+
+td.blank
+{
+    padding: 0;
+    margin: 0;
+}
+
+.blank td
+{
+    border: none;
+}
+
+#descriptionArea
+{
+    margin: 0;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+hr
+{
+    border-top:1px solid #aaa;
+}
+
+hr.fullcontent
+{
+  height: 15px;
+  padding: 10px 0;
+  background: #fff url('http://192.168.0.3:8080/images/icons/hr.gif') no-repeat scroll center;
+}
+
+</style>
+
+</head>
+<body>
+
+<table class="tableBorder" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" width="100%" colspan="2" valign="top">
+                            <h3 class="formtitle">
+                        [AMMSW-2283]&nbsp;<a href="http://192.168.0.3:8080/browse/AMMSW-2283">HRM-Process Journal related issues</a>
+            <span class="subText">
+               Created: 25/01/2020                   &nbsp;Updated: 16/06/2020
+
+                                                    &nbsp;Resolved: 25/01/2020
+                            </span>
+            </h3>
+        </td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Status:</b></td>
+        <td width="80%">Reopened</td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Project:</b></td>
+        <td width="80%"><a href="http://192.168.0.3:8080/secure/BrowseProject.jspa?id=10550">AMMS_web</a></td>
+    </tr>
+
+        <tr>
+            <td><b>Component/s:</b></td>
+            <td>
+                                        <a title="Accounts"
+                href="http://192.168.0.3:8080/issues/?jql=project%3D10550%20AND%20%22component%22%3D11100%20ORDER%20BY%20priority%20ASC"
+            >Accounts</a>                        </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Affects Version/s:</b></td>
+            <td>
+                            None
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Fix Version/s:</b></td>
+            <td>
+                                        <a title="1.0.0.0 - AMMS web version release."
+                href="http://192.168.0.3:8080/issues/?jql=project%3D10550%20AND%20%22fixVersion%22%3D11560%20ORDER%20BY%20priority%20ASC"
+            >1.0.0.0</a>                        </td>
+    </tr>
+    
+    </table>
+
+<br />
+<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" valign="top" width="20%">
+            <b>Type:</b>
+        </td>
+        <td bgcolor="#ffffff" valign="top"  width="30%" >
+            Bug
+        </td>
+
+                    <td bgcolor="#f0f0f0">
+                <b>Priority:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap>
+                Major
+            </td>
+            </tr>
+    <tr>
+                        <td bgcolor="#f0f0f0" valign="top" width="20%">
+                <b>Reporter:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top"  width="30%" >
+                                            <a class="user-hover" rel="FChowdhury" id="word_reporter_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                            </td>
+        
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Assignee:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap  width="30%" >
+                                            <a class="user-hover" rel="samiur" id="word_assignee_samiur" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=samiur">Md. Samiur Rahman</a>
+                            </td>
+            </tr>
+    	<tr>
+		<td bgcolor="#f0f0f0" width="20%">
+			<b>Resolution:</b>
+		</td>
+		<td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+                            Not Fixed
+                    </td>
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Votes:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+                0
+            </td>
+        
+    </tr>
+    
+        <tr>
+        <td bgcolor="#f0f0f0" width="20%">
+            <b>Labels:</b>
+        </td>
+        <td id="labels-36785-value" class="value" bgcolor="#ffffff" valign="top" colspan="3" nowrap>
+                            Accounts, HRM_Process_journal                    </td>
+    </tr>
+    
+    	<tr>
+        		<td bgcolor="#f0f0f0" width="20%"><b>Remaining Estimate:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Not Specified
+            		</td>
+    </tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Time Spent:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Not Specified
+            		</td>
+	</tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Original Estimate:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Not Specified
+            		</td>
+    </tr>
+    
+    </table>
+
+
+
+    <br />
+
+    	<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+            
+
+                <tr>
+            <td bgcolor="#f0f0f0" width=20% valign=top>
+                <b>Attachments:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top">
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    2283_01.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    2283_03.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    2283_07.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    2283_08.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    2283_09.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    2283_10.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    2283_11.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    2283_28.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    2283_29.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    Exemption by Cash.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    Exemption by Cheque.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#08.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#09.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#10.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#12.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#20.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#21.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#21.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#25.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#27.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#29.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#30.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#31.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#43.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#44.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#45.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#46.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#46.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#47.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#48.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#49.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#50.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#53.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#54.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#55.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#56.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="PNG File">
+                    FH#57.JPG.png &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#62.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#63.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#66.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#67.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#68.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#78.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#79.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#79_02.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#80.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#81.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#82.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#83.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#84.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#85.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#86.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#87.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#88.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FH#89.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FP#_22.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FP#23_RV_2 times.jpg &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FP#24.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FP#25.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    FP#26.JPG &nbsp;&nbsp;&nbsp;
+                                    <img src="http://192.168.0.3:8080/images/icons/attach/image.gif" height="16" width="16" border="0" alt="JPEG File">
+                    Late fee for employee security.JPG &nbsp;&nbsp;&nbsp;
+                            </td>
+        </tr>
+        
+            <tr>
+            <td bgcolor="#f0f0f0" width="20%" valign="top">
+                <b>Issue Links:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" class="noPadding">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%" class="blank">
+                                            <tr>
+                            <td colspan="4" bgcolor="#f0f0f0">
+                                <b>Link with</b><br/>
+                            </td>
+                        </tr>
+                                    <tr>
+            <td>
+                Parent
+            </td>
+            <td>
+                <a href="http://192.168.0.3:8080/browse/AMMSW-2011">
+                     AMMSW-2011                 </a>
+            </td>
+            <td>
+                As an user I want to process journal ...
+            </td>
+            <td>
+                Ready To Test
+            </td>
+        </tr>
+                                                                    </table>
+            </td>
+        </tr>
+    
+
+
+
+                        <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Epic Link:</b></td>
+                <td id="customfield_10401-36785-value" class="value" bgcolor="#ffffff" width="80%">
+    <a class="aui-label ghx-label-8" href="http://192.168.0.3:8080/browse/AMMSW-1476">
+        AccountIssues
+    </a>
+</td>
+            </tr>
+                                <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Sprint:</b></td>
+                <td id="customfield_10405-36785-value" class="value" bgcolor="#ffffff" width="80%">Sprint 21</td>
+            </tr>
+            </table>
+
+    <br/>
+
+    <table cellpadding="2" cellspacing="0" border="0" width="100%" align="center">
+    <tr>
+        <td bgcolor="#bbbbbb" width="1%" nowrap align="center">
+            &nbsp;<font color="#ffffff"><b>Description</b></font>&nbsp;
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    </table>
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td id="descriptionArea">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#01: Problems found in Journal Page after Pay salary for designation &quot;Medical Officer (Health Complex)&quot;<br/>
+Screenshot: Please see details in screenshot<br/>
+<a href="http://192.168.0.3:8080/secure/attachment/34429/FH%2308.JPG">http://192.168.0.3:8080/secure/attachment/34429/FH%2308.JPG</a><br/>
+<br/>
+Expected: Should correct the mentioned problems in screenshot as per HRM journal mapping excel file<br/>
+<br/>
+Got the same problem for following Designations-<br/>
+1. Medical Officer (Health Complex)	<br/>
+2. Physiotherapist (Health Complex)	<br/>
+3. Medical Technologist (Health Complex)<br/>
+4. Counselor (Health Complex)	<br/>
+5. Paramedic/Satellite paramedic (Health Complex)<br/>
+6. Receptionist/Computer operator (Health Complex)	<br/>
+7. Health Assistant (Health Complex)<br/>
+8. Peon/Aya (Health Complex)<br/>
+<br/>
+Note: Service Benefit journal is auto created for above designations.<br/>
+Service Benefit journal will not be created for &quot;Social Program&quot; Employee type
+            <br/>
+        </td>
+    </tr>
+    </table>
+
+    <br/>
+
+    <table cellpadding="2" cellspacing="0" border="0" width="100%" align="center">
+    <tr>
+        <td bgcolor="#bbbbbb" width="1%" nowrap align="center">
+            &nbsp;<font color="#ffffff"><b>Comments</b></font>&nbsp;
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    </table>
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%" class="grid" style="margin: 0;">
+                <tr id="comment-header-96167"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">27/01/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-96167"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#02: Processtype shows wrong<br/>
+Screenshot: Please see details in screenshot<br/>
+<a href="http://192.168.0.3:8080/secure/attachment/34418/FH%2309.JPG">http://192.168.0.3:8080/secure/attachment/34418/FH%2309.JPG</a>
+        </td></tr>
+                <tr id="comment-header-96193"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">28/01/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-96193"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#03: Un-realized Service Charge amount shows wrong while disbursed Provident Fund Loan with both processtype Cash &amp; Cheque at a time<br/>
+Screenshot: Please see details in screenshot<br/>
+<a href="http://192.168.0.3:8080/secure/attachment/34423/FH%2310.JPG">http://192.168.0.3:8080/secure/attachment/34423/FH%2310.JPG</a><br/>
+<br/>
+
+        </td></tr>
+                <tr id="comment-header-96211"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">29/01/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-96211"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#04: Wrong Journal is created for designation &quot;Driver&quot; salary<br/>
+Screenshot: Please see details in screenshot<br/>
+<a href="http://192.168.0.3:8080/secure/attachment/34428/FH%2312.JPG">http://192.168.0.3:8080/secure/attachment/34428/FH%2312.JPG</a>
+        </td></tr>
+                <tr id="comment-header-96398"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">06/02/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-96398"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#05: Problem found in Journal after PF loan exemption from HRM_Transaction <br/>
+Screenshot: Please see details in screenshot<br/>
+<a href="http://192.168.0.3:8080/secure/attachment/34482/FH%2320.JPG">http://192.168.0.3:8080/secure/attachment/34482/FH%2320.JPG</a>
+        </td></tr>
+                <tr id="comment-header-96417"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">09/02/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-96417"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#06: Wrong description in journal while take PF loan collection from HRM_Transaction<br/>
+Screenshot: Please see details in screenshot<br/>
+<a href="http://192.168.0.3:8080/secure/attachment/34488/FH%2321.JPG">http://192.168.0.3:8080/secure/attachment/34488/FH%2321.JPG</a><br/>
+<br/>
+Expected: Please correct as per journal mapper file
+        </td></tr>
+                <tr id="comment-header-96440"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">10/02/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-96440"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#07: Narration is wrong in journal for mentioned 3 type Account name<br/>
+Screenshot: Please see details in screenshot<br/>
+<a href="http://192.168.0.3:8080/secure/attachment/34507/FH%2325.JPG">http://192.168.0.3:8080/secure/attachment/34507/FH%2325.JPG</a><br/>
+
+        </td></tr>
+                <tr id="comment-header-96452"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">11/02/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-96452"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#08: Wrong description for any type of Account transaction given in &quot;Collection Trx journal Mapping&quot; sheet with &quot;Cheque&quot;<br/>
+Screenshot: for example please see details on a screenshot <br/>
+<a href="http://192.168.0.3:8080/secure/attachment/34514/FH%2327.JPG">http://192.168.0.3:8080/secure/attachment/34514/FH%2327.JPG</a><br/>
+<br/>
+Expected: Correct narration/description for [ALL] type of account while transaction with &quot;Cheque&quot; process
+        </td></tr>
+                <tr id="comment-header-96534"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">12/02/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-96534"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#09: Account Code &amp; Name is wrong for &quot;Motorcycle Registration Bill&quot; and &quot;Helmet Bill&quot;, also description is wrong as well as when Collection with &quot;Cheque&quot; for Employee Type = Branch/Non-Branch/Social Program<br/>
+Screenshot: please see details on a screenshot<br/>
+<a href="http://192.168.0.3:8080/secure/attachment/34557/FH%2329.JPG">http://192.168.0.3:8080/secure/attachment/34557/FH%2329.JPG</a><br/>
+<br/>
+Expected: Please correct as per mapper for 3 type of employee Branch/Non-Branch/Social Program
+        </td></tr>
+                <tr id="comment-header-96537"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">12/02/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-96537"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#10: Journal created for Non-Branch type employee instead of Social Program(Health/Clinic) when Collection with &quot;Cash&quot; for &quot;Helmet Bill&quot; account<br/>
+Screenshot: please see details on a screenshot<br/>
+<a href="http://192.168.0.3:8080/secure/attachment/34560/FH%2330.JPG">http://192.168.0.3:8080/secure/attachment/34560/FH%2330.JPG</a><br/>
+<br/>
+Expected: Please correct it as per mapper<br/>
+<br/>
+<br/>
+<br/>
+
+        </td></tr>
+                <tr id="comment-header-96538"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">12/02/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-96538"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#11: Journal created for Non-Branch type employee instead of Social Program(i.e. Health/Clinic) when Collection with &quot;Cash&quot; for &quot;Motorcycle Registration Bill&quot; account<br/>
+Screenshot: please see details on a screenshot<br/>
+<a href="http://192.168.0.3:8080/secure/attachment/34561/FH%2331.JPG">http://192.168.0.3:8080/secure/attachment/34561/FH%2331.JPG</a><br/>
+<br/>
+Expected: Please correct it as per mapper
+        </td></tr>
+                <tr id="comment-header-96680"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">20/02/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-96680"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#12: Deducted amount for Punishment head from Pay Salary is missing in Journal<br/>
+Screenshot: please see details on a screenshot<br/>
+<a href="http://192.168.0.3:8080/secure/attachment/34701/FH%2343.JPG">http://192.168.0.3:8080/secure/attachment/34701/FH%2343.JPG</a><br/>
+<br/>
+Expected: Deducted amount of Punishment head &amp; code will show in credit side journal<br/>
+<br/>
+Note: Advance account head will not show in Pay salary as per Skype call decision<br/>
+
+        </td></tr>
+                <tr id="comment-header-96694"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">22/02/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-96694"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#13: Corresponding RV journal is missing if employee transfer cancelled <br/>
+Screenshot: please see details on a screenshot<br/>
+<a href="http://192.168.0.3:8080/secure/attachment/34705/FH%2344.JPG">http://192.168.0.3:8080/secure/attachment/34705/FH%2344.JPG</a>
+        </td></tr>
+                <tr id="comment-header-96735"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">23/02/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-96735"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#14: Collection amount for &quot;Employee Security&quot; head from Pay Salary isn&#39;t showing in Journal<br/>
+Screenshot: please see details on a screenshot<br/>
+<a href="http://192.168.0.3:8080/secure/attachment/34713/FH%2346.JPG">http://192.168.0.3:8080/secure/attachment/34713/FH%2346.JPG</a><br/>
+<br/>
+Expected: Deducted amount of &quot;Employee Security&quot; head &amp; code will show in credit side journal
+        </td></tr>
+                <tr id="comment-header-96770"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">24/02/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-96770"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#15: Journal shows twice at transferring branch after transferred an Employee from branch to ASA Central Office <br/>
+Screenshot: please see details on a screenshot<br/>
+<a href="http://192.168.0.3:8080/secure/attachment/34730/FH%2348.JPG">http://192.168.0.3:8080/secure/attachment/34730/FH%2348.JPG</a><br/>
+<br/>
+Expected: Please correct as per journal mapper
+        </td></tr>
+                <tr id="comment-header-96785"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">25/02/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-96785"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#16: Transaction/journal shows at receiving branch after transferred an Employee from branch to ASA Central Office<br/>
+Screenshot: please see details on a screenshot<br/>
+<a href="http://192.168.0.3:8080/secure/attachment/34736/FH%2349.JPG">http://192.168.0.3:8080/secure/attachment/34736/FH%2349.JPG</a><br/>
+<br/>
+Expected: As per mapper no automatic transaction will be created at Receiving Head Office. So no journal will be created.
+        </td></tr>
+                <tr id="comment-header-96790"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">25/02/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-96790"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#17: No journal created after Employee Released From Branch<br/>
+Screenshot: please see details on a screenshot<br/>
+<a href="http://192.168.0.3:8080/secure/attachment/34741/FH%2350.JPG">http://192.168.0.3:8080/secure/attachment/34741/FH%2350.JPG</a><br/>
+<br/>
+Expected: as per mapper, journal will be created after Employee Released From Branch
+        </td></tr>
+                <tr id="comment-header-96823"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">27/02/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-96823"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#18: In journal, Cash in hand amount is wrong for &quot;Deduction of Excess TA/DA Paid&quot; &amp; &quot;Deduction for lost/damage of Assets&quot;<br/>
+Screenshot: please see details on a screenshot<br/>
+<a href="http://192.168.0.3:8080/secure/attachment/34758/FH%2353.JPG">http://192.168.0.3:8080/secure/attachment/34758/FH%2353.JPG</a><br/>
+<br/>
+Expected: as per mapper, deducted amount will not be sum with Cash in hand amount for mentioned account head 
+        </td></tr>
+                <tr id="comment-header-96824"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">27/02/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-96824"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#19: Deduction amount for &quot;Housing Loan (Collection)&quot; head from Pay Salary isn&#39;t showing in Journal<br/>
+Screenshot: please see details on a screenshot<br/>
+<a href="http://192.168.0.3:8080/secure/attachment/34759/FH%2354.JPG">http://192.168.0.3:8080/secure/attachment/34759/FH%2354.JPG</a><br/>
+<br/>
+Expected: Deduction amount for &quot;Housing Loan (Collection)&quot; head from Pay Salary will show in Journal
+        </td></tr>
+                <tr id="comment-header-97271"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="samiur" id="word_commented_samiur" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=samiur">Md. Samiur Rahman</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">15/03/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97271"><td bgcolor="#ffffff">
+            Bug#01 and Bug#02 Fixed
+        </td></tr>
+                <tr id="comment-header-97295"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="samiur" id="word_commented_samiur" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=samiur">Md. Samiur Rahman</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">16/03/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97295"><td bgcolor="#ffffff">
+            Bug#03 and Bug#04 Fixed
+        </td></tr>
+                <tr id="comment-header-97301"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="samiur" id="word_commented_samiur" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=samiur">Md. Samiur Rahman</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">16/03/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97301"><td bgcolor="#ffffff">
+            Bug#05,Bug#06 and Bug#07  Fixed 
+        </td></tr>
+                <tr id="comment-header-97304"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="samiur" id="word_commented_samiur" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=samiur">Md. Samiur Rahman</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">16/03/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97304"><td bgcolor="#ffffff">
+            Bug#08 Fixed 
+        </td></tr>
+                <tr id="comment-header-97305"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="samiur" id="word_commented_samiur" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=samiur">Md. Samiur Rahman</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">18/03/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97305"><td bgcolor="#ffffff">
+            Bug#09  Fixed 
+        </td></tr>
+                <tr id="comment-header-97312"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="samiur" id="word_commented_samiur" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=samiur">Md. Samiur Rahman</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">19/03/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97312"><td bgcolor="#ffffff">
+            Bug#10,Bug#11,Bug#12,Bug#14,Bug#18  Fixed 
+        </td></tr>
+                <tr id="comment-header-97325"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="samiur" id="word_commented_samiur" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=samiur">Md. Samiur Rahman</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">21/03/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97325"><td bgcolor="#ffffff">
+            Bug#19 Fixed 
+        </td></tr>
+                <tr id="comment-header-97453"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">11/04/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97453"><td bgcolor="#ffffff">
+            Bug#01-----&gt; almost found fixed except 2 points, see screenshot plz - <a href="http://192.168.0.3:8080/secure/attachment/35161/2283_01.JPG">http://192.168.0.3:8080/secure/attachment/35161/2283_01.JPG</a><br/>
+Please correct the mentioned 2 points for following designation also <br/>
+1. Physiotherapist (Integrated Health Center)<br/>
+2. Medical Technologist (Integrated Health Center)<br/>
+3. Counselor (Integrated Health Center)<br/>
+4. Paramedic/Satellite paramedic (Integrated Health Center)<br/>
+5. Receptionist/Computer operator (Integrated Health Center)<br/>
+6. Health Assistant (Integrated Health Center)<br/>
+7. Peon/Aya (Integrated Health Center)<br/>
+8. Senior Static Paramedics (Integrated Health Center)<br/>
+9. Static Paramedics (Integrated Health Center)<br/>
+<br/>
+Bug#02-----&gt; found fixed
+        </td></tr>
+                <tr id="comment-header-97462"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">12/04/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97462"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#20: Un-realized S.C. amount(Bug#03) shows wrong while disbursed PF Loan with both process-type Cash &amp; Cheque at a time<br/>
+<br/>
+Expected: Bug#03 will be treated as like attached screenshot - <br/>
+<a href="http://192.168.0.3:8080/secure/attachment/35162/2283_03.JPG">http://192.168.0.3:8080/secure/attachment/35162/2283_03.JPG</a><br/>
+<br/>
+Bug#03---------&gt; please do fix like Bug#20&#39;s screenshot<br/>
+Bug#04---------&gt; found fixed
+        </td></tr>
+                <tr id="comment-header-97481"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">13/04/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97481"><td bgcolor="#ffffff">
+            Bug#05---------&gt; only point 1 got fixed---------&gt; point 2,3,4 not found fix yet<br/>
+Bug#06---------&gt; point 1,3 got fixed---------&gt; point 2 not found fix yet<br/>
+Tested url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a> 
+        </td></tr>
+                <tr id="comment-header-97483"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">14/04/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97483"><td bgcolor="#ffffff">
+            Bug#07---------&gt; found not fixed - <a href="http://192.168.0.3:8080/secure/attachment/35165/2283_07.JPG">http://192.168.0.3:8080/secure/attachment/35165/2283_07.JPG</a><br/>
+Bug#08---------&gt;found not fixed - collection with Cheque for ALL type of Employee collection account narration is wrong - <a href="http://192.168.0.3:8080/secure/attachment/35166/2283_08.JPG">http://192.168.0.3:8080/secure/attachment/35166/2283_08.JPG</a><br/>
+Bug#09---------&gt;found not fixed - <a href="http://192.168.0.3:8080/secure/attachment/35167/2283_09.JPG">http://192.168.0.3:8080/secure/attachment/35167/2283_09.JPG</a><br/>
+Bug#10---------&gt;found not fixed rightly - <a href="http://192.168.0.3:8080/secure/attachment/35168/2283_10.JPG">http://192.168.0.3:8080/secure/attachment/35168/2283_10.JPG</a><br/>
+Bug#11---------&gt;found not fixed properly- <a href="http://192.168.0.3:8080/secure/attachment/35169/2283_11.JPG">http://192.168.0.3:8080/secure/attachment/35169/2283_11.JPG</a><br/>
+Tested url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a>
+        </td></tr>
+                <tr id="comment-header-97490"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">15/04/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97490"><td bgcolor="#ffffff">
+            Bug#12---------&gt; found not fixed<br/>
+Bug#14---------&gt; found not fixed<br/>
+Bug#18---------&gt; found partial fixed, still problem exists for &quot;Deduction of Excess TA/DA Paid&quot; &amp; &quot;Deduction for lost/damage of Assets&quot;<br/>
+Bug#19---------&gt; found not fixed<br/>
+Tested url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a>
+        </td></tr>
+                <tr id="comment-header-97504"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="samiur" id="word_commented_samiur" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=samiur">Md. Samiur Rahman</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">15/04/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97504"><td bgcolor="#ffffff">
+            Bug#20 Fixed
+        </td></tr>
+                <tr id="comment-header-97505"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="samiur" id="word_commented_samiur" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=samiur">Md. Samiur Rahman</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">15/04/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97505"><td bgcolor="#ffffff">
+            Bug#01 Fixed 
+        </td></tr>
+                <tr id="comment-header-97523"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">16/04/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97523"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#21: Service Benefit calculation problem on mentioned scenario<br/>
+<br/>
+See details on screenshot - <a href="http://192.168.0.3:8080/secure/attachment/35192/FH%2321.JPG">http://192.168.0.3:8080/secure/attachment/35192/FH%2321.JPG</a><br/>
+<br/>
+Note: BA team(Shamim vai) please check &amp; confirm it after office open
+        </td></tr>
+                <tr id="comment-header-97527"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="samiur" id="word_commented_samiur" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=samiur">Md. Samiur Rahman</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">18/04/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97527"><td bgcolor="#ffffff">
+            Bug#5,6,7,8,9,10,11,18 Fixed
+        </td></tr>
+                <tr id="comment-header-97544"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">20/04/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97544"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#22: Ref. VoucherNo is missing on rectified journal i.e for &quot;service benefit&quot; head<br/>
+See details on screenshot - <br/>
+<a href="http://192.168.0.3:8080/secure/attachment/35212/FP%23_22.JPG">http://192.168.0.3:8080/secure/attachment/35212/FP%23_22.JPG</a><br/>
+<br/>
+Expected: Ref. VoucherNo will show for each rectified journal/transaction 
+        </td></tr>
+                <tr id="comment-header-97548"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">20/04/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97548"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#23: RV journal is not created if original transaction rectify two times on same working-day<br/>
+See details on screenshot please- <br/>
+<a href="http://192.168.0.3:8080/secure/attachment/35213/FP%2323_RV_2%20times.jpg">http://192.168.0.3:8080/secure/attachment/35213/FP%2323_RV_2%20times.jpg</a><br/>
+<br/>
+Expected: Always will generate RV journal if rectify multiple times of original transaction<br/>
+<br/>
+<br/>
+
+        </td></tr>
+                <tr id="comment-header-97550"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">20/04/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97550"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#24: Ref. VoucherNo is showing different for rectify journal on mentioned scenario<br/>
+See (point-1 &amp; point-2) details on screenshot please- <br/>
+<a href="http://192.168.0.3:8080/secure/attachment/35215/FP%2324.JPG">http://192.168.0.3:8080/secure/attachment/35215/FP%2324.JPG</a><br/>
+<br/>
+Expected: Correct Ref. VoucherNo will show for RV journal<br/>
+
+        </td></tr>
+                <tr id="comment-header-97551"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">21/04/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97551"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#25: RV journal is created if the summation of rectified  transaction balance is zero(0)<br/>
+Steps:<br/>
+1. Pay salary to an employee and run process journal<br/>
+2. Go to next branch working-day to rectify previous transaction <br/>
+3. Select that employee and that transaction date from employee pay salary page<br/>
+4. Update the provident fund amount i.e if the provident fund value is &quot;1468&quot; then update it from &quot;1468&quot; to &quot;1000&quot;<br/>
+5. Run process journal<br/>
+6. Go to pay salary page again and update the provident fund again i.e from &quot;1000&quot; to &quot;1468&quot; selecting that transaction date<br/>
+7. Run process journal and go to general journal page <br/>
+See details on screenshot please-<br/>
+<a href="http://192.168.0.3:8080/secure/attachment/35216/FP%2325.JPG">http://192.168.0.3:8080/secure/attachment/35216/FP%2325.JPG</a><br/>
+<br/>
+Expected: No journal will passed if the summation of rectified  transaction balance is zero(0) regarding BA comment
+        </td></tr>
+                <tr id="comment-header-97557"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">21/04/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97557"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#26: Ref. VoucherNo(i.e DV00040) isn&#39;t showing for RV journal<br/>
+See (issue-1 &amp; issue-2) details on screenshot please- <br/>
+<a href="http://192.168.0.3:8080/secure/attachment/35223/FP%2326.JPG">http://192.168.0.3:8080/secure/attachment/35223/FP%2326.JPG</a><br/>
+<br/>
+Expected: Ref. VoucherNo(i.e DV00040) will show for RV journal also as per BA comment
+        </td></tr>
+                <tr id="comment-header-97591"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">24/04/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97591"><td bgcolor="#ffffff">
+            Bug#01, Bug#03, Bug#20, Bug#06, Bug#07 ------------&gt; found fixed<br/>
+Bug#05 ------------&gt; found fixed if PF loan exemption with Cash - <a href="http://192.168.0.3:8080/secure/attachment/35239/Exemption%20by%20Cash.JPG">http://192.168.0.3:8080/secure/attachment/35239/Exemption%20by%20Cash.JPG</a>
+        </td></tr>
+                <tr id="comment-header-97592"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">24/04/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97592"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#27: Got 2 problem while goes to PF loan exemption with Cheque<br/>
+See details on screenshot please- <a href="http://192.168.0.3:8080/secure/attachment/35240/Exemption%20by%20Cheque.JPG">http://192.168.0.3:8080/secure/attachment/35240/Exemption%20by%20Cheque.JPG</a>
+        </td></tr>
+                <tr id="comment-header-97594"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="samiur" id="word_commented_samiur" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=samiur">Md. Samiur Rahman</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">25/04/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97594"><td bgcolor="#ffffff">
+            Bug# 12,14,17,19,21,27 Fixed
+        </td></tr>
+                <tr id="comment-header-97606"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">26/04/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97606"><td bgcolor="#ffffff">
+            Bug#08, Bug#09, Bug#10, Bug#11 ------------&gt; found fixed 
+        </td></tr>
+                <tr id="comment-header-97624"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="samiur" id="word_commented_samiur" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=samiur">Md. Samiur Rahman</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">27/04/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97624"><td bgcolor="#ffffff">
+            Bug:13,15,16 fixed
+        </td></tr>
+                <tr id="comment-header-97635"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">27/04/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97635"><td bgcolor="#ffffff">
+            Bug#12, Bug#14, Bug#18, Bug#19, Bug#27 ------------&gt; found fixed <br/>
+tested url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a>
+        </td></tr>
+                <tr id="comment-header-97638"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">28/04/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97638"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#28: Corresponding Ref. VoucherNo is missing on rectify journal if employee transfer cancelled<br/>
+Screenshot: please see details on a screenshot <br/>
+<a href="http://192.168.0.3:8080/secure/attachment/35259/2283_28.JPG">http://192.168.0.3:8080/secure/attachment/35259/2283_28.JPG</a>
+        </td></tr>
+                <tr id="comment-header-97648"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">28/04/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97648"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#29: as per mapper PF Loan&#39;s Service Charge Outstanding journal is missing after Employee Released From Branch<br/>
+<br/>
+Screenshot: please see details on a screenshot <br/>
+<a href="http://192.168.0.3:8080/secure/attachment/35260/2283_29.JPG">http://192.168.0.3:8080/secure/attachment/35260/2283_29.JPG</a><br/>
+<br/>
+Expected: as per mapper PF Loan&#39;s Service Charge Outstanding journal will show
+        </td></tr>
+                <tr id="comment-header-97656"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="samiur" id="word_commented_samiur" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=samiur">Md. Samiur Rahman</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">29/04/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97656"><td bgcolor="#ffffff">
+            Bug#25,29,15 Fixed
+        </td></tr>
+                <tr id="comment-header-97664"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">30/04/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97664"><td bgcolor="#ffffff">
+            Bug#01 - Bug#21, Bug#27 ------------&gt; found fixed<br/>
+tested url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a>
+        </td></tr>
+                <tr id="comment-header-97703"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">02/05/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97703"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#30: Bank name and amount is showing same if disbursed 2 PF loan using 2 different Bank which is incorrect behavior<br/>
+Screenshot: please see details on a screenshot <br/>
+<a href="http://192.168.0.3:8080/secure/attachment/35271/FH%2345.JPG">http://192.168.0.3:8080/secure/attachment/35271/FH%2345.JPG</a><br/>
+<br/>
+Expected: will show different bank with disbursed amount <br/>
+<br/>
+Note: as discussed with @Moynul vai, if disbursed/collection more than one &quot;employee loan&quot; for different Employee on same working-day using same Bank but Cheque No. is different then no CHEQUE No. will show on Journal now. Next will fixed it if necessary
+        </td></tr>
+                <tr id="comment-header-97707"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="samiur" id="word_commented_samiur" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=samiur">Md. Samiur Rahman</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">03/05/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97707"><td bgcolor="#ffffff">
+            Bug: 23,25,29,30 Fixed 
+        </td></tr>
+                <tr id="comment-header-97712"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">04/05/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97712"><td bgcolor="#ffffff">
+            Bug#29 ------------&gt; found fixed<br/>
+tested url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a>
+        </td></tr>
+                <tr id="comment-header-97713"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">04/05/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97713"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#31: Minus(-) sign is missing for PF loan service charge amount when cancelled Employee released on next working-day<br/>
+Screenshot: please see details on a screenshot <br/>
+<a href="http://192.168.0.3:8080/secure/attachment/35279/FH%2346.JPG">http://192.168.0.3:8080/secure/attachment/35279/FH%2346.JPG</a><br/>
+<br/>
+Expected: minus(-) sign will show for PF loan service charge amount also<br/>
+
+        </td></tr>
+                <tr id="comment-header-97714"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">05/05/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97714"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#32: Extra journal is showing wrongly if PF loan disbursed &amp; collection for an employee on same working-day using different Bank<br/>
+Screenshot: please see details on a screenshot <br/>
+a) <a href="http://192.168.0.3:8080/secure/attachment/35280/FH%2347.JPG">http://192.168.0.3:8080/secure/attachment/35280/FH%2347.JPG</a>
+        </td></tr>
+                <tr id="comment-header-97715"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">05/05/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97715"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#33: amount showing wrong if taken PF loan collection for same employee on same working-day using different Bank<br/>
+Screenshot: please see details on a screenshot <br/>
+<a href="http://192.168.0.3:8080/secure/attachment/35281/FH%2355.JPG">http://192.168.0.3:8080/secure/attachment/35281/FH%2355.JPG</a><br/>
+
+        </td></tr>
+                <tr id="comment-header-97716"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">05/05/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97716"><td bgcolor="#ffffff">
+            Bug#30 ------------&gt; found fixed<br/>
+tested url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a>
+        </td></tr>
+                <tr id="comment-header-97721"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">06/05/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97721"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#34: &quot;Salary &amp; Allowance Expense&quot; head is not showing for rectify transaction/journal<br/>
+Screenshot: please see details on a screenshot <br/>
+<a href="http://192.168.0.3:8080/secure/attachment/35283/FH%2356.JPG">http://192.168.0.3:8080/secure/attachment/35283/FH%2356.JPG</a>
+        </td></tr>
+                <tr id="comment-header-97722"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">06/05/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97722"><td bgcolor="#ffffff">
+            Bug#01 - Bug#21, Bug#23, Bug#27, Bug#29, Bug#30 ------------&gt; found fixed<br/>
+tested url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a>
+        </td></tr>
+                <tr id="comment-header-97723"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="samiur" id="word_commented_samiur" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=samiur">Md. Samiur Rahman</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">06/05/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97723"><td bgcolor="#ffffff">
+            Bug: ,31 Fixed 
+        </td></tr>
+                <tr id="comment-header-97724"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">07/05/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97724"><td bgcolor="#ffffff">
+            Bug#25, Bug#31 ------------&gt; found fixed<br/>
+tested url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a>
+        </td></tr>
+                <tr id="comment-header-97751"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="samiur" id="word_commented_samiur" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=samiur">Md. Samiur Rahman</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">09/05/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97751"><td bgcolor="#ffffff">
+            Bug#32,33  Fixed 
+        </td></tr>
+                <tr id="comment-header-97757"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">10/05/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97757"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#35: Taking &quot;Employee Security&quot; collection with CASH for two different employee on same working-day from HRM_Transaction. Separate Journal showing<br/>
+Screenshot: please see details on a screenshot<br/>
+<a href="http://192.168.0.3:8080/secure/attachment/35297/FH%2357.JPG.png">http://192.168.0.3:8080/secure/attachment/35297/FH%2357.JPG.png</a><br/>
+<br/>
+Expected: Will be one journal with sum as collected by CASH for both
+        </td></tr>
+                <tr id="comment-header-97779"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="samiur" id="word_commented_samiur" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=samiur">Md. Samiur Rahman</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">11/05/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97779"><td bgcolor="#ffffff">
+            Bug# 26,34,35 Fixed 
+        </td></tr>
+                <tr id="comment-header-97808"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">14/05/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97808"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#36: Duplicate journal is showing for collection with CHEQUE process<br/>
+Screenshot: please see details on a screenshot<br/>
+<a href="http://192.168.0.3:8080/secure/attachment/35311/FH%2362.JPG">http://192.168.0.3:8080/secure/attachment/35311/FH%2362.JPG</a><br/>
+<br/>
+Expected: Will be one journal for same CHEQUE<br/>
+<br/>
+Note: sometimes i got this type problem for other accounts(i.e punishment with CHEQUE) collection also
+        </td></tr>
+                <tr id="comment-header-97810"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">14/05/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97810"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#37: Penal/Service/Late fee collection from Pay Salary for &quot;Employee Security&quot; account showing under wrong Account Head &amp; Code in Journal<br/>
+<br/>
+Screenshot: please see details on a screenshot<br/>
+<a href="http://192.168.0.3:8080/secure/attachment/35312/FH%2363.JPG">http://192.168.0.3:8080/secure/attachment/35312/FH%2363.JPG</a><br/>
+
+        </td></tr>
+                <tr id="comment-header-97816"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="samiur" id="word_commented_samiur" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=samiur">Md. Samiur Rahman</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">14/05/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97816"><td bgcolor="#ffffff">
+            Bug# 28 Fixed 
+        </td></tr>
+                <tr id="comment-header-97830"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="samiur" id="word_commented_samiur" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=samiur">Md. Samiur Rahman</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">17/05/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-97830"><td bgcolor="#ffffff">
+            Bug#36,37
+        </td></tr>
+                <tr id="comment-header-98165"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">02/06/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-98165"><td bgcolor="#ffffff">
+            Bug#01 - Bug#21, Bug#23, Bug#25 - Bug#31, Bug#33 ------------&gt; found fixed<br/>
+tested url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a>
+        </td></tr>
+                <tr id="comment-header-98172"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">02/06/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-98172"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#38:  Service Charge amount is showing wrong with SUM if taken loan collection with both CASH &amp; CHEQUE for same or different employee on same working-day<br/>
+<br/>
+Screenshot: please see details on a screenshot<br/>
+<a href="http://192.168.0.3:8080/secure/attachment/35458/FH%2366.JPG">http://192.168.0.3:8080/secure/attachment/35458/FH%2366.JPG</a><br/>
+<br/>
+Expected: Service Charge amount should not be shown with SUM, for both CASH &amp; CHEQUE process will be separate based on calculation<br/>
+
+        </td></tr>
+                <tr id="comment-header-98185"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">03/06/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-98185"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#39: Took 2 collection for i.e Employee Security account from HRM_Transaction for same/different employee using same BANK acc. &amp; same CHEQUE No. intensionally on same working-day then see journal<br/>
+<br/>
+Screenshot: please see details on a screenshot<br/>
+<a href="http://192.168.0.3:8080/secure/attachment/35467/FH%2367.JPG">http://192.168.0.3:8080/secure/attachment/35467/FH%2367.JPG</a><br/>
+<br/>
+Note: Please correct this type of scenario for others employee accounts also not for Employee Security account only
+        </td></tr>
+                <tr id="comment-header-98186"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">03/06/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-98186"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#40: On Process Journal page, for CHEQUE collection, &quot;Employee loan collection&quot; amount is multiply by 2 which is wrong<br/>
+Screenshot: please see details on a screenshot<br/>
+<a href="http://192.168.0.3:8080/secure/attachment/35468/FH%2368.JPG">http://192.168.0.3:8080/secure/attachment/35468/FH%2368.JPG</a>
+        </td></tr>
+                <tr id="comment-header-98187"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">03/06/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-98187"><td bgcolor="#ffffff">
+            Bug#35, Bug#36 ------------&gt; found fixed<br/>
+tested url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a>
+        </td></tr>
+                <tr id="comment-header-98201"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="samiur" id="word_commented_samiur" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=samiur">Md. Samiur Rahman</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">04/06/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-98201"><td bgcolor="#ffffff">
+            &nbsp;Bug 32,38,39,40 fixed<br/>
+
+        </td></tr>
+                <tr id="comment-header-98279"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">10/06/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-98279"><td bgcolor="#ffffff">
+            Bug#32, Bug#39, Bug#40 ------------&gt; found fixed<br/>
+tested url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a>
+        </td></tr>
+                <tr id="comment-header-98289"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">11/06/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-98289"><td bgcolor="#ffffff">
+            Bug#34, Bug#37, Bug#38  ------------&gt; found fixed<br/>
+tested url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+<br/>
+Note: for Bug#37, Misc (Other) Income will show separately in Journal like Branch-BA confirmed OK for now - <a href="http://192.168.0.3:8080/secure/attachment/35512/Late%20fee%20for%20employee%20security.JPG">http://192.168.0.3:8080/secure/attachment/35512/Late%20fee%20for%20employee%20security.JPG</a>
+        </td></tr>
+                <tr id="comment-header-98290"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">11/06/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-98290"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#41: Getting problem in Journal after rectifying Employee Security&#39;s  amount &amp; late fee from Pay Salary<br/>
+<br/>
+Screenshot: please see details from screenshot<br/>
+<a href="http://192.168.0.3:8080/secure/attachment/35511/FH%2378.JPG">http://192.168.0.3:8080/secure/attachment/35511/FH%2378.JPG</a><br/>
+
+        </td></tr>
+                <tr id="comment-header-98301"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">13/06/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-98301"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#42: If disbursed PF loan &amp; Motor/By cycle loan using both CASH-CHEQUE then PF loan&#39;s Cheque amount is shown again with motor/bi-cycle loan<br/>
+<br/>
+Screenshot: please see details from screenshot<br/>
+a. <a href="http://192.168.0.3:8080/secure/attachment/35515/FH%2379.JPG">http://192.168.0.3:8080/secure/attachment/35515/FH%2379.JPG</a><br/>
+b. <a href="http://192.168.0.3:8080/secure/attachment/35519/FH%2379_02.JPG">http://192.168.0.3:8080/secure/attachment/35519/FH%2379_02.JPG</a>
+        </td></tr>
+                <tr id="comment-header-98303"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">13/06/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-98303"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#43: If disbursed Motor/By cycle loan using both CASH-CHEQUE process at a time then two journal created<br/>
+<br/>
+Screenshot: please see details from screenshot <br/>
+<a href="http://192.168.0.3:8080/secure/attachment/35520/FH%2380.JPG">http://192.168.0.3:8080/secure/attachment/35520/FH%2380.JPG</a><br/>
+<br/>
+Note: Not a bug, this is ok for now, if loan has no S.C. then two journal will be shown.
+        </td></tr>
+                <tr id="comment-header-98305"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">13/06/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-98305"><td bgcolor="#ffffff">
+            Bug#01 - Bug#21, Bug#23, Bug#25 - Bug#40 ------------&gt; found fixed<br/>
+tested url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a>
+        </td></tr>
+                <tr id="comment-header-98317"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">14/06/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-98317"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#44: Extra PF journal is showing wrongly if motor cycle &quot;late fee&quot; transaction by CHEQUE from HRM_Transaction<br/>
+Screenshot: please see details from screenshot <br/>
+<a href="http://192.168.0.3:8080/secure/attachment/35525/FH%2381.JPG">http://192.168.0.3:8080/secure/attachment/35525/FH%2381.JPG</a><br/>
+<br/>
+Expected: please remove extra PF journal
+        </td></tr>
+                <tr id="comment-header-98320"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">14/06/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-98320"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#45: Extra journal shows for &quot;late fee&quot; on same working-day for PF/motor/Bi cycle loan with different CHEQUE <br/>
+Screenshot: please see details from screenshot <br/>
+<a href="http://192.168.0.3:8080/secure/attachment/35526/FH%2382.JPG">http://192.168.0.3:8080/secure/attachment/35526/FH%2382.JPG</a><br/>
+<br/>
+Expected: remove extra/duplicate journal<br/>
+
+        </td></tr>
+                <tr id="comment-header-98325"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">15/06/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-98325"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#46: PF contribution amount &amp; Service Benefit amount showing double which is wrong<br/>
+Screenshot: please see details from screenshot <br/>
+a. <a href="http://192.168.0.3:8080/secure/attachment/35533/FH%2383.JPG">http://192.168.0.3:8080/secure/attachment/35533/FH%2383.JPG</a><br/>
+<br/>
+b. PF contribution &amp; Service Benefit journal exists after deleting pay salary on same working-day which should not be<br/>
+Screenshot - <a href="http://192.168.0.3:8080/secure/attachment/35534/FH%2384.JPG">http://192.168.0.3:8080/secure/attachment/35534/FH%2384.JPG</a>
+        </td></tr>
+                <tr id="comment-header-98326"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">15/06/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-98326"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#47: Salary journal is not displaying if disburse salary by CHEQUE giving Penal/Service amount for both or any of Motor Cycle/Bi-Cycle loan<br/>
+<br/>
+Screenshot: please see details from screenshot <br/>
+a. <a href="http://192.168.0.3:8080/secure/attachment/35535/FH%2385.JPG">http://192.168.0.3:8080/secure/attachment/35535/FH%2385.JPG</a><br/>
+<br/>
+b. two Salary journal generates- one for Cash &amp; one for Cheque if change Penal amount to 0<br/>
+Screenshot- <a href="http://192.168.0.3:8080/secure/attachment/35536/FH%2386.JPG">http://192.168.0.3:8080/secure/attachment/35536/FH%2386.JPG</a>
+        </td></tr>
+                <tr id="comment-header-98329"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">15/06/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-98329"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#48: As per mapper, PF loan Late Fee transaction with CHEQUE from HRM_Transaction is not OK - related Bank/Cheque journal is not showing<br/>
+<br/>
+Screenshot: please see details from screenshot<br/>
+<a href="http://192.168.0.3:8080/secure/attachment/35538/FH%2387.JPG">http://192.168.0.3:8080/secure/attachment/35538/FH%2387.JPG</a>
+        </td></tr>
+                <tr id="comment-header-98331"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">15/06/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-98331"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#49: Narration/description is blank in journal for Subsidy transaction with CASH/CHEQUE<br/>
+Screenshot: please see details from screenshot <br/>
+<a href="http://192.168.0.3:8080/secure/attachment/35539/FH%2388.JPG">http://192.168.0.3:8080/secure/attachment/35539/FH%2388.JPG</a><br/>
+<br/>
+Note: BA please add narration in excel journal mapper first
+        </td></tr>
+                <tr id="comment-header-98424"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="FChowdhury" id="word_commented_FChowdhury" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=FChowdhury">Md. Faruk Chowdhury</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">16/06/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-98424"><td bgcolor="#ffffff">
+            Test url: <a href="http://192.168.250.48/amms-web/">http://192.168.250.48/amms-web/</a><br/>
+Bug#50: Salary journal for Cash is generating wrongly if disburse salary by CHEQUE giving Penal/Service amount for &quot;Employee Security&quot; account<br/>
+<br/>
+Screenshot: please see details from screenshot <br/>
+<a href="http://192.168.0.3:8080/secure/attachment/35657/FH%2389.JPG">http://192.168.0.3:8080/secure/attachment/35657/FH%2389.JPG</a>
+        </td></tr>
+                <tr id="comment-header-98438"><td bgcolor="#f0f0f0">
+            Comment by  
+                                                        <a class="user-hover" rel="samiur" id="word_commented_samiur" href="http://192.168.0.3:8080/secure/ViewProfile.jspa?name=samiur">Md. Samiur Rahman</a>
+                                        <font size="-2">
+            [
+                <font color="#336699">16/06/2020</font>
+
+                            ]
+            </font>
+
+        </td></tr>
+        <tr id="comment-body-98438"><td bgcolor="#ffffff">
+            Bug 41,42,43,44,45,46,47,48,50 Fixed
+        </td></tr>
+            </table>
+Generated at Thu Jun 18 12:06:59 BDT 2020 by S.A.Jilani using JIRA 7.3.1#73012-sha1:68837e38d8ed1b069612405186dcdceed665bb39.
+
+</body>
+</html>

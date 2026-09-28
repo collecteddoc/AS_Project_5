@@ -1,0 +1,90 @@
+AMMS-Online
+http://amms-qa.asabd.org/amms-web/
+Sr. Branch Manager	: 1252
+Loan Officer: 41530
+For both emp. Pass: Asa12$#
+
+Meeting minutes 2024.09.30 
+--------------------------
+
+Note:
+
+Fine/Penalty/Extra Bills "Effective Date" should be mapped with Account "Opening Date" (For Bill) / "Disburse Date" (For Punishment).
+
+After "Opening Date" of account, it will impact on immediate next pay salary.
+
+Fine/Penalty/Extra Bills "Duration (Month)" should be mapped with Account "Duration" and "Total Installment" (For Punishment).
+
+Create AMMS Account, Account Type and PMIS Fine/Penalty/Extra Bills mapping.
+
+Fine/Penalty/Extra Bills should be in Pay Salary and read-only. Ensure that last installment should be round figure.
+
+Only "Is Approved" = "Yes" multi-letter ("Extra Bill Type", "Penalty") will be processed/synced (except only Fine).
+
+All the PMIS GL Account should be in Credit side and Cash should be in Debit side.
+
+"Penalty-With 43%" should be GL Account "Penalty from staff income" and "Penalty-Without 43%" should be particular selected GL Account.
+
+AMMS Online sync the PMIS multi-letters "Is Final" = "Yes", "Effective Date" till today and "Is Approved" = "Yes" data automatically daily and create employee account in latest salary structure.
+
+Add validations e.g. "Effective Date" of Fine/Penalty/Extra Bill should be greater than "Effective Date" in multi-letter.
+
+
+Questions:
+
+(Completed) Do we need "Effective Month", "Duration (Month)"? Because right now there is no facilities for these field.
+Answer: Extra Bills Type should be in payroll. Extra bill type should in "Is Approved" = "Yes". All GL should be CR. Last installment should be round. 100 tk 3 months. 32, 32, 34. 
+
+(Completed) Instead of "Effective Month" can we store "Effective Date"? After "Effective Date" that month salary will be effective.
+Answer: Yap. We can use "Effective Date" instead of "Effective Month". Effective Date, Duration (Month) should be locked.
+
+(Completed) Correct it. Fine Amount will hit in Pay Salary, Bill Amount will hit in Pay Salary, Penalty Amount will hit in Pay Salary?
+Answer: Correct.
+
+(Completed) Page 1 => "Penalty-With 43%" or "Penalty-Without 43%" GL Head
+Answer: "Penalty-With 43%"  should be GL head "Penalty from staff income". 
+        "Penalty-Without 43%" should be GL head. 
+	There will be approval for "Extra Bill Type", "Penalty".
+
+(Pending) Will be separate 3 amount field for Fine, Penalty, Extra Bill Type Remission if performed combinedly?
+Answer: Stakeholders will provide the details later.
+Create new account type and journal mapping sitting with stakeholders.
+
+
+(Pending) What if someone delete the multi-letter data from PMIS UI or backend script? What should be impact on AMMS online fetched data?
+Answer: User will manage it. Strict the user.
+
+(Completed) Is AMMS Online sync the PMIS multi-letters "Is Final" = "Yes" data automatically? If Yes then What is the time schedule for data syncing process?
+Answer: Daily.
+
+
+(Pending) Page 2,3 => Where is mapping for the GL head mentioned in the "Extra Bills Type" and "With/Without 43%"?
+
+Problems found
+
+    * Arear should be in Payment part of Pay Salary.
+    * There is no action mentioned for Penalty remission.
+
+
+Meeting minutes 2024.09.29
+--------------------------
+
+    * In Fine UI => Fine Voucher, Extra Bills Type Voucher will be generated using Account Type. Account Type should be loaded in PMIS. Fine Amount in "Pay Salary" UI, Extra Bill Amount in HRM Transaction UI.
+    * In Penalty UI => With 43% or Without 43% in single selection box there will be AccountType of GL Account Head. (In Pop With 43% or Without 43% List will be populated for user help).
+    * With 43% => Penalty CR, Cash DR
+    * Without 43%=> Particular GL Account CR, Cash DR
+    * Data Sync =>  Multi-letter should be Is Final is "Yes" and "Effective Date" should be greater than from Today., "Is Approved" should be "Yes".
+
+
+Technical
+
+2. There is also a challenge so add employee account the latest salary structure of the employee.
+
+3. What about Originating Office Code and Branch while creating employee account. Because PMIS branch and AMMS Online branch Id is not matching. Will be go for Branch Code?
+
+5. What is impact in penalty data model when "Penalty & Fine" transaction is performed in multi-letter and manual letter? Ask Rafiq / Muzahid for PMIS database.
+
+
+
+
+http://192.168.0.3:8080/browse/AMMSW-6547

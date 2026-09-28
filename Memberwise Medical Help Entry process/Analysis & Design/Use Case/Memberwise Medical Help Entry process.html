@@ -1,0 +1,2457 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+  table, th, td {
+  border-collapse: collapse !important;
+  text-align: left !important;
+  border: 1px solid black !important;
+  cellpadding: 12px !important;
+  cellspacing: 12px !important;
+}
+</style>
+
+
+
+
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Memberwise Medical Help Entry process</title></head><body><br>
+<div style="text-align: center;"><span style="font-weight: bold; color: rgb(51, 51, 255);">(In Progress)</span><span style="font-weight: bold;"><span style="color: red;"></span><br>
+
+Fine &amp; 43% Penalty PMIS &amp; AMMS Online sync</span><br>
+</div>
+<br>
+<span style="font-weight: bold; color: black;">Jira:</span><span style="color: black;"></span><span style="font-weight: bold; color: black;"><br>
+</span><span style="color: black;">http://192.168.0.3:8080/browse/AMMSW-6547</span><span style="font-weight: bold; color: black;"><br>
+</span><span style="color: black;">http://192.168.0.3:8080/browse/HRMS-443</span><span style="font-weight: bold; color: black;"><br>
+<br>
+</span><span style="font-weight: bold; color: black;">
+Confluence:</span><br>
+http://192.168.0.3:8090/pages/viewpage.action?pageId=109936989<br>
+http://192.168.0.3:8090/display/AM/Close-Open+Working+Day<br>
+http://192.168.0.3:8090/pages/viewpage.action?pageId=127303695<br>
+<br>
+<span style="font-weight: bold; color: black;">Remission Solution:&nbsp; </span><span style="color: black;"></span><br>
+<br>
+Remission automation is not possible via PMIS, but it can be solved using below method through AMMS HRM module.<br>
+Below Transaction will be executed while performing remission
+transaction from HRM Transaction for that particular Penalty Account.
+Here only challenge is if anyone perform Reverse Remission e.g.
+Edit/Delete.<br style="color: black;">
+
+
+<span style="color: black;"><br>
+Penalty Amount = 1200</span><br style="color: black;">
+
+
+<span style="color: black;">Penalty Outstanding Amount = (Penalty Amount - Total Penalty Deducted)</span><br style="color: black;">
+
+
+<br style="color: black;">
+<span style="color: black;">
+(Remission before no deduction or after penalty partially deducted, but has enough outstanding)</span><br style="color: black;">
+<span style="color: black;">Case 1: (Remission Amount &lt; Penalty
+Outstanding
+Amount)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+-- Remission Amount = 400,&nbsp;
+Penalty Outstanding Amount = 1000 </span><br style="color: black;">
+<span style="color: black;">
+
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Then</span><br style="color: black;">
+<span style="color: black;">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Transaction 1: Update New Penalty
+Amount </span><br style="color: black;">
+
+
+
+<span style="color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; =&gt;
+"Penalty New Amount" = "Penalty Old Amount" - "Remission Amount"= (1200
+-400) tk = 800 tk (No accounting voucher) </span><br style="color: black;">
+<span style="color: black;">
+
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; End</span><br style="color: black;">
+
+
+<span style="color: black;"></span><br style="color: black;">
+<span style="color: black;">
+(Remission after penalty partially deducted and has not enough outstanding)</span><br style="color: black;">
+<span style="color: black;">
+
+Case 2: If ("Remission Amount" &gt; 
+"Penalty Outstanding Amount" and "Penalty Outstanding Amount" &gt; 0)&nbsp; -- Remission Amount = 600,&nbsp;
+Penalty Outstanding Amount = 400 </span><br style="color: black;">
+<span style="color: black;">
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Then </span><br style="color: black;">
+<span style="color: black;">
+&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; Transaction 1: Update New Penalty Amount (Nullifying
+outstanding)</span><br style="color: black;">
+
+
+<span style="color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; =&gt; "Penalty
+New Amount" = "Penalty Old Amount" - "Penalty Outstanding Amount" =
+(1200 - 400) tk = 800 tk (No accounting voucher)</span><br style="color: black;">
+
+
+<span style="color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Transaction 2: Remission Amount Returned by Cash</span><br style="color: black;">
+
+
+<span style="color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+=&gt;Remission-Cash Amount =
+("Remission Amount" - "Penalty Outstanding Amount") =
+(600 - 400) tk = 200 tk (Auto calculated by the system) (Accounting
+voucher) </span><br style="color: black;">
+<span style="color: black;">
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; End</span><br style="color: black;">
+
+<br style="color: black;">
+<span style="color: black;">
+(Remission after penalty full paid)</span><br style="color: black;">
+
+
+
+<span style="color: black;">Case 3 : If ("Remission Amount" &gt; 
+"Penalty Outstanding Amount" and "Penalty Outstanding Amount" = 0)&nbsp;&nbsp; -- Remission Amount = 1200,&nbsp;
+Penalty Outstanding Amount = 0 </span><br style="color: black;">
+
+
+
+<span style="color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Then </span><br style="color: black;">
+
+
+
+
+<span style="color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Transaction 2: Remission Amount Returned by Cash</span><br style="color: black;">
+
+
+
+
+<span style="color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; =&gt;Remission-Cash
+Amount =
+"Remission Amount" = 1200 tk = 1200 tk (Auto calculated by the system)
+(Accounting
+voucher) </span><br style="color: black;">
+<span style="color: black;">
+
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; End</span><br style="color: black;">
+
+
+<br style="color: black;">
+
+
+<span style="font-weight: bold; color: black;">Voucher</span><span style="color: black;"> </span><br style="color: black;">
+
+<span style="color: black;">Remission-Cash GL Head
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+DR&nbsp;&nbsp;&nbsp;&nbsp; 400</span><br style="color: black;">
+<span style="color: black;">Cash&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CR&nbsp;&nbsp;&nbsp;&nbsp; 400</span><br style="color: black;">
+<br style="color: black;">
+<br>
+<br>
+<span style="color: red;">Partial remission can be performed by
+updating Fine/Penalty/Extra Bill amount after deducting remission
+amount from employee Fine/Penalty/Extra Bill account.</span>
+  
+  <ol>
+  
+  
+  
+  
+  
+  
+  
+  
+</ol>
+
+<span style="color: red;">System will follow AMMS online rules for calculation.</span><br style="color: red;">
+
+
+<span style="color: red;">&nbsp;&nbsp;&nbsp; http://192.168.0.3:8090/display/AM/7.+Employee+Account+Management</span><br>
+<br>
+(Cancelled)<br>
+43% Penalty<br>
+&nbsp;&nbsp;&nbsp; Can remission happen multiple times, or only once?<br>
+&nbsp;&nbsp;&nbsp; Punishment Collection &amp; Exemption GL head is not
+same as per F:\Other\A\AS_Project_3\PROJECT\AMMS Online\5. Accounts
+Management\Confluence =&gt;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+HRMS_Journal_Mapping_Final-11.11.2024.xlsx<br>
+&nbsp;&nbsp;&nbsp; Ask for remission journal mapping.<br>
+&nbsp;&nbsp;&nbsp; Due to remission Change in <br>
+&nbsp;&nbsp;&nbsp; http://192.168.0.3:8090/display/AM/8.1+HRM+Transaction+Type<br>
+&nbsp;&nbsp;&nbsp; http://192.168.0.3:8090/display/AM/8.2+HRM+Transaction+Matrix<br>
+&nbsp;&nbsp;&nbsp; http://192.168.0.3:8090/display/AM/3.3.3+HRMS+and+Payroll+Transaction+Journal+Mapping<br>
+<br>
+<span style="font-weight: bold;">Meeting Minutes 25.02.2025</span><br>
+<br>
+<span style="font-weight: bold;">Agenda:</span><br>
+<ul>
+  <li>Feedbacks of Penalty 43%. <br>
+  </li>
+</ul>
+<span style="font-weight: bold;">Decision:</span> (http://192.168.0.3:8080/browse/HRMS-400)<br>
+<ol>
+  <li>In the Penalty multi-letters, the default value for 'Duration
+(month)' should be 1. The user should be able to change the value if
+needed.<span style="color: rgb(0, 0, 0); font-family: Verdana; font-size: 12px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: nowrap; display: inline ! important; float: none;"></span></li>
+  <li><span style="color: rgb(0, 0, 0); font-family: Verdana; font-size: 12px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: nowrap; display: inline ! important; float: none;">http://192.168.0.3:8080/browse/HRMS-387 =&gt; Point 11.</span></li>
+  <li><span style="color: rgb(0, 0, 0); font-family: Verdana; font-size: 12px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: nowrap; display: inline ! important; float: none;">http://192.168.0.3:8080/browse/HRMS-387 =&gt; Point 9.</span></li>
+  <li><span style="color: rgb(0, 0, 0); font-family: Verdana; font-size: 12px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: nowrap; display: inline ! important; float: none;">http://192.168.0.3:8080/browse/HRMS-387 =&gt; Point 6.</span></li>
+  <li>There should be a configuration that allows approval / rejection
+to be performed separately by the Accounts and HR departments.
+Instructions have already been provided to Rafiq vai by the Accounts
+department.</li>
+  <li>The watermark text will be '&#2437;&#2472;&#2472;&#2497;&#2478;&#2507;&#2470;&#2495;&#2468;' for unapproved penalty letters.<span class="Y2IQFc" lang="bn"></span></li>
+  <li>There should be a new type named 'Extra Bill,' and the subject
+will be provided by the HR department. The Accounts department will
+inform us of the subject.</li>
+  <li>In the 'Penalty Approval' UI, add two columns named "Created By"
+and "Approved/Rejected By" where value will be "Employee Name" along
+with "Employee Id".</li>
+  <li>After the Approve/Reject action, a notification email should be
+sent to the respective employee, branch, the person who
+approved/rejected the letter, and the CC recipients of the letter.</li>
+</ol>
+
+<br style="font-weight: bold;">
+<span style="font-weight: bold;">Meeting Minutes 27.01.2025</span><br>
+<br>
+<span style="font-weight: bold;">Agenda:</span><br>
+<ul>
+  <li>Discussion on remission problem &amp; solution.</li>
+</ul>
+<span style="font-weight: bold;">Decision:</span><br>
+<ul>
+  <li>If needed IT team will support remission manually from backend in AMMS Online.</li>
+</ul><span style="font-weight: bold;"></span><br>
+
+<br>
+
+<span style="font-weight: bold;"></span><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+Penalty
+Amount&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 1200 tk (1st January)<br>
+Installment Month&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 12<br>
+Per Month Installment&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 100 tk<br>
+<br>
+<span style="font-weight: bold;">Scenario 1:</span> Before Salary Payment (No deduction.)<br>
+<br>
+Remission Amount&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 600 tk<br>
+Penalty Outstanding&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = (1200 - 600) = 600 tk<br>
+<br>
+Remission Amount&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 1200 tk (max)<br>
+Penalty Outstanding&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = (1200 - 1200) = 0 tk (Closed)<br>
+<br>
+What about journal? <br>
+Penalty GL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&gt; DR<br>
+Cash&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+=&gt; CR (But no salary paid? and No edit / delete accounts in AMMS
+Online).<br>
+<br>
+<span style="font-weight: bold;">Solution:</span> IT will modify/delete
+HRM Penalty Accounts (600 tk) in AMMS Online from backend database (if
+wrong employee after approval / need to change amount).<br>
+<br>
+<span style="font-weight: bold;">Scenario 2:</span> Partial Remission (Remission after salary payment is made.)<br>
+<br>
+Total Penalty Deducted = 1000 tk (Penalty Outstanding = 200 tk)<br>
+Remission Amount&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 600 tk <br>
+<br>
+Penalty Outstanding&nbsp;&nbsp;&nbsp;&nbsp; = (Penalty - Total Collection - Remission) tk<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 1200 - 1000 - 600 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= (400) (Negative Penalty Outstanding?)<br>
+<br>
+TA/DA (Branch Staffs) -(Expenses) (4035021006)&nbsp;&nbsp; CR&nbsp;&nbsp;&nbsp; 1000<br>
+Salary&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+DR&nbsp;&nbsp;&nbsp; 1000<br>
+<br>
+TA/DA (Branch Staffs) -(Expenses) (4035021006)&nbsp;&nbsp; DR&nbsp;&nbsp;&nbsp;&nbsp; 400<br>
+Cash&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CR&nbsp;&nbsp;&nbsp;&nbsp; 400<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+Unknown GL Head ?
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+DR&nbsp;&nbsp;&nbsp;&nbsp; 200<br>
+Unknown GL Head ?
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CR&nbsp;&nbsp;&nbsp;&nbsp; 200 <br>
+<br>
+<span style="font-weight: bold;">Solution 1: </span>IT will modify HR
+Penalty Accounts (1000 tk) in AMMS Online from backend database and do
+manual accounts journal for 400 tk remaining remission.<br>
+<span style="font-weight: bold;"><br></span><span style="font-weight: bold;">Scenario 3: </span>Full Remission (Remission after the full penalty is paid.)<br>
+Total Penalty Deducted&nbsp;&nbsp;&nbsp; = 1200 tk (Penalty Outstanding = 0 tk)<br>
+Remission Amount&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 1200 tk <br>
+<br>
+Penalty Outstanding&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = (Penalty - Collection - Remission) tk<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= 1200 - 1200 - 1200 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= (1200) (Negative Penalty Outstanding?)<br>
+What about journal?<br>
+<br>
+<span style="font-weight: bold;">Solution 1:</span> IT will do manual accounts journal for 1200 tk remission.<br>
+<br>
+<span style="font-weight: bold;">Solution 2: </span><br>
+<br>
+Penalty Outstanding Amount = (Penalty Amount - Total Deducted) = (1200 - 1200) = 0 tk<br>
+
+<br>
+Transaction 1: Cash = (Remission Amount - Penalty Outstanding Amount) =
+(1200 - 0) tk = 1200 tk (Auto calculated by the system) (Accounting
+voucher)<br>
+Transaction 2: set "Penalty New Amount" = "Penalty Old Amount" - 
+"Penalty Outstanding Amount" = (1200 - 0) tk = 1200 tk (No accounting voucher)<br>
+
+<br>
+
+<span style="font-weight: bold;">Voucher</span><br>
+
+
+TA/DA (Branch Staffs) -(Expenses) (4035021006)&nbsp;&nbsp; DR&nbsp;&nbsp;&nbsp; 1200<br>
+Cash&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CR&nbsp;&nbsp;&nbsp;&nbsp; 1200<br>
+<br><span style="font-weight: bold;">
+Meeting Minutes 19.01.2025</span><br>
+1. "View Penalty with 43%" popup, point will be displayed as number.<br>
+2. When user click on "With 43%" checkbox, then only "Penalty Type" single selection box will be refreshed.<br>
+3. For "Unapproved" fine/penalty letter it will be written "Unapproved" as watermark in the letter.<br>
+4. In "Multi-Letters" UI, "Status" column will be added when status will be "Pending, Approved. Rejected".<br>
+<br>
+
+<span style="color: black;"></span><span style="color: black;"></span><span style="font-weight: bold; color: rgb(0, 102, 0);">Technical Questions</span><br>
+
+
+<span style="color: red;"></span>
+<br>
+<span style="color: rgb(0, 102, 0);"><span style="font-weight: bold;">Question 1: </span>Will be separate 3 amount field for Fine, Penalty, Extra Bill Type Remission if performed combinedly? (Rafiq)</span><br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0); font-weight: bold;">Answer: </span><span style="color: rgb(0, 102, 0);">It will be ignored if remission is ignored for auto transaction.</span><br>
+<span style="font-weight: bold;"></span><br>
+
+<span style="font-weight: bold; color: rgb(0, 102, 0);">Stakeholders Questions</span><br>
+<br style="color: red;">
+<span style="font-weight: bold; color: rgb(0, 102, 0);">(Completed)</span><span style="color: rgb(0, 102, 0);"> </span><span style="font-weight: bold; color: rgb(0, 102, 0);"> [Decision Made] </span><span style="color: rgb(0, 102, 0);">(Discussed in the meeting held on 05 November, 2024)</span><br style="color: rgb(0, 102, 0);">
+<span style="font-weight: bold; color: rgb(0, 102, 0);"></span><span style="color: rgb(0, 102, 0);"><span style="font-weight: bold;">Question 1: </span>What will be the changes in
+"Payroll Register" report for these new account type of payroll? All
+these column will be summed up in "Punishment" existing column?</span><br style="color: rgb(0, 102, 0);">
+<span style="color: red;"><span style="font-weight: bold; color: rgb(0, 102, 0);">Answer: </span><span style="color: rgb(0, 102, 0);">New columns will be displayed in "Payroll Register".</span><span style="font-weight: bold;"><br>
+<br>
+</span></span>
+<br>
+<span style="font-weight: bold; color: rgb(0, 102, 0);">(Completed)</span><span style="color: rgb(0, 102, 0);"> </span><span style="font-weight: bold; color: rgb(0, 102, 0);"> [Decision Made] </span><span style="color: rgb(0, 102, 0);">(Discussed in the meeting held on 05 November, 2024)</span><br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);"><span style="font-weight: bold;">Question 2:</span> How the Account Type name will be displayed in salary slip? Is it with GL Code or without GL Code?<br>
+</span><span style="font-weight: bold; color: rgb(0, 102, 0);">Answer:</span><span style="color: rgb(0, 102, 0);"> Account Type will be displayed along with GL code, but remove Bangla.</span><br>
+<br>
+<span style="font-weight: bold; color: rgb(0, 102, 0);">(Completed)</span><span style="color: rgb(0, 102, 0);"> </span><span style="font-weight: bold; color: rgb(0, 102, 0);"> [Decision Made] </span><span style="color: rgb(0, 102, 0);">(Discussed in the meeting held on 05 November, 2024)</span><br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);"><span style="font-weight: bold;">Question 3:</span> Remission can be perform in
+4 ways in AMMS online? What will be the&nbsp; remission amount which
+fine/penalty is already collected partially?</span><br style="color: rgb(0, 102, 0);">
+<span style="font-weight: bold; color: rgb(0, 102, 0);">Answer:</span><span style="color: rgb(0, 102, 0);"> Remission will be performed from HRM transaction.</span><br>
+<ul style="color: rgb(0, 102, 0);">
+  
+</ul>
+<span style="font-weight: bold; color: rgb(0, 102, 0);"></span><span style="color: rgb(0, 102, 0);">Voucher Entry</span><br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">
+DR - Particular GL Head of Fine, Extra Bill, Penalty</span><br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">
+CR - Cash</span><br style="color: rgb(0, 102, 0);">
+
+<br style="color: rgb(0, 102, 0);">
+
+<span style="color: rgb(0, 102, 0);">Ensure</span><br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">
+Fine, Extra Bill, Penalty employee account balance should be upto date.</span><br style="color: rgb(0, 102, 0);">
+<br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">Option 1: Manual Journal Entry (As-Is Process)</span><br style="color: rgb(0, 102, 0);">
+
+<br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">
+Advantage: </span><br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">
+1. No changes needed in AMMS Online</span><br style="color: rgb(0, 102, 0);">
+
+<br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">
+
+Disadvantage:</span><br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">
+1. Fine, Extra Bill, Penalty employee account balance will not be updated for AMMS online account and report.</span><br style="color: rgb(0, 102, 0);">
+
+
+
+<br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">Option 2: PMIS Auto Transaction (To-Be Process)</span><br style="color: rgb(0, 102, 0);">
+
+<br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">
+Advantage:</span><br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">
+1. No user interaction needed.</span><br style="color: rgb(0, 102, 0);">
+
+<br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">
+Disadvantage:</span><br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">
+1. Need to define the process and huge changes needed in Amms online. Also discussion meeting needed to define the process.</span><br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">2. Only full amount remission of
+fine/extra bill/ penalty which is disadvantage if partial
+adjustment needed there can be any remission amount in PMIS. What if
+"Remission" Transaction happend after some "Collection" transaction. Is
+there any validations needed to add?</span><br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">
+
+3. "Transaction Date", "System Date", "Branch Working Date" will be system defined and user has no control. </span><br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">
+
+4. Cash can be negative if more fine, penalty, extra bill remission happend if branch has less cash.</span><br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">
+
+5. It will be performed by the system automatically that's why branch user could not be able to notified instantly.</span><br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">
+6. Also there is challenge to identify particular account for remission. Because PMIS does not know the AMMS Online Account Id.</span><br style="color: rgb(0, 102, 0);">
+
+
+<br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">Option 3: Add "Remission" section in employee account (To-Be Process)</span><br style="color: rgb(0, 102, 0);">
+
+<br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">
+Advantage:</span><br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">
+1. User will entry remission amount for particular account and system will perform the remission transaction for that account.</span><br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">
+2. Employee balance will be upto date.</span><br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">
+3. Full
+or Any amount remission of fine/extra bill/ penalty which is advantage
+if partial
+adjustment needed. What if "Remission" Transaction happend after some
+"Collection" transaction. Is there any validations needed to add?</span><br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">
+4. Any time user can entry if needed. </span><br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">
+
+5. Central or Branch user can entry.</span><br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">
+
+6. Notification can be displayed after performing remission.</span><br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">
+7. Add new validations in future if needed.</span><br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">
+8. Account department and branch will have full control.</span><br style="color: rgb(0, 102, 0);">
+
+<br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">
+Disadvantage:</span><br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">
+1. Changes needed in Amms online.</span><br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);">
+2. Account Type need to be open for HRM
+"Remission" Transaction. Need to create new transaction type in AMMS
+Online. Also there is challenge to allow both pay salary and HRM
+transaction.</span><br>
+<br>
+<span style="font-weight: bold; color: rgb(0, 102, 0);">(Completed)</span><span style="color: rgb(0, 102, 0);"> </span><span style="font-weight: bold; color: rgb(0, 102, 0);"> [Decision Made] </span><span style="color: rgb(0, 102, 0);">(Discussed in the meeting held on 05 November, 2024)</span><br><span style="color: rgb(0, 102, 0);"><span style="font-weight: bold;">Question 4:</span> Details clarificaiton on "Notification System"</span><br style="color: rgb(0, 102, 0);">
+<span style="color: rgb(0, 102, 0);"><span style="font-weight: bold;">Answer:</span> In Notification icon display
+the quantity. After clicking on the notification icon, Remission
+notificaiton will be displayed for that day.</span><span style="color: rgb(0, 102, 0);"><span style="font-weight: bold;"></span></span><span style="color: red;"></span><br>
+
+<ul style="color: rgb(0, 102, 0);">
+
+  <li><span style="font-weight: bold;">(Completed)</span> <span style="font-weight: bold;"> [Decision Made] </span>(Point 6, 14)&nbsp;&nbsp;</li>
+<ul><li>Where
+is the Multi-letter in PMIS for below other letter type? Answer: Ignore
+all the letter except "Deduction of Lost/Damage of Asset (Point 6)"</li><li>Is it always in pay salary?&nbsp; Answer: It will be pay roll.</li><li>Where is the GL mapping. Answer: Deduction of Lost/Damage of Asset [Penalty without 43%]
+    </li><li>If
+loan is recovered then how employee will get the money back e.g. in
+which GL account. Letter Type (Other) need details or not possible
+right now if
+multi letter not developed from HR. Answer: Ignore it. </li></ul>
+</ul>
+
+
+<div style="margin-left: 80px; color: rgb(0, 102, 0);">
+<ul><li>Loan Liabilities/Obligation by Employee (Point 14)<br>
+</li><li>Deposit against irregularity in Disbursement. (Point 14)<br>
+</li><li>Deposit against misappropriation charges. (Point 14)<br>
+</li><li>Deduction of Lost/Damage of Asset (Point 6)<br>
+  </li></ul>
+</div>
+
+
+<span style="color: rgb(0, 102, 0); font-weight: bold;">Answer: </span><span style="color: rgb(0, 102, 0);">Resolved. <span style="font-weight: bold;">(</span></span><span style="color: rgb(0, 102, 0); font-weight: bold;">Discussed with Muyid vai on 14 October, 2024 and Nipon da on 23 October, 2024)</span><span style="color: rgb(0, 102, 0);"><span style="font-weight: bold;"></span></span><br style="color: rgb(0, 102, 0);">
+
+<br>
+
+<ul style="color: rgb(0, 102, 0);">
+<li><span style="font-weight: bold;">(Completed)</span> <span style="font-weight: bold;"> [Decision Made] </span>(Point
+9) Report Generation. Provide report format template and details.
+Accounts will provide the report format after discussing with HR
+department.<span style="font-weight: bold;"></span></li>
+</ul>
+
+
+
+<span style="color: rgb(0, 102, 0); font-weight: bold;">Answer:&nbsp; </span><span style="color: rgb(0, 102, 0);">Ignore report. It will be surved by PMIS existing report. <span style="font-weight: bold;">(</span></span><span style="color: rgb(0, 102, 0); font-weight: bold;">Discussed with Muyid vai on 14 October, 2024 and Nipon da on 23 October, 2024)</span><span style="color: red;"><span style="color: black; font-weight: bold;"></span></span><br>
+
+<br>
+
+<ul style="color: rgb(0, 102, 0);">
+<li><span style="font-weight: bold;">(Completed)</span> <span style="color: red;"><span style="color: black; font-weight: bold;"> <span style="color: rgb(0, 102, 0);">[Decision Made] </span></span></span>In letter "Deduction of extra salary in
+payroll", is Account dynamic e.g. Inflationary Adjustment etc. then
+provide the complete account list so that IT can map is easily. Is it
+always from in salary? Problem is "Inflationary Adjustment" will be created multiple times if it happens several times.<br>
+</li><li><span style="font-weight: bold;">(Completed)</span> <span style="color: red;"><span style="color: black; font-weight: bold;"> <span style="color: rgb(0, 102, 0);">[Decision Made] </span></span></span>In letter "Deduction of extra salary in payroll", where is the letter in Multi-letter?<br>
+
+    </li>
+</ul>
+
+
+<span style="color: rgb(0, 102, 0);"></span><span style="color: rgb(0, 102, 0); font-weight: bold;">Answer: </span><span style="color: rgb(0, 102, 0);"> Ignore it. Other letter.</span> <span style="color: red;"><span style="color: rgb(0, 102, 0); font-weight: bold;">(</span></span><span style="color: rgb(0, 102, 0); font-weight: bold;">Discussed with Muyid vai on 14 October, 2024 and Nipon da on 23 October, 2024)</span><span style="color: red;"><span style="color: black; font-weight: bold;"></span></span><br style="color: red;">
+
+<br>
+
+<ul style="color: rgb(0, 102, 0);">
+<li><span style="font-weight: bold;">(Completed)</span> <span style="color: red;"><span style="color: black; font-weight: bold;"> <span style="color: rgb(0, 102, 0);">[Decision Made] </span></span></span>(Point 4) Right now in AMMS Online there is
+no facility or not possible to perform penalty and fine remission. What
+should be the treatment in that case if wrong employee got penalty?<br>
+  </li>
+</ul>
+<span style="color: red;"><span style="font-weight: bold; color: rgb(0, 102, 0);">Answer:&nbsp; </span><span style="color: rgb(0, 102, 0);">User
+will create "Remission" multi-letter in PMIS and then perform AMMS
+Online transaction for that particular employee account (Fine, Penalty,
+Extra Bill) by central Accounts department [Only Accounts, HR
+department can perform "Remission" transaction in AMMS Online HRM
+Transaction for that particular employee accounts].</span>&nbsp; <br>
+
+<span style="color: rgb(0, 102, 0); font-weight: bold;">(</span></span><span style="color: rgb(0, 102, 0); font-weight: bold;">Discussed with Muyid vai on 14 October, 2024 and Nipon da on 23 October, 2024)</span><span style="color: red;"><span style="color: black; font-weight: bold;"> <span style="color: rgb(0, 102, 0);"></span></span><br>
+
+</span>
+<ul style="color: rgb(0, 102, 0);">
+<li><span style="font-weight: bold;">(Completed) </span><span style="font-weight: bold;"> [Decision Made] </span>(Point 5) This is new requirements and
+need details clarification (When and how the notification will be
+displayed. Also what will be the text. Shakeholders should provide the
+text). <span style="font-weight: bold; color: red;"></span><br>
+</li>
+</ul>
+
+<span style="color: rgb(0, 102, 0);"><span style="font-weight: bold;">Answer: </span>After
+performing "Remission" transaction in AMMS Online =&gt; HRM =&gt;
+Employee's particular account from Central Accounts / HR department
+then a notification count will be shown in notification icon of that
+branch. After clicking on the notification icon pop up will be showing
+"Employee name",&nbsp; "Penalty name", "Remission amount" and
+"Remission date" for that day entered remission. </span><br style="color: rgb(0, 102, 0);">
+
+<span style="color: rgb(0, 102, 0);"><span style="font-weight: bold;">(</span></span><span style="color: rgb(0, 102, 0); font-weight: bold;">Discussed with Muyid vai on 14 October, 2024 and Nipon da on 23 October, 2024)</span><span style="color: rgb(0, 102, 0);"> <span style="font-weight: bold;"> </span></span><br>
+
+<span style="color: red;"><span style="color: black;"></span><span style="font-weight: bold; color: black;">
+</span></span><span style="color: red;"><span style="font-weight: bold; color: black;"><br>
+</span></span>
+<ul style="color: rgb(0, 102, 0);">
+<li><span style="font-weight: bold;">(Completed)</span> <span style="color: red;"><span style="color: black; font-weight: bold;"> <span style="color: rgb(0, 102, 0);">[Decision Made] </span></span></span>Need complete guideline / treatment for the deletion process of
+penalty/fine/extra bill (both in PMIS and AMMS Online).&nbsp;</li>
+</ul>
+
+<span style="color: rgb(0, 102, 0);">
+<span style="font-weight: bold;">Answer:</span> Multi letter can be
+deleted only when "Is Final" is "No" and before "Effective Date". So
+there will be no impact on the PMIS and Amms Online. Can be ignored as per Nipon da, Muyid vai. </span><br>
+
+<span style="color: red;"><span style="color: rgb(0, 102, 0); font-weight: bold;">(</span></span><span style="color: rgb(0, 102, 0); font-weight: bold;">Discussed with Muyid vai on 14 October, 2024 </span><span style="color: rgb(0, 102, 0); font-weight: bold;">and Nipon da on 23 October, 2024</span><span style="color: rgb(0, 102, 0); font-weight: bold;">)</span><span style="color: black; font-weight: bold;"><br>
+<br>
+</span>
+<ul style="color: rgb(0, 102, 0);">
+<li><span style="font-weight: bold;">(Completed) </span><span style="color: red;"><span style="color: black; font-weight: bold;"> <span style="color: rgb(0, 102, 0);">[Decision Made] </span></span></span>(Point
+8) Is it "Letter Date" or "Multi Letter Effective Date" or "Deduction
+Date"? What if "Letter Date" and "Salary Date" both are 20th day
+(Eid time pay roll date not after 25th day every year) of the month
+"Deduction Date"?&nbsp; </li>
+</ul>
+
+<span style="color: rgb(0, 102, 0); font-weight: bold;">Answer: </span><span style="color: rgb(0, 102, 0);">It will be "Deduction Date". Also add rule </span><span style="color: rgb(0, 102, 0);">"Deduction Date" should be equal or greater than "Multi Letter Effective Date".</span> <span style="color: black; font-weight: bold;"></span><br>
+
+<span style="color: red;"><span style="color: rgb(0, 102, 0); font-weight: bold;">(</span></span><span style="color: rgb(0, 102, 0); font-weight: bold;">Discussed with Muyid vai on 14 October, 2024 </span><span style="color: rgb(0, 102, 0); font-weight: bold;">and Nipon da on 23 October, 2024</span><span style="color: rgb(0, 102, 0); font-weight: bold;">)</span><span style="color: black; font-weight: bold;"><br></span><br>
+<br>
+<span style="font-weight: bold;">Stakeholders PABX</span><br>
+
+
+<ul>
+<li>Md. Abu Al Muid &nbsp; 281</li>
+  <li>Md. Sahab Uddin&nbsp;&nbsp;&nbsp; 281</li>
+</ul>
+<br>
+<span style="font-weight: bold;">Requirements:</span><br>
+<br>
+<span style="font-weight: bold;">CR_1.1. Penalty Multi-letter Change Request</span><br>
+<br>
+<span style="font-weight: bold;">UI</span><br>
+<br>
+<span style="color: red;"><img style="width: 1402px; height: 892px;" alt="" src="2.5.%20Fine_Penalty_ExtraBill_MultiLetter.png"><br>
+<br>
+<img style="width: 1057px; height: 875px;" alt="" src="3.1.%20Fine_Penalty_ExtraBill_Approval.png.png"><br>
+</span><strong style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); font-weight: bold;"><br>
+UI Validation</strong><br>
+<ul>
+  <li>UIV_1.1. "Fine", "Extra Bills", "Penalty" section should be visible as per "Fine Type" selection.</li>
+</ul>
+<span style="color: red;">
+</span>
+<table style="text-align: left; width: 945px; height: 197px;" border="0" cellpadding="2" cellspacing="2">
+
+
+
+
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; font-weight: bold; color: black;">Fine Type&nbsp; <br>
+      </td>
+      
+      
+      <td style="vertical-align: top; font-weight: bold; color: black;">"Fine" section visible?<br>
+</td>
+      <td style="vertical-align: top; font-weight: bold; color: black;">"Extra Bills" section Visible?</td>
+      <td style="vertical-align: top; font-weight: bold; color: black;">"Penalty" section visible?</td><td style="vertical-align: top; font-weight: bold;">Approval Needed by Accounts?</td>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">Auto Approved by System</span><br>
+      </td>
+
+      
+    </tr>
+    <tr>
+      <td style="vertical-align: top; color: black;">Fine</td>
+      
+      
+      <td style="vertical-align: top; color: black;">Yes<br>
+</td>
+      <td style="vertical-align: top; color: black;">No<br>
+</td>
+      <td style="vertical-align: top; color: black;">No<br>
+</td><td style="vertical-align: top;">No<br>
+      </td>
+      <td style="vertical-align: top;">Yes<br>
+      </td>
+
+      
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Fine with Extra Bill</td>
+      
+      
+      <td style="vertical-align: top;">Yes<br>
+</td>
+      <td style="vertical-align: top;">Yes<br>
+</td>
+      <td style="vertical-align: top;">No<br>
+</td><td style="vertical-align: top;">Yes<br>
+      </td>
+      <td style="vertical-align: top;">No<br>
+      </td>
+
+      
+    </tr>
+    <tr>
+      <td style="vertical-align: top; color: black;">Penalty</td>
+      
+      
+      <td style="vertical-align: top; color: black;">No<br>
+</td>
+      <td style="vertical-align: top; color: black;">No<br>
+</td>
+      <td style="vertical-align: top; color: black;">Yes<br>
+</td><td style="vertical-align: top;">Yes<br>
+      </td>
+      <td style="vertical-align: top;">No<br>
+      </td>
+
+      
+    </tr>
+    
+    <tr>
+      <td style="vertical-align: top; color: black;">Fine &amp; Penalty<br>
+
+      </td>
+      
+      
+      <td style="vertical-align: top; color: black;">Yes<br>
+</td>
+      <td style="vertical-align: top; color: black;">No<br>
+</td>
+      <td style="vertical-align: top; color: black;">Yes<br>
+</td><td style="vertical-align: top;">Yes<br>
+      </td>
+      <td style="vertical-align: top;">No<br>
+      </td>
+
+      
+    </tr>
+    
+    
+    <tr>
+      <td style="vertical-align: top;">Fine with Extra Bill &amp; Penalty</td>
+      
+      
+      <td style="vertical-align: top;">Yes<br>
+</td>
+      <td style="vertical-align: top;">Yes<br>
+</td>
+      <td style="vertical-align: top;">Yes<br>
+</td><td style="vertical-align: top;">Yes<br>
+      </td>
+      <td style="vertical-align: top;">No<br>
+      </td>
+
+      
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+<span style="color: red;"><br></span>
+<ul>
+  <li>UIV_1.2. Default value should be selected in "Fine" single selection box and "Fine" single selection box should be hidden.<br>
+</li>
+  <li>UIV_1.3. "Deduction Date", "Duration (Month)" should be same for Fine, Extra Bill and Penalty.</li>
+  <li>UIV_1.4. <span style="color: black;">"Deduction Date" should be equal or greater than "Multi Letter Effective Date".</span> <span style="color: black; font-weight: bold;"></span></li>
+
+  <li>UIV_1.5. Option should be populated in "Penalty Type" single selection box depending on "Penalty Category" selection.</li>
+  <li>UIV_1.6.&nbsp;
+If "Is Approved" is "No" then "Approve" button should be visible. After
+clicking on "Approve" button, "Is Approved" should be changed to "Yes"
+and "Approved By", "Approved Date" will be recorded. <br>
+</li>
+  <li>UIV_1.7. Only letter of "Is Final" is "Yes",&nbsp; "Is
+Processed" is "Yes", "Is Synced" is "No" should be populated in Approve
+UI list.</li>
+  <li>UIV_1.8. After clicking on the "Letter No" of a&nbsp; record in "Approval" UI, user can be able to view the multi letter.</li>
+  <li>UIV_1.9. <span style="font-family: &quot;Shonar Bangla&quot;,serif;">While clicking on View "Penalty-With
+  43%" link then below text will be populated in the popup for user guidance.</span><span style="color: rgb(0, 29, 53); font-size: 28px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: nowrap; background-color: rgb(255, 255, 255); display: inline ! important; float: none; font-family: monospace;"></span></li>
+</ul>
+<table class="MsoTableGrid" style="border: medium none ; border-collapse: collapse; width: 959px; height: 930px;" border="1" cellpadding="0" cellspacing="0">
+<tbody><tr style=""><td style="border: 1pt solid windowtext; padding: 0in 5.4pt; width: 467.5pt;" valign="top" width="623"><p class="MsoNormal" style="margin-bottom: 0in; text-align: center; line-height: normal;" align="center"><span style="font-family: &quot;Shonar Bangla&quot;,serif;"><span style="font-weight: bold;">Penalty-With
+  43% &#2476;&#2495;&#2476;&#2480;&#2467;</span><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="">
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 467.5pt;" valign="top" width="623">
+  <p class="MsoNormal" style="margin-bottom: 0in; line-height: normal;"><span style="font-family: &quot;Shonar Bangla&quot;,serif;">&#2443;&#2467;&#2503;&#2480; &#2488;&#2494;&#2480;&#2509;&#2477;&#2495;&#2488; &#2458;&#2494;&#2480;&#2509;&#2460; &#2476;&#2503;&#2486;&#2496; &#2478;&#2451;&#2453;&#2497;&#2475; &#2453;&#2480;&#2494;&#2404;<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="">
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 467.5pt;" valign="top" width="623">
+  <p class="MsoNormal" style="margin-bottom: 0in; line-height: normal;"><span style="font-family: &quot;Shonar Bangla&quot;,serif;">&#2488;&#2462;&#2509;&#2458;&#2527;, &#2447;&#2482;&#2463;&#2495;&#2447;&#2488; &#2451; &#2472;&#2495;&#2480;&#2494;&#2474;&#2468;&#2509;&#2468;&#2494; &#2468;&#2489;&#2476;&#2495;&#2482;&#2503;&#2480; &#2488;&#2497;&#2470;
+  &#2476;&#2503;&#2486;&#2496; &#2474;&#2509;&#2480;&#2470;&#2494;&#2472; &#2453;&#2480;&#2494;&#2404;<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="">
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 467.5pt;" valign="top" width="623">
+  <p class="MsoNormal" style="margin-bottom: 0in; line-height: normal;"><span style="font-family: &quot;Shonar Bangla&quot;,serif;">&#2458;&#2498;&#2524;&#2494;&#2472;&#2509;&#2468; &#2470;&#2503;&#2472;&#2494;-&#2474;&#2494;&#2451;&#2472;&#2494; &#2476;&#2503;&#2486;&#2495; &#2474;&#2509;&#2480;&#2470;&#2494;&#2472; &#2476;&#2494; &#2472;&#2507;&#2463;&#2495;&#2486;-&#2474;&#2503;
+  &#2453;&#2480;&#2509;&#2468;&#2472; &#2472;&#2494; &#2453;&#2480;&#2494;&#2404;<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="">
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 467.5pt;" valign="top" width="623">
+  <p class="MsoNormal" style="margin-bottom: 0in; line-height: normal;"><span style="font-family: &quot;Shonar Bangla&quot;,serif;">&#2472;&#2495;&#2527;&#2478;&#2476;&#2480;&#2509;&#2489;&#2495;&#2480;&#2509;&#2477;&#2498;&#2468; &#2477;&#2494;&#2476;&#2503; &#2437;&#2476;&#2488;&#2480; &#2477;&#2494;&#2468;&#2494; &#2474;&#2509;&#2480;&#2470;&#2494;&#2472;
+  &#2453;&#2480;&#2494;&#2404;<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="">
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 467.5pt;" valign="top" width="623">
+  <p class="MsoNormal" style="margin-bottom: 0in; line-height: normal;"><span style="font-family: &quot;Shonar Bangla&quot;,serif;">&#2453;&#2503;&#2472;&#2509;&#2470;&#2509;&#2480;&#2496;&#2527; &#2453;&#2494;&#2480;&#2509;&#2479;&#2494;&#2482;&#2527; &#2489;&#2468;&#2503; &#2468;&#2489;&#2476;&#2495;&#2482; &#2447;&#2472;&#2503; &#2476;&#2509;&#2479;&#2476;&#2489;&#2494;&#2480;
+  &#2472;&#2494; &#2453;&#2480;&#2503; &#2474;&#2497;&#2472;&#2480;&#2494;&#2527; &#2453;&#2503;&#2472;&#2509;&#2470;&#2509;&#2480;&#2496;&#2527; &#2453;&#2494;&#2480;&#2509;&#2479;&#2494;&#2482;&#2527;&#2503; &#2474;&#2509;&#2480;&#2503;&#2480;&#2467; &#2453;&#2480;&#2494;&#2480; &#2474;&#2509;&#2480;&#2503;&#2453;&#2509;&#2487;&#2495;&#2468;&#2503; &#2438;&#2470;&#2494;&#2527;&#2453;&#2499;&#2468;/&#2460;&#2480;&#2495;&#2478;&#2494;&#2472;&#2494;&#2453;&#2499;&#2468; &#2437;&#2480;&#2509;&#2469;
+  &#2488;&#2434;&#2488;&#2509;&#2469;&#2494;&#2527; &#2460;&#2478;&#2494; &#2453;&#2480;&#2503; &#2437;&#2479;&#2494;&#2458;&#2495;&#2468; &#2438;&#2527; &#2488;&#2499;&#2487;&#2509;&#2463;&#2495; &#2453;&#2480;&#2494;&#2404;<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="">
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 467.5pt;" valign="top" width="623">
+  <p class="MsoNormal" style="margin-bottom: 0in; line-height: normal;"><span style="font-family: &quot;Shonar Bangla&quot;,serif;">&#2443;&#2467;&#2503;&#2480; (&#2474;&#2494;&#2451;&#2527;&#2494;&#2480;&#2463;&#2495;&#2482;&#2494;&#2480;/&#2470;&#2497;&#2455;&#2509;&#2471;&#2476;&#2468;&#2496; &#2455;&#2494;&#2477;&#2496;&#2480; &#2454;&#2494;&#2478;&#2494;&#2480;/&#2488;&#2509;&#2479;&#2494;&#2472;&#2495;&#2463;&#2503;&#2486;&#2472;/&#2447;&#2488;&#2447;&#2478;&#2447;&#2474;&#2495;
+  &#2439;&#2468;&#2509;&#2479;&#2494;&#2470;&#2495;) &#2488;&#2494;&#2480;&#2509;&#2477;&#2495;&#2488;&#2458;&#2494;&#2480;&#2509;&#2460; &#2453;&#2478; &#2438;&#2470;&#2494;&#2527; &#2453;&#2480;&#2494;&#2404;<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="">
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 467.5pt;" valign="top" width="623">
+  <p class="MsoNormal" style="margin-bottom: 0in; line-height: normal;"><span style="font-family: &quot;Shonar Bangla&quot;,serif;">&#2453;&#2478;/&#2476;&#2503;&#2486;&#2496; &#2474;&#2509;&#2480;&#2470;&#2494;&#2453;&#2499;&#2468; &#2463;&#2494;&#2453;&#2494; &#2474;&#2503;-&#2480;&#2507;&#2482;&#2503; &#2454;&#2494;&#2468;&#2477;&#2495;&#2468;&#2509;&#2468;&#2495;&#2453;
+  &#2488;&#2478;&#2472;&#2509;&#2476;&#2527; &#2472;&#2494; &#2453;&#2480;&#2503; &#2437;&#2472;&#2509;&#2479;&#2494;&#2472;&#2509;&#2479; &#2453;&#2482;&#2494;&#2478;&#2503; &#2474;&#2509;&#2480;&#2470;&#2494;&#2472;/&#2453;&#2480;&#2509;&#2468;&#2472; &#2453;&#2480;&#2494; &#2476;&#2494; &#2447;&#2453;&#2439; &#2437;&#2480;&#2509;&#2469; &#2476;&#2459;&#2480;&#2503;&#2480; &#2478;&#2471;&#2509;&#2479;&#2503; &#2488;&#2478;&#2472;&#2509;&#2476;&#2527; &#2472;&#2494;
+  &#2453;&#2480;&#2494;&#2404;<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="">
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 467.5pt;" valign="top" width="623">
+  <p class="MsoNormal" style="margin-bottom: 0in; line-height: normal;"><span style="font-family: &quot;Shonar Bangla&quot;,serif;">&#2447;&#2480;&#2495;&#2527;&#2494;&#2480; &#2489;&#2495;&#2488;&#2494;&#2476;&#2503;/&#2476;&#2453;&#2503;&#2527;&#2494; &#2476;&#2503;&#2468;&#2472;-&#2477;&#2494;&#2468;&#2494; &#2454;&#2494;&#2468;&#2477;&#2495;&#2468;&#2509;&#2468;&#2495;&#2453;
+  &#2474;&#2509;&#2480;&#2470;&#2494;&#2472; &#2472;&#2494; &#2453;&#2480;&#2503; &#2437;&#2472;&#2509;&#2479;&#2494;&#2472;&#2509;&#2479; &#2453;&#2482;&#2494;&#2478;&#2503; &#2474;&#2509;&#2480;&#2470;&#2494;&#2472;/&#2453;&#2480;&#2509;&#2468;&#2472; &#2453;&#2480;&#2494; &#2476;&#2494; &#2447;&#2453;&#2439; &#2437;&#2480;&#2509;&#2469; &#2476;&#2459;&#2480;&#2503;&#2480; &#2478;&#2471;&#2509;&#2479;&#2503; &#2488;&#2478;&#2472;&#2509;&#2476;&#2527; &#2472;&#2494;
+  &#2453;&#2480;&#2494;&#2404;<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="">
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 467.5pt;" valign="top" width="623">
+  <p class="MsoNormal" style="margin-bottom: 0in; line-height: normal;"><span style="font-family: &quot;Shonar Bangla&quot;,serif;">&#2474;&#2503;-&#2480;&#2507;&#2482;&#2503; &#2476;&#2503;&#2486;&#2496; &#2474;&#2509;&#2480;&#2470;&#2494;&#2472;&#2453;&#2499;&#2468; &#2463;&#2494;&#2453;&#2494; &#2454;&#2494;&#2468;&#2477;&#2495;&#2468;&#2509;&#2468;&#2495;&#2453;
+  &#2488;&#2478;&#2472;&#2509;&#2476;&#2527; &#2472;&#2494; &#2453;&#2480;&#2503; &#2458;&#2495;&#2489;&#2509;&#2472;&#2495;&#2468; &#2489;&#2451;&#2527;&#2494;&#2480; &#2474;&#2480; &#2472;&#2455;&#2470;&#2503; &#2460;&#2478;&#2494; &#2453;&#2480;&#2494;&#2404;<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="">
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 467.5pt;" valign="top" width="623">
+  <p class="MsoNormal" style="margin-bottom: 0in; line-height: normal;"><span style="font-family: &quot;Shonar Bangla&quot;,serif;">&#2478;&#2494;&#2482;&#2494;&#2478;&#2494;&#2482; &#2453;&#2509;&#2480;&#2527;&#2503;&#2480; &#2453;&#2509;&#2487;&#2503;&#2468;&#2509;&#2480;&#2503; &#2476;&#2495;&#2482; &#2489;&#2468;&#2503; &#2441;&#2510;&#2488;&#2503;
+  &#2453;&#2480; &#2453;&#2480;&#2509;&#2468;&#2472; &#2453;&#2480;&#2503; &#2478;&#2498;&#2482;&#2509;&#2479; &#2474;&#2480;&#2495;&#2486;&#2507;&#2471; &#2472;&#2494; &#2453;&#2480;&#2503; &#2488;&#2434;&#2488;&#2509;&#2469;&#2494; &#2489;&#2468;&#2503; &#2463;&#2509;&#2479;&#2494;&#2453;&#2509;&#2488; &#2474;&#2480;&#2495;&#2486;&#2507;&#2471; &#2453;&#2480;&#2494;&#2480; &#2478;&#2494;&#2471;&#2509;&#2479;&#2478;&#2503; &#2488;&#2434;&#2488;&#2509;&#2469;&#2494;&#2453;&#2503;
+  &#2453;&#2509;&#2487;&#2468;&#2495;&#2455;&#2509;&#2480;&#2488;&#2509;&#2468; &#2453;&#2480;&#2494;&#2404;<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="">
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 467.5pt;" valign="top" width="623">
+  <p class="MsoNormal" style="margin-bottom: 0in; line-height: normal;"><span style="font-family: &quot;Shonar Bangla&quot;,serif;">&#2476;&#2494;&#2524;&#2495; &#2477;&#2494;&#2524;&#2494; &#2477;&#2509;&#2479;&#2494;&#2463; &#2451; &#2463;&#2509;&#2479;&#2494;&#2453;&#2509;&#2488; &#2453;&#2478;/&#2476;&#2503;&#2486;&#2496; &#2474;&#2509;&#2480;&#2470;&#2494;&#2472;
+  &#2453;&#2480;&#2494;&#2404;<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="">
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 467.5pt;" valign="top" width="623">
+  <p class="MsoNormal" style="margin-bottom: 0in; line-height: normal;"><span style="font-family: &quot;Shonar Bangla&quot;,serif;">&#2476;&#2494;&#2524;&#2495;&#2477;&#2494;&#2524;&#2494;&#2480; &#2458;&#2497;&#2453;&#2509;&#2468;&#2495;&#2474;&#2468;&#2509;&#2480;&#2503; &#2477;&#2497;&#2482;&#2503;&#2480; &#2453;&#2494;&#2480;&#2467;&#2503; &#2447;&#2476;&#2434;
+  &#2441;&#2510;&#2488;&#2503; &#2453;&#2480; &#2451; &#2477;&#2509;&#2479;&#2494;&#2463; &#2474;&#2480;&#2495;&#2486;&#2507;&#2471;&#2503;&#2480; &#2453;&#2509;&#2487;&#2503;&#2468;&#2509;&#2480;&#2503; &#2479;&#2503; &#2453;&#2507;&#2472; &#2471;&#2480;&#2467;&#2503;&#2480; &#2456;&#2494;&#2463;&#2468;&#2495;/&#2477;&#2498;&#2482;/&#2437;&#2488;&#2457;&#2509;&#2455;&#2468;&#2495; &#2447;&#2476;&#2434; &#2453;&#2478;/&#2476;&#2503;&#2486;&#2496; &#2474;&#2509;&#2480;&#2470;&#2494;&#2472;
+  &#2453;&#2480;&#2494;&#2480; &#2460;&#2472;&#2509;&#2479; &#2488;&#2434;&#2488;&#2509;&#2469;&#2494; &#2453;&#2509;&#2487;&#2468;&#2495;&#2455;&#2509;&#2480;&#2488;&#2509;&#2469; &#2489;&#2451;&#2527;&#2494;&#2404;<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="">
+  <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 467.5pt;" valign="top" width="623">
+  <p class="MsoNormal" style="margin-bottom: 0in; line-height: normal;"><span style="font-family: &quot;Shonar Bangla&quot;,serif;">&#2476;&#2494;&#2524;&#2495; &#2477;&#2494;&#2524;&#2494;&#2480; &#2458;&#2497;&#2453;&#2509;&#2468;&#2495;&#2474;&#2468;&#2509;&#2480;&#2503; &#2438;&#2527;&#2468;&#2472; &#2451; &#2458;&#2497;&#2453;&#2509;&#2468;&#2495;&#2478;&#2498;&#2482;&#2509;&#2479;
+  &#2472;&#2495;&#2480;&#2509;&#2471;&#2494;&#2480;&#2467;&#2503; &#2453;&#2509;&#2480;&#2463;&#2495; &#2469;&#2494;&#2453;&#2494;&#2527; &#2477;&#2509;&#2479;&#2494;&#2463; &#2451; &#2463;&#2509;&#2479;&#2494;&#2453;&#2509;&#2488; &#2476;&#2503;&#2486;&#2496; &#2474;&#2509;&#2480;&#2470;&#2494;&#2472; &#2453;&#2480;&#2503; &#2488;&#2434;&#2488;&#2509;&#2469;&#2494;&#2480; &#2453;&#2509;&#2487;&#2468;&#2495; &#2488;&#2494;&#2471;&#2472; &#2453;&#2480;&#2494;&#2404;
+  <o:p></o:p></span></p>
+  </td>
+ </tr>
+</tbody>
+</table>
+
+
+
+<br>
+<br>
+
+<span style="color: red;"></span><span style="font-weight: bold;">Data Model</span><br>
+<span style="color: red;">EmployeeMultiletter_Sync<span style="color: black;"></span></span><br>
+<span style="color: red;">(If there is confusion then do not share data model. Ask dev team to design table as per sync process.)</span><br>
+<br>
+<span style="font-weight: bold;">CR_1.2. Penalty Remission Multi-letter Change Request</span><br>
+<br>
+<span style="font-weight: bold;">Primary Actor</span><br>
+
+HR<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"></span><br>
+<br>
+<span style="font-weight: bold;">
+Secondary Actor</span><br>
+
+Accounts<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"></span><br>
+<br>
+<span style="font-weight: bold;">
+Pre-Condition </span><br>
+<ul>
+  <li>Pre_1.2.1. Particular active <span style="color: red;"><span style="color: rgb(0, 102, 0);"><span style="color: black;">employee account (Fine, Penalty, Extra Bill)</span> </span></span> must exist in AMMS Online.</li>
+</ul>
+
+<span style="font-weight: bold;"></span><span style="font-weight: bold;">
+Flow of Event</span><br>
+<ul>
+  <li>Step 1: Create multi letter for "Penalty Remission".<br>
+  </li>
+  <li>Step 2: Perform "Penalty Remission" transaction for that particular <span style="color: red;"><span style="color: rgb(0, 102, 0);"><span style="color: black;">employee account (Fine, Penalty, Extra Bill)</span> </span></span> after effective date of multi letter.</li>
+</ul>
+<span style="font-weight: bold;">
+Post-Condition </span><br>
+
+<ul>
+  <li>Post_<span style="color: black;">1</span>.2.1. System should deduct remission amount from that particular active <span style="color: red;"><span style="color: rgb(0, 102, 0);"><span style="color: black;">employee account (Fine, Penalty, Extra Bill)</span> </span></span> and process journal.</li>
+  <li><span style="color: black;">Post_1.2.2. </span><span style="color: rgb(0, 102, 0);"><span style="color: black;">After performing "Remission"
+transaction in AMMS Online =&gt; HRM =&gt; Employee's particular
+account by Central Accounts / HR department then a notification count
+will be shown in notification icon of that branch. After clicking on
+the noticiation icon pop up will be showing "Employee name",&nbsp; "Penalty
+name", "Remission amount" and "Remission date".</span> </span></li>
+</ul>
+<br>
+<span style="font-weight: bold;">Business Rules</span><br>
+<span style="font-weight: bold;">
+</span>
+<ul style="color: red;">
+  <li>BR_1.2.1. Journal mapping for "Penalty Remission"</li>
+</ul>
+<ul style="color: red;">
+  <ul>
+    <li>If "Fine" or "Penalty with 43%", then<br>
+    </li>
+  </ul>
+</ul><span style="color: red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Penalty from staff income
+(3050002001)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+- DR</span><br style="color: red;"><span style="color: red;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Cash&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+- CR</span><br style="color: red;">
+<br style="color: red;">
+<ul style="color: red;">
+  <ul>
+    <li>&nbsp;If "Penalty without 43%", then</li>
+  </ul>
+</ul><span style="color: red;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Particular GL Account of "Penalty
+without 43%" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - DR</span><br style="color: red;"><span style="color: red;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Cash&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+- CR</span><br>
+<span style="color: red;"></span><br>
+<span style="font-weight: bold;">UC_1.1. Process fetched multi-letter data.</span><br>
+<br>
+<span style="font-weight: bold;">Primary Actor</span><br>
+<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">System</span><br>
+<br style="font-weight: bold;">
+<span style="font-weight: bold;">
+Secondary Actor</span><br>
+<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">N/A</span><br>
+<br style="font-weight: bold;">
+<span style="font-weight: bold;">
+Pre-Condition </span><br>
+<ul style="margin: 10px 0px 0px; list-style-type: disc; color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255);">
+<li>Pre_1<span style="color: black;"></span>.1.&nbsp;System will run batch process as per defiened schedule.<br>
+</li>
+  <li>Pre_<span style="color: black;">1</span>.2. <span style="color: black;">"EmployeeMultiletter_Sync" </span>has "Is Final" of&nbsp;"Yes", "<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Is Processed" of "Yes",</span> <span style="color: black;"></span><span style="color: black; font-weight: bold;"></span><span style="color: black;">"Is Approved" of "Yes" and "Is Synced" of "No"</span>, "Effective Date" should be less than today.
+  </li>
+  
+  <li>Pre_1.3. "Multi_Letters" has "<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Status" of "Active", </span>"Is Final" of&nbsp;"Yes", "Effective Date" should be less than today.</li>
+
+</ul>
+<br style="font-weight: bold;">
+<span style="font-weight: bold;">
+Flow of Event</span><br>
+<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">System will run batch process automatically daily.<br>
+<br style="font-weight: bold;">
+</span><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">
+</span><span style="font-weight: bold;">
+Post-Condition </span><br>
+<ul style="margin: 10px 0px 0px; list-style-type: disc; color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255);">
+<li>Post_<span style="color: black;">1</span>.1. System should change
+"Is Synced" to "Yes", "Synced Date" should be recorded in <span style="color: red;">EmployeePenaltyHistory_Sync<span style="color: black;"></span></span> and create
+employee account in HRM employee current salary structure as per declared account type.&nbsp;</li>
+  <li>Post_1.2. AMMS Online HRM employee account should be created using below information. <span style="color: red;">(Add more details for mapping)</span><br style="color: rgb(51, 51, 255);">
+
+
+  </li>
+</ul>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Account
+with should be created as per "Account Type" of the synced record.<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"></span><br>
+<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; "Amount" should be mapped with </span>"<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Principal Amount" .<br>
+    </span>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; "<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Repeat in Payroll" should be "Yes".</span><br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; "Deduction Date" should be mapped with "Account Opening Date"<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; "Duration (Month)" should be mapped with "Duration". <br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; "<span style="font-size: 11px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Installment Type</span>" should be "Monthly". <br>
+
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; "Duration (Month)" should be mapped with "<span style="font-size: 11px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Total Installment</span>" and "Installment Amount" should be auto calculated as per AMMS Online rules.<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Follow puunishment rules for "<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Life Cycle", "Disburse Date".</span>
+<ul style="margin: 10px 0px 0px; list-style-type: disc; color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255);">
+<li>Post_<span style="color: black;">1</span>.3.&nbsp;Audit
+trail / change log should be maintained separately for every changes
+with execution date, executed by and other information.</li>
+</ul>
+
+<br style="font-weight: bold;">
+<span style="font-weight: bold;">
+UI</span><br>
+<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">N/A<br>
+</span><br style="font-weight: bold;">
+<span style="font-weight: bold;">
+Data Model</span><br>
+<span style="color: red; font-weight: bold;"><span style="color: black;"></span></span><span style="color: red;">EmployeePenaltyHistory_Sync<span style="color: black;"></span></span><br>
+<br>
+<span style="color: red;"></span><span style="font-weight: bold;">Business Rules </span><br>
+<ul>
+  <li>BR_1.1. Ensure that a <span style="color: red;">PenaltyHistory_Sync</span> record should be synced and processed once to avoid
+duplicate employee account creation in same salary structure.</li>
+</ul><br>
+<ul style="color: black;">
+<li style="color: rgb(51, 102, 255);">UC_2: Process Fetched Penalty
+=&gt; Process the penalty fetched table data of PMIS and create a new
+payroll deduction side head/employee acounts in
+AMMS Online (Pay Salary) for those multi-letter and manual letter of <a href="http://192.168.0.3:8090/display/PMIS/15.3.+PenaltyHistory" style="color: rgb(51, 102, 255); text-decoration: none; border-bottom-color: rgb(51, 51, 51);">PenaltyHistory</a><span style="color: rgb(51, 102, 255);"> (http://192.168.0.3:8090/display/PMIS/15.3.+PenaltyHistory)? </span><span style="color: red;"></span></li><li style="color: rgb(51, 102, 255);">Fine/Penalty Account wise AMMS Account creation (follow punishment or disbursement irregularity) mapping should be here. <br>
+  </li>
+</ul>
+<span style="color: rgb(51, 51, 255);"></span><br>
+
+<span style="font-weight: bold; color: black;"><br>
+Note:</span><br>
+<br>
+<a href="../../Collected%20Documents/Fine%20&amp;%2043%25%20Penalty%20PMIS%20&amp;%20AMMS%20Linking%20.docx">Fine &amp; 43% Penalty PMIS &amp; AMMS Linking.docx</a><br>
+<br>
+<span style="font-weight: bold; color: red;">Do not expose that PMIS requirements is written in Confluence. Otherwise there will be problem by Rfq dev.</span><br>
+<span style="font-weight: bold;"><br>
+Penalty </span><br>
+&nbsp;&nbsp;&nbsp; http://192.168.0.3:8090/display/PMIS/15.+Multi-Letters =&gt; <strong style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); font-weight: normal;">UC_15.14.1. Add / Edit Penalty using Manual Letter<br>
+</strong>&nbsp;&nbsp;&nbsp; http://192.168.0.3:8090/display/PMIS/15.+Multi-Letters =&gt;&nbsp; <strong style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); font-weight: normal;"></strong><strong style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); font-weight: normal;">UC_15.14.2. Add / Edit Penalty using Multi-Letters</strong><br>
+<br>
+<span style="font-weight: bold;">Penalty Remission</span><br>
+&nbsp;&nbsp;&nbsp; http://192.168.0.3:8090/display/PMIS/15.+Multi-Letters =&gt; <strong style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); font-weight: normal;">UC_15.24.1. Add / Edit Penalty Remission using Manual Letter<br>
+</strong>&nbsp;&nbsp;&nbsp; http://192.168.0.3:8090/display/PMIS/15.+Multi-Letters =&gt; <strong style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); font-weight: normal;">UC_15.24.2. Add / Edit Penalty Remission using Multi-Letters</strong><br>
+<strong style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255);"><br>
+</strong><span style="font-weight: bold;">Penalty Data Model</span><br>
+<strong style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); font-weight: normal;">&nbsp;&nbsp;&nbsp; http://192.168.0.3:8090/display/PMIS/15.3.+PenaltyHistory </strong>=&gt; <span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Fine Type. e.g. Fine / Penalty / Fine &amp; Penalty.</span> <br>
+<br>
+<strong style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); font-weight: bold;">Welfare Fund Assistance using&nbsp;<strong>Multi-Letters</strong></strong><br>
+<strong style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); font-weight: normal;">http://192.168.0.3:8090/display/PMIS/15.+Multi-Letters =&gt; UC_15.34.2. Add / Edit&nbsp;Welfare Fund Assistance using&nbsp;<strong style="font-weight: normal;">Multi-Letters</strong></strong><br>
+<br>
+<span style="font-weight: bold;"></span> 
+<ul>
+  <li><img style="width: 50%; height: 50%;" alt="" src="Penalty%20Manual.png"><br>
+  </li>
+</ul>
+<img style="width: 50%; height: 50%;" alt="" src="Penalty%20Multi-letter.png"><br>
+<span style="font-weight: bold; color: red;"></span><br>
+select * from H_EmployeeMultiLetter where LetterNo = 'NP/SA-0886(1-3)/24'<br>
+<br>
+select * from H_EmployeePenalty where LetterNo = 'NP/SA-0886(1-3)/24'<br>
+order by Id desc<br>
+<br>
+select * from H_EmployeePenaltyHistory where LetterNo = 'NP/SA-0886(1-3)/24'<br>
+<br>
+select top 1 * from H_EmployeePenaltyRemissionHistory order by Id desc<br>
+<br>
+
+<div style="text-align: center;">
+<div style="text-align: center;"><span style="color: black; font-weight: bold;"><span style="color: rgb(0, 153, 0);"></span></span><span style="color: black; font-weight: bold;"><span style="color: rgb(0, 153, 0);">(Completed)</span></span><span style="font-weight: bold;"></span>
+</div>
+<h1 id="summary-val" style="margin: 0px 0px 0px -5px; padding: 2px 30px 2px 5px; color: rgb(41, 41, 41); font-size: 24px; font-weight: bold; line-height: 1.25; text-transform: none; z-index: 1; font-style: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-align: center;">Savings Lapse new policy</h1>
+
+
+</div>
+<span style="font-weight: bold; color: black;">Jira:</span><br>
+http://192.168.0.3:8080/browse/AMMSW-6381<br>
+<br>
+<span style="font-weight: bold; color: black;">
+Confluence: </span><span style="color: black;">http://192.168.0.3:8090/display/AM/3.2.3.+Member+Savings+Lapsed</span><span style="font-weight: bold; color: black;"><br>
+<br>Note:<br>
+</span><br>
+<span style="color: red;"></span>http://192.168.0.3:8090/display/AM/6.+Bad+Debt+Management<br>
+ Late Fee logic<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+http://192.168.0.3:8090/display/AM/3.2.2.2+LTS+%28Recurring+Savings%29+Account+Management
+=&gt; Search "<span style="color: rgb(51, 51, 51); font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">'Late Fee" or </span><span style="color: rgb(51, 51, 51); font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">3a5.1, </span><span style="color: rgb(51, 51, 51); font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">3a5.2, </span><span style="color: rgb(51, 51, 51); font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">3a6.</span><span style="color: rgb(51, 51, 51); font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"> </span><br>
+<br>
+Change 1: When a savings account is lapsed then record will be inserted
+into "LapsedAccount" table. LapsedAccount table =&gt; Id, AccountId
+(Savings Account Id), Amount (Lapsed Amount), Other columns as per bad
+debt accounts) and Lapsed transaction (as per bad debt transaction)<br>
+<br><span style="color: black;">Change 2: While doing transaction from
+UI for "Lapsed Return", "Undo Lapsed Return", "Lapsed to Income"
+transaction then it will insert record in Lapsed transaction (as per
+bad debt transaction).</span><br>
+<br>
+<span style="color: black; font-weight: bold;">Lapsed Return Voucher<br>
+</span>2124: Savings outstanding to dormant (Liabilities)&nbsp; DR<br>Cash
+in Hand (at Branch
+Office)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+CR<br>
+<br>
+2124: Savings outstanding to dormant (Liabilities)&nbsp; DR<br>
+Bank&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CR<br>
+<br>
+<br>
+<strong style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255);"><span style="color: black;">Lapsed To Income</span></strong><br>
+2124: Savings outstanding to dormant (Liabilities)&nbsp; DR<br>
+3050399003 - Income from Lapsed Savings&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CR<br>
+<br style="font-weight: bold;">
+<span style="color: black; font-weight: bold;">UC_1.1. Lapsed Return</span><br style="color: black;">
+<br style="font-weight: bold; color: black;">
+<span style="font-weight: bold; color: black;">Primary Actor</span><br style="font-weight: bold; color: black;">
+<span style="color: black;">Branch Manager(BM)</span><br style="color: black;">
+<br style="font-weight: bold; color: black;">
+<span style="font-weight: bold; color: black;">Secondary Actor</span><br style="color: black;">
+<span style="color: black;">RM/DM/Admin</span><br style="color: black;">
+<br style="font-weight: bold; color: black;">
+<span style="font-weight: bold; color: black;">Pre-Condition </span><br style="color: black;">
+<ul style="margin: 10px 0px 0px; list-style-type: disc; color: black; font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255);">
+<li>Pre_1.1.1. User must login into the system.</li><li>Pre_1.1.2. User must have proper privilege to access.</li><li>Pre_1.1.3. LAN and internet connectivity must be up.</li><li>Pre_1.1.4. Master data related to store information must exist in the database.</li><li>Pre_1.1.5. Savings Account e.g. General savings, CBS, LTS must be lapsed.</li>
+</ul>
+<br style="font-weight: bold; color: black;">
+<span style="font-weight: bold; color: black;">Flow of Event</span><br style="color: black;">
+<ul>
+<li style="color: black;">User: Go to AMMS Online =&gt; Programs =&gt; =&gt; click on "Lapsed Member List".
+  </li><li style="color: black;">System: Shows the "Lapsed Member List" UI.<span style="font-weight: bold;"><br>
+    </span></li><li style="color: black;">User: Choose record from list and press "Lapsed Return" button.</li><li>System: Shows the confirmation message.</li><li>User: Click on &#8220;Confirm&#8221; button.</li><li>System: Shows appropriate message.</li>
+</ul>
+<span style="font-weight: bold;">Post-Condition </span><br>
+<ul style="margin: 10px 0px 0px; list-style-type: disc; color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255);">
+  <li>Post_8.1.1. System should create lapsed transaction. <br>
+  </li>
+  <li>Post_8.1.2. "Undo Lapsed" button will be shown and "Lapsed Return" button will be hidden for that transaction.<br>
+  </li>
+  <li>Post_8.1.3. System show proper message.</li>
+  <li>Post_8.1.4. Audit
+trail / change log should be maintained separately for every changes
+with execution date, executed by and other information.</li>
+  <li style="color: black;">Post_8.1.6. System should undo the changes performed by"Lapsed Return" transaction.<span style="color: black; font-weight: bold;"></span></li>
+</ul>
+<br style="font-weight: bold;">
+<span style="font-weight: bold;">UI</span><br style="font-weight: bold;">
+<span style="font-weight: bold;"></span><img style="width: 100%; height: 100%;" alt="" src="1.2.%20Lapsed%20Member%20List.png"><br style="font-weight: bold;">
+<span style="font-weight: bold;"><br>
+UI Validations<br>
+</span>
+<ul>
+  <li>"Lapsed Return" or "Undo Lapsed Return" only one button will be visible at a time.<span style="font-weight: bold;"> <br>
+    </span></li>
+</ul>
+
+<span style="font-weight: bold;">Data Model</span><br>
+<br>
+<span style="font-weight: bold;">Member_Savings_Lapsed_Account</span><br>
+
+<br>
+
+
+<table class="confluenceTable" style="border-collapse: collapse; margin-top: 0px; margin-bottom: 0px; overflow-x: auto; color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); width: 1579px; height: 562px;">
+
+<tbody><tr>
+      <td style="vertical-align: top; font-weight: bold; text-align: center;">Attribute Name</td>
+      <td style="vertical-align: top; font-weight: bold; text-align: center;">Data Type</td><td style="vertical-align: top; font-weight: bold; text-align: center;">Data Capture Method<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"><span style="font-weight: bold;"></span><br>
+      </span></td>
+      <td style="vertical-align: top; font-weight: bold; text-align: center;"><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"><span style="font-weight: bold;">Description</span><br>
+      </span></td>
+
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Id<br>
+</td>
+      <td style="vertical-align: top;"><br>
+</td>
+      <td style="vertical-align: top;"><br>
+</td>
+      <td style="vertical-align: top;"><br>
+</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Lapsed Account Id<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Lapsed Amount</td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Lapsed Date</td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+<tr>
+      <td style="vertical-align: top;">Reference Program Id</td>
+      <td style="vertical-align: top;"><br>
+</td>
+      <td style="vertical-align: top;"><br>
+</td>
+      <td style="vertical-align: top;"><br>
+</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Reference Account Id</td>
+      <td style="vertical-align: top;"><br>
+</td>
+      <td style="vertical-align: top;"><br>
+</td>
+      <td style="vertical-align: top;"><br>
+</td>
+    </tr>
+<tr>
+      <td style="vertical-align: top;">Member</td>
+      <td style="vertical-align: top;">Member</td><td style="vertical-align: top;">User</td>
+      <td style="vertical-align: top;">ASA member.</td>
+
+    </tr>
+    
+    
+<tr>
+      <td style="vertical-align: top;">Group</td>
+      <td style="vertical-align: top;">Group</td><td style="vertical-align: top;">System</td>
+      <td style="vertical-align: top;">Occuring group. <span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Current group of the member</span><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"></span></td>
+
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Loan Officer</td>
+      <td style="vertical-align: top;">Employee</td><td style="vertical-align: top;">System</td>
+      <td style="vertical-align: top;">Occuring loan officer. <span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Current LO of the member.</span></td>
+
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Branch</td>
+      <td style="vertical-align: top;">ASA Branch</td>
+      <td style="vertical-align: top;">System</td>
+      <td style="vertical-align: top;"><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"></span>Occuring branch of transaction. <span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Current branch of the member.</span></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Status</td>
+      <td style="vertical-align: top;"><br>
+</td>
+      <td style="vertical-align: top;"><br>
+</td>
+      <td style="vertical-align: top;"><br>
+</td>
+    </tr>
+    
+    
+    
+
+    
+    
+    <tr>
+      <td style="vertical-align: top;">Created By</td>
+      <td style="vertical-align: top;">User</td><td style="vertical-align: top;">System<br>
+      </td>
+      <td style="vertical-align: top;">Record created by whom.<br>
+      </td>
+
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Creation Branch Working Date<br>
+</td>
+      <td style="vertical-align: top;"> Datetime<br>
+</td><td style="vertical-align: top;">System<br>
+      </td>
+      <td style="vertical-align: top;">Record creation branch working date.<br>
+      </td>
+
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Creation System Date</td>
+      <td style="vertical-align: top;">Datetime</td>
+      <td style="vertical-align: top;">System<br>
+      </td>
+      <td style="vertical-align: top;">Record creation system working date.<br>
+      </td>
+    </tr>
+<tr>
+      <td style="vertical-align: top;">Modified By</td>
+      <td style="vertical-align: top;">User</td><td style="vertical-align: top;">System<br>
+      </td>
+      <td style="vertical-align: top;">Record modified by whom.<br>
+      </td>
+
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Modification Branch Working Date</td>
+      <td style="vertical-align: top;">Datetime </td><td style="vertical-align: top;">System<br>
+      </td>
+      <td style="vertical-align: top;">Record modification branch working date.<br>
+      </td>
+
+    </tr><tr>
+      <td style="vertical-align: top;">Modification System Date</td>
+      <td style="vertical-align: top;">Datetime</td>
+      <td style="vertical-align: top;">System<br>
+      </td>
+      <td style="vertical-align: top;">Record modification system working date.<br>
+      </td>
+    </tr><tr>
+      <td style="vertical-align: top;">Status Changed By<br>
+      </td>
+      <td style="vertical-align: top;">User</td>
+      <td style="vertical-align: top;">System</td>
+      <td style="vertical-align: top;">Record status changed by whom.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Status Changed System Date<br>
+      </td>
+      <td style="vertical-align: top;">Datetime</td>
+      <td style="vertical-align: top;">System</td>
+      <td style="vertical-align: top;">Record status change system date.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Status Changed Branch Working Date<br>
+      </td>
+      <td style="vertical-align: top;">Datetime</td>
+      <td style="vertical-align: top;">System</td>
+      <td style="vertical-align: top;">Record status change branch working date.<br>
+      </td>
+    </tr>
+
+
+</tbody>
+</table>
+
+<span style="font-weight: bold; color: red;"></span><strong style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255);"></strong><br style="font-weight: bold;">
+<span style="font-weight: bold;">Business Rules </span><br>
+<ul>
+  <li>BR_1.1.1. If user undo savings lapsed then all the changes
+made in "Member_Savings_Lapsed_Account" and
+"Member_Savings_Lapsed_Transaction" shall also be undone</li>
+</ul>
+
+
+<ul>
+
+  <li><span style="color: red;"><span style="color: black;">select top 25 * from program.SavingsTransaction where TransactionTypeId in (17,24,46) and AccountId = 29849</span><br style="color: black;">
+    <br style="color: black;"><span style="color: black;">
+select top 25 * from program.SavingsAccount where Id = 29849</span><br style="color: black;">
+    <br style="color: black;"><span style="color: black;">
+select * from program.Member where Id = 9580</span><br style="color: black;">
+    <br style="color: black;"><span style="color: black;">
+select * from OrganizationalConfig where Type in ('AccountType', 'SavingsAccountFlag', 'SavingsAccountFlag') order by Type asc</span><br>
+</span></li>
+
+</ul>
+
+<div style="text-align: center;"><img style="width: 50%; height: 50%;" alt="" src="moz-screenshot.jpg"><br>
+</div>
+<span style="font-weight: bold; color: black;"><br>
+Note:<br>
+</span><span style="color: black;">11.5 Savings members who are eligible to be lapsed<br>
+http://192.168.0.3:8090/display/AM/11.5+Savings+members+who+are+eligible+to+be+lapsed</span><span style="font-weight: bold; color: black;"><br>
+</span><br>
+<h1 id="summary-val" style="margin: 0px 0px 0px -5px; padding: 2px 30px 2px 5px; color: rgb(41, 41, 41); font-size: 24px; font-weight: normal; line-height: 1.25; text-transform: none; z-index: 1; font-style: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255);"><br>
+</h1>
+<span style="font-weight: bold; color: black;"></span><span style="font-weight: bold;"></span>
+<div style="text-align: center;"><span style="color: black; font-weight: bold;"><span style="color: rgb(0, 153, 0);">(Completed)</span></span><span style="font-weight: bold;"></span><br>
+<span style="font-weight: bold;">Memberwise Medical Help Entry process</span><br>
+</div>
+<span style="font-weight: bold; color: black;">Jira:<br>
+</span><span style="color: black;">http://192.168.0.3:8080/browse/AMMSW-6382</span><span style="font-weight: bold; color: black;"><br>
+<br>
+Confluence:<br>
+</span><span style="color: black;">http://192.168.0.3:8090/display/AM/8.+Memberwise+Medical+Help+Entry<br>
+http://192.168.0.3:8090/display/AM/3.3.1+Program+Journal+Mapping =&gt; </span><a href="http://192.168.0.3:8090/download/attachments/13960956/Program_Journal_Mapper_Final%2015.09.2024.xlsx?version=1&amp;modificationDate=1726375781522&amp;api=v2" data-linked-resource-id="106791498" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Program_Journal_Mapper_Final 15.09.2024.xlsx" data-nice-type="Excel Spreadsheet" data-linked-resource-content-type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" data-linked-resource-container-id="13960956" data-linked-resource-container-version="19" style="color: black; text-decoration: none; font-size: 14px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255);">Program_Journal_Mapper_Final 15.09.2024.xlsx</a><br>
+<br>
+<span style="font-weight: bold;">Stakeholders:</span><br>
+Hemayet (JDD), Accounts PABX 245<br style="color: black;">
+<span style="font-weight: bold; color: black;"><br>
+ASA Manual link: </span><br style="color: black;">
+
+
+<span style="color: black;">file:///F:/Other/A/AS_Project_2/PROJECT/ASA%20Manual/2023/Operation/Chapter_9-Transaction.pdf =&gt; Page 90</span><br>
+<br>
+<span style="color: black; font-weight: bold;"><span style="color: rgb(0, 153, 0);">(Completed)</span></span><br>
+<strong><span style="color: black; font-weight: bold;">UC_8.1. Add/Edit </span></strong><span style="color: black; font-weight: bold;">Memberwise Medical Help <span style="color: rgb(51, 51, 255);"></span></span><br>
+<br>
+<strong>Primary Actor</strong><br><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Branch Manager (BM) or<span>&nbsp;</span></span><span class="inline-comment-marker valid" data-ref="3ed98d78-4c95-402c-b765-a4289cb12741" style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal;">any other user in other office</span><br>
+<span class="inline-comment-marker valid" data-ref="3ed98d78-4c95-402c-b765-a4289cb12741" style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal;"></span><br>
+<span class="inline-comment-marker valid" data-ref="3ed98d78-4c95-402c-b765-a4289cb12741" style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal;"></span>
+<strong>Secondary Actor</strong><br><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"><span></span>Regional Manager (RM), District Manager (DM) and Admin</span><br>
+<br>
+<strong>Pre-Condition</strong>
+<ul style="margin: 10px 0px 0px; list-style-type: disc; color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255);">
+<li>Pre_8.1.1. User must login into the system.</li><li>Pre_8.1.2. User must have proper privilege to access.</li><li>Pre_8.1.3. LAN and internet connectivity must be up.</li><li>Pre_8.1.4. Master data related to store information must exist in the database.</li>
+  <li>Pre_8.1.5. Member must be active.</li>
+
+</ul>
+<br>
+<strong>Data Model</strong><br>
+<br>
+<span style="font-weight: bold;">Memberwise_Medical_Help</span><br>
+<br>
+<a href="http://192.168.0.3:8090/display/LC/Master+data+with+sample+data" style="color: rgb(53, 114, 176); text-decoration: none;"></a>
+<table class="confluenceTable" style="border-collapse: collapse; margin-top: 0px; margin-bottom: 0px; overflow-x: auto; color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); width: 1579px; height: 562px;">
+<tbody><tr>
+      <td style="vertical-align: top; font-weight: bold; text-align: center;">Attribute Name</td>
+      <td style="vertical-align: top; font-weight: bold; text-align: center;">Data Type</td><td style="vertical-align: top; font-weight: bold; text-align: center;">Data Capture Method<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"><span style="font-weight: bold;"></span><br>
+      </span></td>
+      <td style="vertical-align: top; font-weight: bold; text-align: center;"><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"><span style="font-weight: bold;">Description</span><br>
+      </span></td>
+
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Occuring Branch<br>
+      </td>
+      <td style="vertical-align: top;">ASA Branch<br>
+      </td>
+      <td style="vertical-align: top;">System<br>
+      </td>
+      <td style="vertical-align: top;">Occuring branch of transaction. <span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Current branch of the member.</span>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Occuring Loan Officer <br>
+      </td>
+      <td style="vertical-align: top;">Employee<br>
+      </td>
+      <td style="vertical-align: top;">System<br>
+      </td>
+      <td style="vertical-align: top;">Occuring loan officer. <span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Current LO of the member.</span>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Occuring Group<br>
+      </td>
+      <td style="vertical-align: top;">Group<br>
+      </td>
+      <td style="vertical-align: top;">System<br>
+      </td>
+      <td style="vertical-align: top;">Occuring group. <span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Current group of the member</span>
+      </td>
+    </tr>
+<tr>
+      <td style="vertical-align: top;">Member </td>
+      <td style="vertical-align: top;">Member</td><td style="vertical-align: top;">User<br>
+      </td>
+      <td style="vertical-align: top;">ASA member who is getting medical help.<br>
+      </td>
+
+    </tr>
+    
+    
+<tr>
+      <td style="vertical-align: top;">Disease </td>
+      <td style="vertical-align: top;">Disease</td><td style="vertical-align: top;">User<br>
+      </td>
+      <td style="vertical-align: top;">Medical help for a disease of a member. Disease list is given below:<br>
+      <ul>
+        <li>Cancer (Blood, Lungs, Bone, Stomach, Throat): &#2453;&#2509;&#2479;&#2494;&#2472;&#2509;&#2488;&#2494;&#2480; (&#2476;&#2509;&#2482;&#2494;&#2465;, &#2475;&#2497;&#2488;&#2475;&#2497;&#2488;, &#2489;&#2494;&#2524;, &#2474;&#2494;&#2453;&#2488;&#2509;&#2469;&#2482;&#2496;, &#2455;&#2482;&#2494;)</li>
+        <li>Acid assistance: &#2447;&#2488;&#2495;&#2465; &#2488;&#2489;&#2494;&#2527;&#2468;&#2494; </li>
+        <li>Other Cancer: &#2437;&#2472;&#2509;&#2479;&#2494;&#2472;&#2509;&#2479; &#2453;&#2509;&#2479;&#2494;&#2472;&#2509;&#2488;&#2494;&#2480;</li>
+        <li>Brain Tumor / Bleeding: &#2476;&#2509;&#2480;&#2503;&#2472; &#2463;&#2495;&#2441;&#2478;&#2494;&#2480; / &#2480;&#2453;&#2509;&#2468;&#2453;&#2509;&#2487;&#2480;&#2467;</li>
+        <li>Stone removal: &#2488;&#2509;&#2463;&#2507;&#2472; &#2437;&#2474;&#2488;&#2494;&#2480;&#2467; </li>
+        <li>Kidney damage/transplant: &#2453;&#2495;&#2465;&#2472;&#2495; &#2465;&#2509;&#2479;&#2494;&#2478;&#2503;&#2460; / &#2463;&#2509;&#2480;&#2494;&#2472;&#2509;&#2488;&#2474;&#2509;&#2482;&#2509;&#2479;&#2494;&#2472;&#2509;&#2463;&nbsp; </li>
+        <li>Heart surgery (Valve replacement): &#2489;&#2494;&#2480;&#2509;&#2463; &#2437;&#2474;&#2494;&#2480;&#2503;&#2486;&#2472; (&#2477;&#2494;&#2482;&#2509;&#2476; &#2474;&#2480;&#2495;&#2476;&#2480;&#2509;&#2468;&#2472;)</li>
+        <li>Heart Operation (Repair): &#2489;&#2494;&#2480;&#2509;&#2463; &#2437;&#2474;&#2494;&#2480;&#2503;&#2486;&#2472; (&#2480;&#2495;&#2474;&#2503;&#2527;&#2494;&#2480;)</li>
+        <li>Heart Operation (Bypass): &#2489;&#2494;&#2480;&#2509;&#2463; &#2437;&#2474;&#2494;&#2480;&#2503;&#2486;&#2472; (&#2476;&#2494;&#2439;&#2474;&#2494;&#2488;)</li>
+        <li>Spinal surgery: &#2478;&#2503;&#2480;&#2497;&#2470;&#2472;&#2509;&#2465; &#2437;&#2474;&#2494;&#2480;&#2503;&#2486;&#2472;</li>
+        <li>Orthopedic treatment including patella replacement and
+other operations: &#2437;&#2480;&#2509;&#2469;&#2507;&#2474;&#2503;&#2465;&#2495;&#2453; &#2458;&#2495;&#2453;&#2495;&#2510;&#2488;&#2494;&#2480; &#2453;&#2509;&#2487;&#2503;&#2468;&#2509;&#2480;&#2503; &#2489;&#2494;&#2433;&#2463;&#2497;&#2480; &#2474;&#2509;&#2479;&#2494;&#2465;&#2503;&#2482;&#2494;
+&#2474;&#2480;&#2495;&#2476;&#2480;&#2509;&#2468;&#2472;&#2488;&#2489; &#2437;&#2472;&#2509;&#2479;&#2494;&#2472;&#2509;&#2479; &#2437;&#2474;&#2494;&#2480;&#2503;&#2486;&#2472;</li>
+      </ul>
+Note: "Disease" data model should have columns e.g. English Title, Bangla Title, Effective From Date, Effective To Date.<br>
+
+
+      </td>
+
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Help Amount</td>
+      <td style="vertical-align: top;">Numeric<br>
+      </td><td style="vertical-align: top;">User<br>
+      </td>
+      <td style="vertical-align: top;">Medical help amount for a disease.<br>
+      </td>
+
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Payment Date <br>
+</td>
+      <td style="vertical-align: top;">Date</td>
+      <td style="vertical-align: top;">User</td>
+      <td style="vertical-align: top;">Date of medical help payment.</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Payment Method</td>
+      <td style="vertical-align: top;">Cash / Cheque</td>
+      <td style="vertical-align: top;">User</td>
+      <td style="vertical-align: top;">Payment Method of medical help. Payment method is given below:<br>
+      <ul>
+        <li>Cash</li>
+        <li>Cheque</li>
+      </ul>
+</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="color: rgb(51, 51, 51); font-size: 11px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Bank Account</span></td>
+      <td style="vertical-align: top;">Bank Account<br>
+      </td>
+      <td style="vertical-align: top;">User</td>
+      <td style="vertical-align: top;">Bank account of a branch.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="color: rgb(51, 51, 51); font-size: 11px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Cheque No</span></td>
+      <td style="vertical-align: top;">Text<br>
+      </td>
+      <td style="vertical-align: top;">User</td>
+      <td style="vertical-align: top;">Cheque no.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="color: rgb(51, 51, 51); font-size: 11px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">A/C payable Cheque</span></td>
+      <td style="vertical-align: top;">Yes / No<br>
+      </td>
+      <td style="vertical-align: top;">User</td>
+      <td style="vertical-align: top;">Is cheque A/C payable or not.<br>
+      </td>
+    </tr>
+<tr>
+      <td style="vertical-align: top;">Description</td>
+      <td style="vertical-align: top;">Text<br>
+      </td><td style="vertical-align: top;">User<br>
+      </td>
+      <td style="vertical-align: top;">Disease description.<br>
+      </td>
+
+    </tr>
+    
+    <tr>
+      <td style="vertical-align: top;">Remarks</td>
+      <td style="vertical-align: top;">Text<br>
+      </td><td style="vertical-align: top;">User<br>
+      </td>
+      <td style="vertical-align: top;">Remarks.<br>
+      </td>
+
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Created By</td>
+      <td style="vertical-align: top;">User</td><td style="vertical-align: top;">System<br>
+      </td>
+      <td style="vertical-align: top;">Record created by whom.<br>
+      </td>
+
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Creation Branch Working Date<br>
+</td>
+      <td style="vertical-align: top;"> Datetime<br>
+</td><td style="vertical-align: top;">System<br>
+      </td>
+      <td style="vertical-align: top;">Record creation branch working date.<br>
+      </td>
+
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Creation System Date</td>
+      <td style="vertical-align: top;">Datetime</td>
+      <td style="vertical-align: top;">System<br>
+      </td>
+      <td style="vertical-align: top;">Record creation system working date.<br>
+      </td>
+    </tr>
+<tr>
+      <td style="vertical-align: top;">Modified By</td>
+      <td style="vertical-align: top;">User</td><td style="vertical-align: top;">System<br>
+      </td>
+      <td style="vertical-align: top;">Record modified by whom.<br>
+      </td>
+
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Modification Branch Working Date</td>
+      <td style="vertical-align: top;">Datetime </td><td style="vertical-align: top;">System<br>
+      </td>
+      <td style="vertical-align: top;">Record modification branch working date.<br>
+      </td>
+
+    </tr><tr>
+      <td style="vertical-align: top;">Modification System Date</td>
+      <td style="vertical-align: top;">Datetime</td>
+      <td style="vertical-align: top;">System<br>
+      </td>
+      <td style="vertical-align: top;">Record modification system working date.<br>
+      </td>
+    </tr>
+
+</tbody>
+</table>
+<span style="font-weight: bold; color: red;"></span><strong style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255);"></strong><br>
+<strong style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255);">
+UI</strong><br>
+<div style="text-align: center;"><span style="color: red;"></span><img src="1.1.%20Memberwise%20Medical%20Help%20Entry.png" alt="" style="width: 100%; height: 100%;"><br>
+</div>
+
+<br>
+<span style="font-weight: bold;">UI Description</span><br>
+<br>
+<span style="font-weight: bold;">Member wise medical help UI</span><br>
+<br>
+<table class="wrapped confluenceTable" style="margin: 0px; border-collapse: collapse; overflow-x: auto; color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); width: 1588px; height: 710px;">
+<tbody><tr><td class="confluenceTd" style="border: 1px solid rgb(221, 221, 221); padding: 7px 10px; vertical-align: top; text-align: left; min-width: 8px;"><strong>Field Title</strong></td><td class="confluenceTd" style="border: 1px solid rgb(221, 221, 221); padding: 7px 10px; vertical-align: top; text-align: left; min-width: 8px;"><strong>Field Type</strong></td><td style="vertical-align: top;"><span style="font-weight: bold;">Mandatory</span><br>
+      </td>
+<td class="confluenceTd" style="border: 1px solid rgb(221, 221, 221); padding: 7px 10px; vertical-align: top; text-align: left; min-width: 8px;"><strong>Description</strong></td></tr><tr>
+      <td style="vertical-align: top;">Branch <br>
+      </td>
+      <td style="vertical-align: top;">Label<br>
+      </td>
+      <td style="vertical-align: top;">No<br>
+      </td>
+      <td style="vertical-align: top;">Branch along with branch code e.g. B.Baria Sadar-1 (1768). <span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Capture current branch of the member for medical help</span>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Loan Officer <br>
+      </td>
+      <td style="vertical-align: top;">Label<br>
+      </td>
+      <td style="vertical-align: top;">No<br>
+      </td>
+      <td style="vertical-align: top;">Loan officer along with employee code e.g. Abul Kashem (23025). <span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Capture current LO of the member for medical help</span>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Group<br>
+      </td>
+      <td style="vertical-align: top;">Label<br>
+      </td>
+      <td style="vertical-align: top;">No<br>
+      </td>
+      <td style="vertical-align: top;">Group of a member. <span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Capture current Group of the member for medical help</span>
+      </td>
+    </tr>
+<tr>
+      <td style="vertical-align: top;"><span class="">Member Name<br>
+      </span></td>
+      <td style="vertical-align: top;"><span class="">Label<br>
+</span></td>
+      <td style="vertical-align: top;">No<br>
+      </td>
+<td style="vertical-align: top;"><span class="">Name of member. </span><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">The member who gets the medical help</span></td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span class="">Member Id<br>
+      </span></td>
+      <td style="vertical-align: top;">Label<br>
+      </td>
+      <td style="vertical-align: top;">No</td>
+      <td style="vertical-align: top;"><span class="">AMMS Id of member.<br>
+      </span></td>
+    </tr>
+<tr>
+      <td style="vertical-align: top;"><span class="">Member NID</span></td>
+      <td style="vertical-align: top;"><span class="">Label</span></td>
+      <td style="vertical-align: top;">No<br>
+      </td>
+<td style="vertical-align: top;"><span class="">NID of member.</span></td>
+    </tr>
+    
+    <tr>
+      <td style="vertical-align: top;">Disease</td>
+      <td style="vertical-align: top;">Single selection box</td>
+      <td style="vertical-align: top;">Yes</td>
+      <td style="vertical-align: top;">Disease of a member.</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Help Amount</td>
+      <td style="vertical-align: top;">Text box (Numeric)</td>
+      <td style="vertical-align: top;">Yes</td>
+      <td style="vertical-align: top;">Amount of medical help.</td>
+    </tr>
+<tr>
+      <td style="vertical-align: top;">Payment Date
+      </td>
+      <td style="vertical-align: top;">Date picker<br>
+      </td>
+      <td style="vertical-align: top;">Yes<br>
+      </td>
+<td style="vertical-align: top;">Medical help payment date.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Payment Method</td>
+      <td style="vertical-align: top;">Single selection box<br>
+      </td>
+      <td style="vertical-align: top;">Yes
+      </td>
+      <td style="vertical-align: top;">
+      <span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Payment method of medical help.</span><ul>
+        
+      </ul>
+      </td>
+    </tr>
+<tr>
+      <td style="vertical-align: top;"><span style="color: rgb(51, 51, 51); font-size: 11px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Bank Account</span>
+      </td>
+      <td style="vertical-align: top;">Single selection box<br>
+      </td>
+      <td style="vertical-align: top;">Yes / No<br>
+      </td>
+<td style="vertical-align: top;">If "<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Payment method' = "</span><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Cheque" then mandatory, otherwise optional.</span>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="color: rgb(51, 51, 51); font-size: 11px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Cheque No</span></td>
+      <td style="vertical-align: top;">Text box<br>
+</td>
+      <td style="vertical-align: top;">Yes / No<br>
+      </td>
+<td style="vertical-align: top;">If "<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Payment method' = "</span><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Cheque" then mandatory, otherwise optional.</span>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="color: rgb(51, 51, 51); font-size: 11px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">A/C payable Cheque</span></td>
+      <td style="vertical-align: top;">Check boxs<br>
+      </td>
+      <td style="vertical-align: top;">Yes / No<br>
+      </td>
+      <td style="vertical-align: top;">If "<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Payment method' = "</span><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Cheque" then mandatory, otherwise optional.</span></td>
+    </tr>
+<tr>
+      <td style="vertical-align: top;">Description<br>
+      </td>
+      <td style="vertical-align: top;">Text box (Multiline)<br>
+      </td>
+      <td style="vertical-align: top;">No<br>
+      </td>
+<td style="vertical-align: top;">Description of disease.<br>
+      </td>
+    </tr>
+    
+    <tr>
+      <td style="vertical-align: top;">Remarks<br>
+      </td>
+      <td style="vertical-align: top;">Text box (Multiline)<br>
+      </td>
+      <td style="vertical-align: top;">No<br>
+      </td>
+<td style="vertical-align: top;">Remarks (If any)<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Save<br>
+      </td>
+      <td style="vertical-align: top;">Button<br>
+      </td>
+      <td style="vertical-align: top;">Yes<br>
+      </td>
+<td style="vertical-align: top;">Saves member wise medical help information.<br>
+      </td>
+    </tr>
+    
+    
+    
+</tbody>
+</table>
+<br>
+<strong style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255);">UI Validation Rules</strong><br>
+<ul>
+  <li>
+UIV_8.1.1.  System should shows validation message when a member having same <span class="">"</span><span class="">Member NID" / "</span>Member Id" is trying to get medical help more than once.</li>
+  
+  <li>UIV_8.1.2. "Branch", "Loan Officer", "Group", "Member Name", "Member Id", "Member NID" should be auto populated by the system.</li>
+  <li>UIV_8.1.3. <span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">System will show the </span>"Payment Method"<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"> as "Cash" by default. </span><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">If user select the </span>"Payment Method<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">" as "Cash" then no bank account list or cheque number field will be displayed and vice versa.&nbsp;</span><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"></span><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"> <span></span></span></li>
+  <li><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">UIV_8.1.4. </span><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">In case of </span>"Payment Method" is "<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Cheque" then user needs to click on the </span>"Payment Method"<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"></span><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">
+drop down list and select "Cheque". Then system will populate the
+active bank account list as well as a cheque number field in the
+UI. </span><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">User will select bank account from the drop down list and will input the cheque number to create transaction.</span></li>
+  <li><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"></span><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">UIV_8.1.5. </span><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"></span><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">If </span>"Payment Method"<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"> is "Cash" then all corresponding transaction will hit
+as "Cash" and </span><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">similarly if the </span>"Payment Method"<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"> is </span>"<span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Cheque"</span><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"> then all the corresponding transaction will will hit as "Cheque"<span> </span></span><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">when user click on "Save" button. </span><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"><span></span></span><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;"><span></span></span></li>
+</ul>
+
+<strong>Flow of Event</strong>
+<ul>
+  <li>User: Go to AMMS Online =&gt; Programs =&gt; click on LO
+(Loan Officer) =&gt;&nbsp; click on "Group" =&gt;&nbsp; click on any
+particular member =&gt; click on "Medical Help Information" =&gt; click
+on "Add" button (New Medical Help Information) / click on "Edit" button
+(Existing Medical Help Information).<br>
+  </li>
+  <li>System: Shows the "Medical Help Information" UI.<span style="font-weight: bold;"><br>
+    </span></li>
+  <li>User: Provide relevant information and press "Save" button.</li>
+  <li>System: Shows the confirmation message.</li>
+  <li>User: Click on &#8220;Confirm&#8221; button.</li>
+  <li>System: Shows appropriate message.</li>
+</ul>
+<strong>Post-Condition</strong>
+<ul style="margin: 10px 0px 0px; list-style-type: disc; color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255);">
+<li>Post_8.1.1. System store record in the system.</li><li>Post_8.1.2. System show proper message.</li><li>Post_8.1.3. Saved data will be shown after save in the record list.</li><li>Post_8.1.4. Audit
+trail / change log should be maintained separately for every changes
+with execution date, executed by and other information.</li>
+  <li style="color: black;">Post_8.1.5. System
+will also create transaction when record is added and will also show in
+"Transaction Statement" under "Product Type" =&gt; "Others".&nbsp;</li>
+  <li style="color: black;">Post_8.1.6. System will also create reverse transaction of original transaction and
+create transaction if previous record is edited.</li>
+
+
+</ul>
+<br style="color: black;">
+
+<big style="font-weight: bold; color: black;">Business Rules:</big><br style="color: black;">
+<ul>
+  <li style="color: black;">
+BR_8.1.1. A member having same <span class="">"</span><span class="">Member NID", "</span>Member Id" will get medical help only once in a life time.</li>
+  
+  <li><span style="color: black;">BR_8.1.2. Journal mapping for "Member medical help".</span><br style="color: black;">
+
+    <span style="color: black;"></span>
+    <table style="text-align: left; width: 1560px; height: 501px; color: black;" border="0" cellpadding="2" cellspacing="2">
+
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; font-weight: bold;">Events<br>
+      </td>
+      <td style="vertical-align: top; font-weight: bold;">Operation Tye<br>
+      </td>
+      <td style="vertical-align: top; font-weight: bold;">Trans. Type Name<br>
+      </td>
+      <td style="vertical-align: top; font-weight: bold;">Process</td>
+      <td style="vertical-align: top; font-weight: bold;">Head Type<br>
+      </td>
+      <td style="vertical-align: top; font-weight: bold;">GL Code<br>
+      </td>
+      <td style="vertical-align: top; font-weight: bold;">GL Head Name<br>
+      </td>
+      <td style="vertical-align: top; font-weight: bold;">Dr<br>
+      </td>
+      <td style="vertical-align: top; font-weight: bold;">Cr<br>
+      </td>
+      <td style="vertical-align: top; font-weight: bold;">Voucher Type<br>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="2" style="vertical-align: top;">Member medical help</td>
+      <td colspan="1" rowspan="2" style="vertical-align: top;">Member medical help</td>
+      <td colspan="1" rowspan="2" style="vertical-align: top;">Member medical help</td>
+      <td colspan="1" rowspan="2" style="vertical-align: top;">Cash<br>
+      </td>
+      <td style="vertical-align: top;">Expenses<br>
+      </td>
+      <td style="vertical-align: top;">4035059</td>
+      <td style="vertical-align: top;">
+
+Medical &amp; Treatment Grant (Member)</td>
+      <td style="vertical-align: top;">Medical help amount </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td colspan="1" rowspan="2" style="vertical-align: top;">Debit Voucher<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Asset<br>
+      </td>
+      <td style="vertical-align: top;">1001001001<br>
+      </td>
+      <td style="vertical-align: top;">Cash in Hand (at Branch Office)<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Medical help amount </td>
+    </tr>
+    <tr>
+      <td colspan="1" rowspan="2" style="vertical-align: top;">Member medical help</td>
+      <td colspan="1" rowspan="2" style="vertical-align: top;">Member medical help</td>
+      <td colspan="1" rowspan="2" style="vertical-align: top;">Member medical help</td>
+      <td colspan="1" rowspan="2" style="vertical-align: top;">Cheque<br>
+      </td>
+      <td style="vertical-align: top;">Expenses</td>
+      <td style="vertical-align: top;">4035059</td>
+      <td style="vertical-align: top;">
+
+Medical &amp; Treatment Grant (Member)</td>
+      <td style="vertical-align: top;">Medical help amount</td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td colspan="1" rowspan="2" style="vertical-align: top;">Debit Voucher</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Asset</td>
+      <td style="vertical-align: top;">Bank<br>
+      </td>
+      <td style="vertical-align: top;">Bank<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Medical help amount</td>
+    </tr>
+  </tbody>
+    </table>
+
+    <span style="color: black;"></span><strong style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255);"><br></strong></li>
+
+
+</ul><span style="color: red;"></span>
+<span style="color: black; font-weight: bold;"><span style="color: rgb(0, 153, 0);">(Completed)</span></span><br>
+<strong style="color: black; font-weight: bold;">UC_8.2. </strong><strong style="color: black; font-size: 14px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); font-weight: bold;">Delete<span> </span></strong><span style="color: black; font-weight: bold;">Memberwise Medical Help <span style="color: rgb(0, 153, 0);"></span></span><br>
+<strong style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255);"></strong><br>
+
+<strong>Primary Actor</strong><br><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Branch Manager (BM) or<span>&nbsp;</span></span><span class="inline-comment-marker valid" data-ref="3ed98d78-4c95-402c-b765-a4289cb12741" style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal;">any other user in other office</span><br>
+
+<br>
+
+<strong>Secondary Actor</strong><br><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Regional Manager (RM), District Manager (DM) and Admin</span><br>
+
+<br>
+
+<strong>Pre-Condition</strong>
+<ul style="margin: 10px 0px 0px; list-style-type: disc; color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255);">
+<li>Pre_8.2.1. User must login into the system.</li><li>Pre_8.2.2. User must have proper privilege to access.</li><li>Pre_8.2.3. LAN and internet connectivity must be up.</li><li>Pre_8.2.4. Member wise medical help record must exist in the database.</li>
+</ul>
+
+<br>
+
+<strong>Data Model</strong><br>
+
+Same as above.<br>
+
+<span style="font-weight: bold;"></span><br>
+
+<strong style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255);">UI</strong><br>
+
+<span style="font-weight: bold;"></span>Same as above.<br>
+<br>
+<strong>Flow of Event</strong>
+<ul>
+  <li>User: Go to AMMS Online =&gt; Programs =&gt; click on LO
+(Loan Officer) =&gt;&nbsp; click on "Group" =&gt;&nbsp; click on any
+particular member =&gt; click on "Medical Help Information".
+  </li>
+  <li>System: Shows the "Medical Help Information" UI.<span style="font-weight: bold;"><br>
+    </span></li>
+  <li>User: Choose record from list and press "Delete" button.</li>
+  <li>System: Shows the confirmation message.</li>
+  <li>User: Click on &#8220;Confirm&#8221; button.</li>
+  <li>System: Shows appropriate message.</li>
+</ul>
+
+<strong>Post-Condition</strong>
+<br>
+<ul style="margin: 10px 0px 0px; list-style-type: disc; color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255);">
+<li>Post_8.2.1. System show proper message.</li><li>Post_8.2.2. Refresh record list after delete.<br>
+</li><li>Post_8.2.3. Audit
+trail / change log should be maintained separately for every changes
+with execution date, executed by and other information.</li>
+  <li style="color: black;">Post_8.2.4. System will create reverse transaction of original transaction if previous record is deleted.</li>
+  <li><span style="color: black;">Post_8.2.5. Deleted record will not show in the list. Also Transaction will not show in
+"Transaction Statement" under "Product Type" =&gt; "Others".</span><span style="color: red;"></span></li>
+  
+
+</ul>
+
+<br>
+
+
+<big style="font-weight: bold;">Business Rules:</big><br>
+
+<ul style="color: black;">
+<li>
+BR_8.2.1. <span style="font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">User could not be able to delete those record which are in use.</span></li>
+  <li><span style="font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">BR_8.2.2. </span>Branch Manager can only view and delete only own branch transaction.</li>
+  <li>BR_8.2.3. User can delete transaction based on privilege <span style="font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">as per program transaction<span>&nbsp;</span></span><span data-mce-style="color: #ff0000;" style="font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255);">privilege&nbsp;</span><span style="font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">.</span></li>
+  <li>BR_8.2.4. User cannot delete transaction of inactive member.</li>
+
+</ul><span style="color: black; font-weight: bold;"><span style="color: rgb(0, 153, 0);"></span></span><br>
+<span style="color: black; font-weight: bold;"><span style="color: rgb(0, 153, 0);">
+(Completed)</span></span><br>
+<span style="color: black; font-weight: bold;">R_8.1. </span><strong style="color: black; font-size: 14px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); font-weight: bold;">Statement of Members Treatment Fund</strong><span style="color: black; font-weight: bold;"> Report (Branch)</span><br>
+<br>
+<span style="color: black;"><span style="font-weight: bold;">Description</span></span><br>
+<span style="color: black;">
+This report allows user to view </span><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">division/district/region/branch wise statement of members treatment fund within selected date range of payment.</span><br>
+<br>
+<span style="color: black;"><span style="font-weight: bold;">UI</span></span><br>
+<span style="color: black;">
+</span><br>
+<span style="color: black;">
+<img style="width: 100%; height: 100%;" alt="" src="Statement%20of%20Members%20Treatment%20Fund%20Report%20%28Branch%29.png"></span><br>
+<span style="color: black;">
+<span style="font-weight: bold;"></span></span><br>
+<span style="color: black;"><span style="font-weight: bold;">
+Sample Format of Report</span></span><br>
+<span style="color: black;">
+<a style="color: black;" href="../Document/Report/Statement%20of%20Members%20Treatment%20Fund%20Report%20%28Branch%29.xlsx">Statement of Members Treatment Fund Report (Branch)</a></span><br>
+<span style="color: black;">
+<span style="font-weight: bold;"></span></span><br>
+<span style="color: black;"><span style="font-weight: bold;">
+</span></span><span style="color: black;"><span style="font-weight: bold;">Search Criteria</span></span><br>
+<br>
+<span style="color: black;"></span>
+<table class="relative-table wrapped confluenceTable" style="margin: 10px 0px 0px; border-collapse: collapse; overflow-x: auto; color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; width: 1233px; height: 462px;">
+<colgroup><col style="width: 201.146px;"><col style="width: 676.521px;"></colgroup><thead><tr><th class="confluenceTh mceSelected" style="border: 1px solid rgb(221, 221, 221); padding: 7px 10px; vertical-align: top; text-align: left; min-width: 8px; background-color: rgb(240, 240, 240); font-weight: bold;"><p style="margin: 0px; background-color: rgb(240, 240, 240); font-weight: bold;">Title</p></th><th class="confluenceTh mceSelected" colspan="1" style="border: 1px solid rgb(221, 221, 221); padding: 7px 10px; vertical-align: top; text-align: left; min-width: 8px; background-color: rgb(240, 240, 240); font-weight: bold;"><p style="margin: 0px; background-color: rgb(240, 240, 240); font-weight: bold;"><span>Description</span></p></th></tr></thead><tbody><tr>
+      <td style="vertical-align: top;">From Date</td>
+      <td style="vertical-align: top;">
+      <ul style="margin: 0px; list-style-type: disc; padding-left: 22px;">
+<li>1st day of current month will be selected by default. User can change it.&nbsp;</li><li>"From Date" must not be greater than "To Date".</li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">To Date</td>
+      <td style="vertical-align: top;">
+      <ul style="margin: 0px; list-style-type: disc; padding-left: 22px;">
+<li>Last day of current month will be selected by default. User can be able to change it.&nbsp;</li><li>"To Date" must not be less than "From Date".</li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Division</td>
+      <td style="vertical-align: top;">
+      <ul style="margin: 0px; list-style-type: disc; padding-left: 22px;">
+<li>ASA Division will be loaded.</li><li>User can select 'All' or specific&nbsp;Division.</li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">District</td>
+      <td style="vertical-align: top;">
+      <ul style="margin: 0px; list-style-type: disc; padding-left: 22px;">
+<li>ASA District belongs to selected ASA Division will be loaded.</li><li>User can select 'All' or specific&nbsp;District.</li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Region</td>
+      <td style="vertical-align: top;">
+      <ul style="margin: 0px; list-style-type: disc; padding-left: 22px;">
+<li>ASA Region belongs to selected ASA District will be loaded.</li><li>User can select 'All' or specific&nbsp;Region.</li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Branch</td>
+      <td style="vertical-align: top;">
+      <ul style="margin: 0px; list-style-type: disc; padding-left: 22px;">
+<li>ASA Branch belongs to selected ASA Region will be loaded.</li><li>User can select 'All' or specific Branch.</li>
+      </ul>
+      </td>
+    </tr>
+</tbody>
+</table>
+<br>
+<span style="color: black;"><span style="font-weight: bold;">Header</span></span><br>
+<span style="color: black;"></span><span style="color: black;">&nbsp;&nbsp;&nbsp; {Organization Name}</span><br>
+<span style="color: black;">
+&nbsp;&nbsp;&nbsp; {Report Name}</span><br>
+<span style="color: black;">
+&nbsp;&nbsp;&nbsp; {All the selected filters}</span><br>
+<span style="color: black;">
+&nbsp;&nbsp;&nbsp; {Generation Date &amp; Time: Timestamp, Report Generated By: Username}</span><br>
+<span style="color: black;">
+</span><br>
+<span style="color: black;">
+</span><span style="color: black;"><span style="font-weight: bold;">Field List</span></span><br>
+<br>
+
+<span style="color: black;"></span>
+<table class="relative-table wrapped confluenceTable" style="margin: 10px 0px 0px; border-collapse: collapse; overflow-x: auto; color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; width: 1264px; height: 847px;">
+
+<colgroup><col style="width: 201.146px;"><col style="width: 676.521px;"></colgroup><thead><tr><th class="confluenceTh mceSelected" style="border: 1px solid rgb(221, 221, 221); padding: 7px 10px; vertical-align: top; text-align: left; min-width: 8px; background-color: rgb(240, 240, 240); font-weight: bold;"><p style="margin: 0px; background-color: rgb(240, 240, 240); font-weight: bold;">Title</p></th><th class="confluenceTh mceSelected" colspan="1" style="border: 1px solid rgb(221, 221, 221); padding: 7px 10px; vertical-align: top; text-align: left; min-width: 8px; background-color: rgb(240, 240, 240); font-weight: bold;"><p style="margin: 0px; background-color: rgb(240, 240, 240); font-weight: bold;"><span>Description</span></p></th></tr></thead><tbody><tr>
+      <td style="vertical-align: top;">Division<br>
+</td>
+      <td style="vertical-align: top;">
+      <span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Name of ASA division.&nbsp;</span>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Name of District<br>
+</td>
+      <td style="vertical-align: top;">
+      <span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Name of ASA district.</span>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Region<br>
+</td>
+      <td style="vertical-align: top;">
+      Name of ASA region.<br>
+
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Name of Branch<br>
+</td>
+      <td style="vertical-align: top;">
+      Name of ASA branch.<br>
+
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Period From&#8230;.....to&#8230;....<br>
+      </td>
+      <td style="vertical-align: top;"><span style="color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Report date range of payment.</span></td>
+    </tr>
+<tr>
+      <td style="vertical-align: top;">Sl<br>
+</td>
+      <td style="vertical-align: top;">
+      Serial number of row.<br>
+
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Name of Employee with ID<br>
+      </td>
+      <td style="vertical-align: top;">Name of employee with employee Id.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Group Name<br>
+      </td>
+      <td style="vertical-align: top;">Group name of member.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Date of Payment<br>
+      </td>
+      <td style="vertical-align: top;">Date of payment.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Members Name<br>
+      </td>
+      <td style="vertical-align: top;">Name of member.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Father/Husband Name<br>
+      </td>
+      <td style="vertical-align: top;">Father/Husband name of member.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Date of Membership Started<br>
+      </td>
+      <td style="vertical-align: top;">Date of membership started.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Membership Duration<br>
+      </td>
+      <td style="vertical-align: top;">Membership duration.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">NID Number<br>
+      </td>
+      <td style="vertical-align: top;">NID of member.<br>
+      </td>
+    </tr>
+<tr>
+      <td style="vertical-align: top;">Member ID<br>
+</td>
+      <td style="vertical-align: top;">AMMS ID of member.<br>
+
+      </td>
+    </tr><tr>
+      <td style="vertical-align: top;">Name of Diseases<br>
+      </td>
+      <td style="vertical-align: top;">Name of diseases.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Availed this service earlier (Y/N): If Yes Put number<br>
+      </td>
+      <td style="vertical-align: top;">Availed this service earlier.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Amount Paid<br>
+      </td>
+      <td style="vertical-align: top;">Amount paid.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Remarks<br>
+      </td>
+      <td style="vertical-align: top;">Remarks.<br>
+      </td>
+    </tr>
+
+</tbody>
+</table>
+
+<span style="color: black;"><span style="font-weight: bold;"></span></span><span style="color: black;"></span><br>
+<span style="color: black;"><span style="font-weight: bold;">Export Criteria</span></span><br>
+<span style="color: black;">&nbsp;&nbsp;&nbsp; excel</span><span style="color: red; font-weight: bold;"></span><br>
+<span style="color: red; font-weight: bold;"></span><span style="color: red; font-weight: bold;"></span><br>
+<span style="color: red; font-weight: bold;">
+</span><span style="color: black; font-weight: bold;"><span style="color: rgb(0, 153, 0);">(Completed)</span></span><br>
+<span style="font-weight: bold; color: black;">R_8.2. </span><strong style="color: black; font-weight: bold;">Statement of Members Treatment Fund</strong><span style="color: black; font-weight: bold;"> Report (Country)</span><br>
+<br>
+<span style="font-weight: bold; color: black;">Description</span><br style="color: red;">
+<span style="color: black;">This report allows user to view </span><span style="color: black; font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">statement of members treatment fund within selected date range of payment.</span><br>
+<br style="color: red;">
+<span style="font-weight: bold; color: black;">UI</span><br style="color: red;">
+<img style="width: 100%; height: 100%; color: red;" alt="" src="Statement%20of%20Members%20Treatment%20Fund%20Report%20%28Country%29.png"><br style="color: red;">
+<span style="font-weight: bold; color: black;"></span><br>
+<span style="font-weight: bold; color: black;">
+Sample Format of Report</span><br style="color: black;">
+<a style="color: black;" href="../Document/Report/Statement%20of%20Members%20Treatment%20Fund%20Report%20%28Country%29.xlsx">Statement of Members Treatment Fund Report (Country)</a><br>
+<br style="color: red;">
+<span style="color: black;"><span style="font-weight: bold;">Search Criteria</span></span><br style="color: red;">
+<span style="color: red;">&nbsp;&nbsp;&nbsp; </span><br>
+
+<span style="color: black;"></span>
+<table class="relative-table wrapped confluenceTable" style="margin: 10px 0px 0px; border-collapse: collapse; overflow-x: auto; color: rgb(51, 51, 51); font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; width: 878.333px;">
+
+<colgroup><col style="width: 201.146px;"><col style="width: 676.521px;"></colgroup><thead><tr><th class="confluenceTh mceSelected" style="border: 1px solid rgb(221, 221, 221); padding: 7px 10px; vertical-align: top; text-align: left; min-width: 8px; background-color: rgb(240, 240, 240); font-weight: bold;"><p style="margin: 0px; background-color: rgb(240, 240, 240); font-weight: bold;">Title</p></th><th class="confluenceTh mceSelected" colspan="1" style="border: 1px solid rgb(221, 221, 221); padding: 7px 10px; vertical-align: top; text-align: left; min-width: 8px; background-color: rgb(240, 240, 240); font-weight: bold;"><p style="margin: 0px; background-color: rgb(240, 240, 240); font-weight: bold;"><span>Description</span></p></th></tr></thead><tbody><tr>
+      <td style="vertical-align: top;">From Date</td>
+      <td style="vertical-align: top;">
+      <ul style="margin: 0px; list-style-type: disc; padding-left: 22px;"><li>1st day of current month will be selected by default. User can change it.&nbsp;</li><li>"From Date" must not be greater than "To Date".</li></ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">To Date</td>
+      <td style="vertical-align: top;">
+      <ul style="margin: 0px; list-style-type: disc; padding-left: 22px;"><li>Last day of current month will be selected by default. User can be able to change it.&nbsp;</li><li>"To Date" must not be less than "From Date".</li></ul>
+      </td>
+    </tr>
+    
+    
+    
+    
+</tbody>
+</table>
+
+<br style="color: red;">
+<span style="font-weight: bold; color: black;">Header</span><br style="color: black;">
+<span style="color: black;">&nbsp;&nbsp;&nbsp;  {Organization Name}</span><br>
+<span style="color: black;">
+&nbsp;&nbsp;&nbsp; {Report Name}</span><br>
+<span style="color: black;">
+&nbsp;&nbsp;&nbsp; {All the selected filters}</span><br>
+<span style="color: black;">
+&nbsp;&nbsp;&nbsp; {Generation Date &amp; Time: Timestamp, Report Generated By: Username}</span><br style="color: red;">
+<br style="color: red;">
+<span style="font-weight: bold; color: black;">Field List</span><br style="color: red;">
+<br style="color: black;">
+
+
+<span style="color: black;"></span>
+<table class="relative-table wrapped confluenceTable" style="margin: 10px 0px 0px; border-collapse: collapse; overflow-x: auto; color: black; font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; width: 878.333px;">
+
+
+<colgroup><col style="width: 201.146px;"><col style="width: 676.521px;"></colgroup><thead><tr><th class="confluenceTh mceSelected" style="border: 1px solid rgb(221, 221, 221); padding: 7px 10px; vertical-align: top; text-align: left; min-width: 8px; background-color: rgb(240, 240, 240); font-weight: bold;"><p style="margin: 0px; background-color: rgb(240, 240, 240); font-weight: bold;">Title</p></th><th class="confluenceTh mceSelected" colspan="1" style="border: 1px solid rgb(221, 221, 221); padding: 7px 10px; vertical-align: top; text-align: left; min-width: 8px; background-color: rgb(240, 240, 240); font-weight: bold;"><p style="margin: 0px; background-color: rgb(240, 240, 240); font-weight: bold;"><span>Description</span></p></th></tr></thead><tbody><tr>
+      <td style="vertical-align: top;">Period From&#8230;.....to&#8230;....
+</td>
+      <td style="vertical-align: top;">
+      <span style="font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Report date range of payment.</span>
+
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Sl
+</td>
+      <td style="vertical-align: top;">
+      Serial number of row.
+
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Name of ASA Division<br>
+</td>
+      <td style="vertical-align: top;">
+      Name of ASA division.<br>
+
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Name of ASA District<br>
+</td>
+      <td style="vertical-align: top;">
+      Name of ASA district.<br>
+
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Name of Region<br>
+</td>
+      <td style="vertical-align: top;">
+      Name of ASA region.<br>
+<br>
+
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Name of Branch with ID<br>
+</td>
+      <td style="vertical-align: top;">
+      Name of ASA branch with branch Id.<br>
+
+      </td>
+    </tr><tr>
+      <td style="vertical-align: top;">No of LO at the Branch<br>
+      </td>
+      <td style="vertical-align: top;">Number of Loan officer at the branch.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Total Number of Active Members<br>
+      </td>
+      <td style="vertical-align: top;">Total number of active members at the branch.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Total Number of Borrowers<br>
+      </td>
+      <td style="vertical-align: top;">Total number of borrowers at the branch.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">No of Health Assistance provided<br>
+      </td>
+      <td style="vertical-align: top;">No of health assistance provided by members treatment fund.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"># of members got assistance more than once <br>
+      </td>
+      <td style="vertical-align: top;">Number of members got assistance more than once by members treatment fund.</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Amount Paid<br>
+      </td>
+      <td style="vertical-align: top;">Amount paid.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; color: black;">Remarks<br>
+      </td>
+      <td style="vertical-align: top; color: black;">Remarks. <br>
+      </td>
+    </tr>
+
+</tbody>
+</table>
+<br>
+<span style="color: red;"></span><span style="font-weight: bold; color: red;"></span><span style="font-weight: bold; color: black;">Export Criteria</span><br style="color: black;">
+<span style="color: black;">&nbsp;&nbsp;&nbsp; excel</span><br>
+
+<br style="color: rgb(51, 51, 255);"><br style="font-weight: bold;">
+<div style="text-align: center;"><span style="font-weight: bold;"><span style="color: rgb(0, 153, 0);">(Completed) </span></span><span style="font-weight: bold;"><br>
+Inclusion of a head in Payroll ( Deduction Side)<span style="color: rgb(0, 153, 0);"> </span></span><br>
+</div>
+
+<br>
+<span style="font-weight: bold;">Jira: </span><br>
+http://192.168.0.3:8080/browse/AMMSW-6387 <br>
+<br>
+<span style="color: rgb(51, 51, 255);"></span><span style="font-weight: bold; color: black;">Confluence:</span><br style="color: black;"><span style="color: black;">
+
+http://192.168.0.3:8090/display/AM/5.+Employee+Account+Type+Management</span><br style="color: black;">
+<span style="color: black;">
+http://192.168.0.3:8090/display/AM/8.2+HRM+Transaction+Matrix </span><br style="color: black;"><span style="color: black;">
+
+http://192.168.0.3:8090/display/AM/8.4+HRM+Transaction+Register </span><br style="color: black;"><span style="color: black;">
+
+http://192.168.0.3:8090/display/AM/Payroll+Register</span><br style="color: black;"><span style="color: black;">
+
+http://192.168.0.3:8090/display/AM/3.3.3+HRMS+and+Payroll+Transaction+Journal+Mapping
+=&gt; HRMS_Journal_Mapping_Final-02.09.2024.xlsx</span><br>
+<br>
+<span style="font-weight: bold;">Changes in Confluence:</span><br>
+<br>
+<span style="font-weight: bold; color: black;">Change 1: </span><br style="color: black;"><span style="color: black;">
+http://192.168.0.3:8090/display/AM/5.+Employee+Account+Type+Management =&gt; Add new Account Type given below,</span><br style="color: black;">
+<br style="color: black;">
+<table class="wrapped relative-table confluenceTable" style="margin: 0px; border-collapse: collapse; overflow-x: auto; color: black; font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); width: 875.833px;">
+<tbody><tr><td class="confluenceTd" style="border: 1px solid rgb(221, 221, 221); padding: 7px 10px; vertical-align: top; text-align: left; min-width: 8px;">SL.</td><td class="confluenceTd" style="border: 1px solid rgb(221, 221, 221); padding: 7px 10px; vertical-align: top; text-align: left; min-width: 8px;">Name</td><td class="confluenceTd" style="border: 1px solid rgb(221, 221, 221); padding: 7px 10px; vertical-align: top; text-align: left; min-width: 8px;">Type</td><td class="confluenceTd" style="border: 1px solid rgb(221, 221, 221); padding: 7px 10px; vertical-align: top; text-align: left; min-width: 8px;">Category</td><td class="confluenceTd" style="border: 1px solid rgb(221, 221, 221); padding: 7px 10px; vertical-align: top; text-align: left; min-width: 8px;">Sort Order</td><td class="confluenceTd" style="border: 1px solid rgb(221, 221, 221); padding: 7px 10px; vertical-align: top; text-align: left; min-width: 8px;">Recurring in Payroll</td><td class="confluenceTd" style="border: 1px solid rgb(221, 221, 221); padding: 7px 10px; vertical-align: top; text-align: left; min-width: 8px;">Recurring in Salary Structure</td><td class="confluenceTd" style="border: 1px solid rgb(221, 221, 221); padding: 7px 10px; vertical-align: top; text-align: left; min-width: 8px;">Create Blank Account</td><td colspan="1" class="confluenceTd" style="border: 1px solid rgb(221, 221, 221); padding: 7px 10px; vertical-align: top; text-align: left; min-width: 8px;">Is Balance/Outstanding Carry forward</td></tr><tr><td class="confluenceTd" style="border: 1px solid rgb(221, 221, 221); padding: 7px 10px; vertical-align: top; text-align: left; min-width: 8px;"><br>
+
+<br>
+</td><td class="confluenceTd" style="border: 1px solid rgb(221, 221, 221); padding: 7px 10px; vertical-align: top; text-align: left; min-width: 8px;">Deposit against irregularity in Disbursement</td><td class="confluenceTd" style="border: 1px solid rgb(221, 221, 221); padding: 7px 10px; vertical-align: top; text-align: left; min-width: 8px;"><span style="font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Deduction</span></td><td class="confluenceTd" style="border: 1px solid rgb(221, 221, 221); padding: 7px 10px; vertical-align: top; text-align: left; min-width: 8px;"><span style="font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Punishment</span></td><td class="confluenceTd" style="border: 1px solid rgb(221, 221, 221); padding: 7px 10px; vertical-align: top; text-align: left; min-width: 8px;"><br>
+
+</td><td class="confluenceTd" style="border: 1px solid rgb(221, 221, 221); padding: 7px 10px; vertical-align: top; text-align: left; min-width: 8px;"><span style="font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">No</span></td><td class="confluenceTd" style="border: 1px solid rgb(221, 221, 221); padding: 7px 10px; vertical-align: top; text-align: left; min-width: 8px;"><span style="font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">No</span></td><td class="confluenceTd" style="border: 1px solid rgb(221, 221, 221); padding: 7px 10px; vertical-align: top; text-align: left; min-width: 8px;">Yes</td><td colspan="1" class="confluenceTd" style="border: 1px solid rgb(221, 221, 221); padding: 7px 10px; vertical-align: top; text-align: left; min-width: 8px;"><span style="font-size: 14px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); display: inline ! important; float: none;">Yes</span></td></tr></tbody>
+</table>
+<br style="color: black;">
+<span style="font-weight: bold; color: black;">Change 2:</span><br style="color: black;"><span style="color: black;">
+http://192.168.0.3:8090/display/AM/8.2+HRM+Transaction+Matrix =&gt;&nbsp; What are the "</span><strong style="color: black; font-size: 14px; font-style: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255); font-weight: normal;">Allowed Transaction Type"</strong><span style="color: black;"> for "Deposit against irregularity in Disbursement".</span><br style="color: black;">
+<img style="color: black;" src="file:///C:/Users/Jilani/AppData/Local/Temp/moz-screenshot.jpg" alt=""><br style="color: black;">
+<span style="font-weight: bold; color: black;">Change 3:</span><br style="color: black;"><span style="color: black;">
+http://192.168.0.3:8090/display/AM/8.4+HRM+Transaction+Register =&gt;
+Add "Deposit against irregularity in Disbursement" in register.</span><br style="color: black;">
+<span style="font-weight: bold; color: black;"></span><br style="color: black;"><span style="color: black;">
+http://192.168.0.3:8090/display/AM/Payroll+Register =&gt; Add "Deposit against irregularity in Disbursement" in register.</span><br style="color: black;">
+<br style="color: black;">
+<span style="font-weight: bold; color: black;">Change 4:</span><br style="color: black;"><span style="color: black;">
+http://192.168.0.3:8090/display/AM/3.3.3+HRMS+and+Payroll+Transaction+Journal+Mapping
+=&gt;&nbsp;</span><a style="color: black;" target="_blank" rel="tag" href="../Document/HRMS_Journal_Mapping_Final-02.09.2024.xlsx"> </a><span style="color: black;"><a target="_blank" rel="tag" href="../Document/HRMS_Journal_Mapping_Final-02.09.2024.xlsx">HRMS_Journal_Mapping_Final-02.09.2024.xlsx</a> =&gt; Add "Deposit against irregularity in Disbursement" in Tabs =&gt; "HR AC TYPE", "Salary Payment Journal Mapping".</span><br style="color: black;">
+
+<br>
+<br>
+<h1 id="summary-val" style="margin: 0px 0px 0px -5px; padding: 2px 30px 2px 5px; color: rgb(41, 41, 41); font-size: 24px; font-weight: bold; line-height: 1.25; text-transform: none; z-index: 1; font-style: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; widows: 2; word-spacing: 0px; white-space: normal; background-color: rgb(255, 255, 255);">Savings Lapse new policy</h1>
+<br>
+<br>
+
+</body></html>

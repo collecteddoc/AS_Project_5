@@ -1,0 +1,997 @@
+﻿<?xml version='1.0'?>
+<?mso-application progid='Excel.Sheet'?>
+<s:Workbook xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:s="urn:schemas-microsoft-com:office:spreadsheet">
+  <s:Styles>
+    <s:Style s:ID="Default">
+      <s:Alignment />
+      <s:Font />
+      <s:Interior />
+    </s:Style>
+    <s:Style s:ID="DefaultCell">
+      <s:Alignment />
+      <s:Borders>
+        <s:Border s:Color="Black" s:Position="Top" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Right" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Bottom" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Left" s:LineStyle="Continuous" s:Weight="1" />
+      </s:Borders>
+      <s:Font />
+      <s:Interior />
+    </s:Style>
+    <s:Style s:ID="DefaultBoldCell">
+      <s:Alignment />
+      <s:Borders>
+        <s:Border s:Color="Black" s:Position="Top" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Right" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Bottom" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Left" s:LineStyle="Continuous" s:Weight="1" />
+      </s:Borders>
+      <s:Font s:Bold="1" />
+      <s:Interior />
+    </s:Style>
+    <s:Style s:ID="DefaultIntegerCell">
+      <s:Alignment />
+      <s:Borders>
+        <s:Border s:Color="Black" s:Position="Top" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Right" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Bottom" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Left" s:LineStyle="Continuous" s:Weight="1" />
+      </s:Borders>
+      <s:Font />
+      <s:Interior />
+      <s:NumberFormat s:Format="_(* #,##0_);_(* \(#,##0\);_(* &quot;-&quot;??_);_(@_)" />
+    </s:Style>
+    <s:Style s:ID="DefaultIntegerBoldCell">
+      <s:Alignment />
+      <s:Borders>
+        <s:Border s:Color="Black" s:Position="Top" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Right" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Bottom" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Left" s:LineStyle="Continuous" s:Weight="1" />
+      </s:Borders>
+      <s:Font s:Bold="1" />
+      <s:Interior />
+      <s:NumberFormat s:Format="_(* #,##0_);_(* \(#,##0\);_(* &quot;-&quot;??_);_(@_)" />
+    </s:Style>
+    <s:Style s:ID="DefaultDoubleCell">
+      <s:Alignment />
+      <s:Borders>
+        <s:Border s:Color="Black" s:Position="Top" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Right" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Bottom" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Left" s:LineStyle="Continuous" s:Weight="1" />
+      </s:Borders>
+      <s:Font />
+      <s:Interior />
+      <s:NumberFormat s:Format="_(* #,##0.00_);_(* \(#,##0.00\);_(* &quot;-&quot;??_);_(@_)" />
+    </s:Style>
+    <s:Style s:ID="DefaultDoubleBoldCell">
+      <s:Alignment />
+      <s:Borders>
+        <s:Border s:Color="Black" s:Position="Top" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Right" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Bottom" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Left" s:LineStyle="Continuous" s:Weight="1" />
+      </s:Borders>
+      <s:Font s:Bold="1" />
+      <s:Interior />
+      <s:NumberFormat s:Format="_(* #,##0.00_);_(* \(#,##0.00\);_(* &quot;-&quot;??_);_(@_)" />
+    </s:Style>
+    <s:Style s:ID="DefaultNumberCell">
+      <s:Alignment />
+      <s:Borders>
+        <s:Border s:Color="Black" s:Position="Top" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Right" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Bottom" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Left" s:LineStyle="Continuous" s:Weight="1" />
+      </s:Borders>
+      <s:Font />
+      <s:Interior />
+      <s:NumberFormat s:Format="_(* #,##0.00_);_(* \(#,##0.00\);_(* &quot;-&quot;??_);_(@_)" />
+    </s:Style>
+    <s:Style s:ID="DefaultNumberBoldCell">
+      <s:Alignment />
+      <s:Borders>
+        <s:Border s:Color="Black" s:Position="Top" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Right" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Bottom" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Left" s:LineStyle="Continuous" s:Weight="1" />
+      </s:Borders>
+      <s:Font s:Bold="1" />
+      <s:Interior />
+      <s:NumberFormat s:Format="_(* #,##0.00_);_(* \(#,##0.00\);_(* &quot;-&quot;??_);_(@_)" />
+    </s:Style>
+    <s:Style s:ID="DefaultDateTimeCell">
+      <s:Alignment />
+      <s:Borders>
+        <s:Border s:Color="Black" s:Position="Top" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Right" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Bottom" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Left" s:LineStyle="Continuous" s:Weight="1" />
+      </s:Borders>
+      <s:Font />
+      <s:Interior />
+      <s:NumberFormat s:Format="Short Date" />
+    </s:Style>
+    <s:Style s:ID="DefaultDateTimeBoldCell">
+      <s:Alignment />
+      <s:Borders>
+        <s:Border s:Color="Black" s:Position="Top" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Right" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Bottom" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Left" s:LineStyle="Continuous" s:Weight="1" />
+      </s:Borders>
+      <s:Font s:Bold="1" />
+      <s:Interior />
+      <s:NumberFormat s:Format="Short Date" />
+    </s:Style>
+    <s:Style s:ID="HeaderTop1">
+      <s:Alignment s:Horizontal="Center" s:Vertical="Center" />
+      <s:Font s:Bold="1" s:Size="20" />
+      <s:Interior />
+    </s:Style>
+    <s:Style s:ID="HeaderTop2">
+      <s:Alignment s:Horizontal="Center" s:Vertical="Center" />
+      <s:Font s:Bold="1" s:Size="15" />
+      <s:Interior />
+    </s:Style>
+    <s:Style s:ID="HeaderTop3">
+      <s:Alignment s:Horizontal="Left" s:Vertical="Center" />
+      <s:Font s:Bold="1" s:Size="12" />
+      <s:Interior />
+    </s:Style>
+    <s:Style s:ID="HeaderTop4">
+      <s:Alignment s:Horizontal="Right" s:Vertical="Center" />
+      <s:Font s:Bold="1" s:Size="12" />
+      <s:Interior />
+    </s:Style>
+    <s:Style s:ID="HeaderCenterAlign">
+      <s:Alignment s:Horizontal="Center" s:Vertical="Center" s:WrapText="1" />
+      <s:Borders>
+        <s:Border s:Color="Black" s:Position="Top" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Right" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Bottom" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Left" s:LineStyle="Continuous" s:Weight="1" />
+      </s:Borders>
+      <s:Font s:Bold="1" />
+      <s:Interior s:Color="#C0C0C0" s:Pattern="Solid" />
+    </s:Style>
+    <s:Style s:ID="HeaderLeftAlign">
+      <s:Alignment s:Horizontal="Left" s:Vertical="Center" s:WrapText="1" />
+      <s:Borders>
+        <s:Border s:Color="Black" s:Position="Top" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Right" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Bottom" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Left" s:LineStyle="Continuous" s:Weight="1" />
+      </s:Borders>
+      <s:Font s:Bold="1" />
+      <s:Interior s:Color="#C0C0C0" s:Pattern="Solid" />
+    </s:Style>
+    <s:Style s:ID="HeaderRightAlign">
+      <s:Alignment s:Horizontal="Right" s:Vertical="Center" s:WrapText="1" />
+      <s:Borders>
+        <s:Border s:Color="Black" s:Position="Top" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Right" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Bottom" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Left" s:LineStyle="Continuous" s:Weight="1" />
+      </s:Borders>
+      <s:Font s:Bold="1" />
+      <s:Interior s:Color="#C0C0C0" s:Pattern="Solid" />
+    </s:Style>
+    <s:Style s:ID="column0row-1">
+      <s:Borders>
+        <s:Border s:Color="Black" s:Position="Top" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Right" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Bottom" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Left" s:LineStyle="Continuous" s:Weight="1" />
+      </s:Borders>
+      <s:Font s:Bold="1" s:FontName="Microsoft Sans Serif" s:Size="10" />
+      <s:Interior s:Color="#DCDCDC" s:Pattern="Solid" />
+    </s:Style>
+    <s:Style s:ID="column0row0">
+      <s:Borders>
+        <s:Border s:Color="Black" s:Position="Top" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Right" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Bottom" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Left" s:LineStyle="Continuous" s:Weight="1" />
+      </s:Borders>
+      <s:Font s:FontName="Microsoft Sans Serif" s:Size="10" s:Color="#000000" />
+      <s:Interior s:Color="#FFFFFF" s:Pattern="Solid" />
+    </s:Style>
+    <s:Style s:ID="column6row0">
+      <s:Borders>
+        <s:Border s:Color="Black" s:Position="Top" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Right" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Bottom" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Left" s:LineStyle="Continuous" s:Weight="1" />
+      </s:Borders>
+      <s:Font s:FontName="Microsoft Sans Serif" s:Size="10" s:Color="#000000" />
+      <s:Interior s:Color="#FFFFFF" s:Pattern="Solid" />
+      <s:NumberFormat s:Format="_(* #,##0.00_);_(* \(#,##0.00\);_(* &quot;-&quot;??_);_(@_)" />
+    </s:Style>
+    <s:Style s:ID="column7row0">
+      <s:Borders>
+        <s:Border s:Color="Black" s:Position="Top" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Right" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Bottom" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Left" s:LineStyle="Continuous" s:Weight="1" />
+      </s:Borders>
+      <s:Font s:FontName="Microsoft Sans Serif" s:Size="10" s:Color="#000000" />
+      <s:Interior s:Color="#FFFFFF" s:Pattern="Solid" />
+      <s:NumberFormat s:Format="_(* #,##0_);_(* \(#,##0\);_(* &quot;-&quot;??_);_(@_)" />
+    </s:Style>
+    <s:Style s:ID="column0row5">
+      <s:Borders>
+        <s:Border s:Color="Black" s:Position="Top" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Right" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Bottom" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Left" s:LineStyle="Continuous" s:Weight="1" />
+      </s:Borders>
+      <s:Font s:Bold="1" s:FontName="Microsoft Sans Serif" s:Size="9" s:Color="#000000" />
+      <s:Interior s:Color="#C0C0C0" s:Pattern="Solid" />
+    </s:Style>
+    <s:Style s:ID="column6row5">
+      <s:Borders>
+        <s:Border s:Color="Black" s:Position="Top" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Right" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Bottom" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Left" s:LineStyle="Continuous" s:Weight="1" />
+      </s:Borders>
+      <s:Font s:Bold="1" s:FontName="Microsoft Sans Serif" s:Size="9" s:Color="#000000" />
+      <s:Interior s:Color="#C0C0C0" s:Pattern="Solid" />
+      <s:NumberFormat s:Format="_(* #,##0.00_);_(* \(#,##0.00\);_(* &quot;-&quot;??_);_(@_)" />
+    </s:Style>
+    <s:Style s:ID="column7row5">
+      <s:Borders>
+        <s:Border s:Color="Black" s:Position="Top" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Right" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Bottom" s:LineStyle="Continuous" s:Weight="1" />
+        <s:Border s:Color="Black" s:Position="Left" s:LineStyle="Continuous" s:Weight="1" />
+      </s:Borders>
+      <s:Font s:Bold="1" s:FontName="Microsoft Sans Serif" s:Size="9" s:Color="#000000" />
+      <s:Interior s:Color="#C0C0C0" s:Pattern="Solid" />
+      <s:NumberFormat s:Format="_(* #,##0_);_(* \(#,##0\);_(* &quot;-&quot;??_);_(@_)" />
+    </s:Style>
+  </s:Styles>
+  <s:Worksheet s:Name="Sheet1">
+    <s:Names>
+      <s:NamedRange s:Name="Print_Titles" s:RefersTo="=Sheet1!R4" />
+    </s:Names>
+    <s:Table>
+      <s:Column s:Width="28" />
+      <s:Column s:Width="105" />
+      <s:Column s:Width="70" />
+      <s:Column s:Width="70" />
+      <s:Column s:Width="105" />
+      <s:Column s:Width="70" />
+      <s:Column s:Width="70" />
+      <s:Column s:Width="84" />
+      <s:Column s:Width="84" />
+      <s:Column s:Width="70" />
+      <s:Column s:Width="70" />
+      <s:Column s:Width="70" />
+      <s:Column s:Width="84" />
+      <s:Column s:Width="56" />
+      <s:Column s:Width="56" />
+      <s:Column s:Width="56" />
+      <s:Column s:Width="56" />
+      <s:Column s:Width="56" />
+      <s:Column s:Width="56" />
+      <s:Column s:Width="56" />
+      <s:Column s:Width="56" />
+      <s:Column s:Width="56" />
+      <s:Column s:Width="56" />
+      <s:Column s:Width="84" />
+      <s:Column s:Width="70" />
+      <s:Column s:Width="70" />
+      <s:Column s:Width="84" />
+      <s:Column s:Width="70" />
+      <s:Column s:Width="70" />
+      <s:Column s:Width="70" />
+      <s:Row>
+        <s:Cell s:MergeAcross="29" s:StyleID="HeaderTop1">
+          <s:Data s:Type="String">Asset Register</s:Data>
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell s:MergeAcross="10" s:StyleID="HeaderTop3">
+          <s:Data s:Type="String">Branch Name: Polerhat, Bagerhat</s:Data>
+        </s:Cell>
+        <s:Cell s:MergeAcross="10" s:StyleID="HeaderTop3">
+          <s:Data s:Type="String">From Date : Sat, 15/02/2020  To Date : Sun, 31/05/2020</s:Data>
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell s:MergeDown="1" s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">S#</s:Data>
+        </s:Cell>
+        <s:Cell s:MergeAcross="4" s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">Brief Description of Assets</s:Data>
+        </s:Cell>
+        <s:Cell s:MergeAcross="1" s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">Opening Balance</s:Data>
+        </s:Cell>
+        <s:Cell s:MergeAcross="3" s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">Procurement</s:Data>
+        </s:Cell>
+        <s:Cell s:MergeAcross="2" s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">Received</s:Data>
+        </s:Cell>
+        <s:Cell s:MergeAcross="1" s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">Sold</s:Data>
+        </s:Cell>
+        <s:Cell s:MergeAcross="1" s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">Damaged</s:Data>
+        </s:Cell>
+        <s:Cell s:MergeAcross="1" s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">Transferred</s:Data>
+        </s:Cell>
+        <s:Cell s:MergeAcross="1" s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">Balance</s:Data>
+        </s:Cell>
+        <s:Cell s:MergeAcross="3" s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">Depreciation</s:Data>
+        </s:Cell>
+        <s:Cell s:MergeDown="1" s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">Written Down Value</s:Data>
+        </s:Cell>
+        <s:Cell s:MergeAcross="1" s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">Physical Verification</s:Data>
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell s:Index="2" s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">Description</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">Identity No</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">Category</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">Location</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">Depreciation Rate</s:Data>
+        </s:Cell>
+        <s:Cell s:Index="7" s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">QTY</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">Amount</s:Data>
+        </s:Cell>
+        <s:Cell s:Index="9" s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">Date of Purchased</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">QTY</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">Unit Cost</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">Total Cost</s:Data>
+        </s:Cell>
+        <s:Cell s:Index="13" s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">Date</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">QTY</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">Amount</s:Data>
+        </s:Cell>
+        <s:Cell s:Index="16" s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">QTY</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">Amount</s:Data>
+        </s:Cell>
+        <s:Cell s:Index="18" s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">QTY</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">Amount</s:Data>
+        </s:Cell>
+        <s:Cell s:Index="20" s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">QTY</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">Amount</s:Data>
+        </s:Cell>
+        <s:Cell s:Index="22" s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">QTY</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">Amount</s:Data>
+        </s:Cell>
+        <s:Cell s:Index="24" s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">Opening Balance</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">During the year</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">Depreciation Adjusted</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">Closing Balance</s:Data>
+        </s:Cell>
+        <s:Cell s:Index="29" s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">Date</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="HeaderCenterAlign">
+          <s:Data s:Type="String">By Whom</s:Data>
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String">1</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String">CILLING FAN</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String">014</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String">OFFICE EQUIPMENTS</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String" />
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">20</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">1</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">1441</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String" />
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String" />
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">1</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">1441</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">1309.84</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">4.64</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">1314.48</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">126.52</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String" />
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String" />
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String">2</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String">Cilling Fan</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String">14</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String">OFFICE EQUIPMENTS</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String" />
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">20</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">1</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">6100</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String" />
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String" />
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">1</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">6100</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">3982.62</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">74.96</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">4057.58</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">2042.42</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String" />
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String" />
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String">3</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String">Refrigeretor</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String">36</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String">OFFICE EQUIPMENTS</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String">Branch</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">20</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">1</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">39590</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String" />
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String" />
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">1</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">39590</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">20502.48</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">675.68</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">21178.16</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">18411.84</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String" />
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String" />
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String">4</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String">Staplizer</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String">37</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String">OFFICE EQUIPMENTS</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String">Branch</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">20</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">1</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">2930</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String" />
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String" />
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">1</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">2930</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">1517.34</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">50</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">1567.34</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">1362.66</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String" />
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String" />
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String">5</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String">Solar_System_0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String">ASA-SLRS-20-01136-30</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String">OFFICE EQUIPMENTS</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String">Dhaka</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">20</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">1</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">200</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String" />
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String" />
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column7row0">
+          <s:Data s:Type="Number">1</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">200</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">6.67</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">26.68</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">33.35</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row0">
+          <s:Data s:Type="Number">166.65</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String" />
+        </s:Cell>
+        <s:Cell s:StyleID="column0row0">
+          <s:Data s:Type="String" />
+        </s:Cell>
+      </s:Row>
+      <s:Row>
+        <s:Cell s:StyleID="column0row5">
+          <s:Data s:Type="String" />
+        </s:Cell>
+        <s:Cell s:StyleID="column0row5">
+          <s:Data s:Type="String">Total</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row5">
+          <s:Data s:Type="String" />
+        </s:Cell>
+        <s:Cell s:StyleID="column0row5">
+          <s:Data s:Type="String" />
+        </s:Cell>
+        <s:Cell s:StyleID="column0row5">
+          <s:Data s:Type="String" />
+        </s:Cell>
+        <s:Cell s:StyleID="column6row5">
+          <s:Data s:Type="Number" />
+        </s:Cell>
+        <s:Cell s:StyleID="column7row5">
+          <s:Data s:Type="Number">5</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row5">
+          <s:Data s:Type="Number">50261</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row5">
+          <s:Data s:Type="String" />
+        </s:Cell>
+        <s:Cell s:StyleID="column7row5">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row5">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row5">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row5">
+          <s:Data s:Type="String" />
+        </s:Cell>
+        <s:Cell s:StyleID="column7row5">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row5">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column7row5">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row5">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column7row5">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row5">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column7row5">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row5">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column7row5">
+          <s:Data s:Type="Number">5</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row5">
+          <s:Data s:Type="Number">50261</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row5">
+          <s:Data s:Type="Number">27318.95</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row5">
+          <s:Data s:Type="Number">831.96</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row5">
+          <s:Data s:Type="Number">0</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row5">
+          <s:Data s:Type="Number">28150.91</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column6row5">
+          <s:Data s:Type="Number">22110.09</s:Data>
+        </s:Cell>
+        <s:Cell s:StyleID="column0row5">
+          <s:Data s:Type="String" />
+        </s:Cell>
+        <s:Cell s:StyleID="column0row5">
+          <s:Data s:Type="String" />
+        </s:Cell>
+      </s:Row>
+    </s:Table>
+    <x:WorksheetOptions>
+      <x:ProtectObjects>False</x:ProtectObjects>
+      <x:ProtectScenarios>False</x:ProtectScenarios>
+      <x:PageSetup>
+        <x:Layout x:Orientation="Landscape" x:CenterHorizontal="1" />
+        <x:Footer x:Data="Page &amp;P of &amp;N" />
+      </x:PageSetup>
+      <x:Print>
+        <x:PaperSizeIndex>5</x:PaperSizeIndex>
+        <x:HorizontalResolution>600</x:HorizontalResolution>
+        <x:VerticalResolution>600</x:VerticalResolution>
+        <x:Scale>36</x:Scale>
+        <x:ValidPrinterInfo />
+      </x:Print>
+    </x:WorksheetOptions>
+  </s:Worksheet>
+</s:Workbook>

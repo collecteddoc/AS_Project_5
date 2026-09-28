@@ -1,0 +1,5 @@
+Problems in Asset 
+-----------------
+After asset transfer / receive process journal got stuck.
+
+Asset Written down Value and Current Book Value is same.

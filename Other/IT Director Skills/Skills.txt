@@ -1,0 +1,40 @@
+HoIT / IT Director Requirements
+-------------------------------
+	Determining business requirements for IT systems
+	Directly supervising some employees
+	Hiring certain members
+	Handling employees’ concerns and performances
+	Communicating with the technology team and other departments as collaboration requires
+	Identifying and eliminating security vulnerabilities with strategic solutions that increase data security
+	Directing and supporting the implementation of new software and hardware
+	Managing the organization’s help desk (internal, external, or both)
+	Overseeing departmental finances, including budgeting and forecasting
+	Implementing executive policies
+	Reporting back to the C-suite (https://www.investopedia.com/terms/c/c-suite.asp)
+	IT directors often work closely with the chief technology officer (CTO) and other executives
+
+
+Learning Required
+-----------------
+	- Better english with british accent
+	- Know buzzy words
+	- Procurement knowledge e.g. Tender, Purchasing
+	- Project plan template
+	- Certifications for IT directors e.g. CompTIA A+ Certification, CompTIA Network+, CompTIA Security+, Continuous learning
+	- TIL / COBIT / PMP / Prince2 certification will be an added advantage
+	- Exposure to domain control, Google workspace management, and Microsoft 365 management.
+	- Hands-on experience in implementing firewalls, WAF, security policy management, end-user security management, and protection against           cyber threats.
+	
+
+Skills
+------
+	- Technical skills e.g. knowledge in order to understand what is going on within the infrastructure
+	- Communication skills both written and verbal e.g. go-between for the senior-level executives and the IT department
+	- Leadership skills e.g. needed to not only motivate teams, but to help move the department towards its goals.
+	- Analytical skills e.g. Research the best solutions
+	- Organizational skills e.g. can multi-talk and juggle multiple responsibilities at a time
+	- Business skills e.g. financial skills like budgeting, forecasting, and justifying.
+
+
+URL:
+	- https://www.bmc.com/blogs/it-director-role-and-responsibilities-what-does-a-director-of-technology-do/
